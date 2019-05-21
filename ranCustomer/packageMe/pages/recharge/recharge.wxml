@@ -1,0 +1,28 @@
+<!--packageMe/pages/recharge/recharge.wxml-->
+<view class="container">
+
+  <view class="select-box">
+    <view class="item">
+
+    </view>
+
+    <view class="item">
+      
+    </view>
+
+    <view class="item">
+
+    </view>
+
+    <view class="item">
+      
+    </view>
+  </view>
+  <view class="balance">现有余额：￥1000.00</view>
+
+
+  <view class="btn-box">
+    <view class="recharge-btn">立即充值</view>
+    <view class="tip">点击“立即充值”，即表示您已同意《充值协议》</view>
+  </view>
+</view>

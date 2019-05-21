@@ -1,0 +1,22 @@
+<!--packageStore/pages/payOrder/payOrder.wxml-->
+<view class="content">
+  <view class="price">订单金额：<text>￥<text class="big">{{price}}</text></text></view>
+  <view class="time">支付剩余：{{minute}}:{{second}}</view>
+
+  <view class="title">
+      选择支付方式
+  </view>
+  <radio-group class="radio-group" bindchange="radioChange">
+    <label class="radio">
+      <radio value="1" checked="true" />
+      账户余额支付<text>（剩余￥{{userInfo.user_money}}）</text>
+    </label>
+    <label class="radio">
+      <radio value="2"/>
+      微信支付
+    </label>
+  </radio-group>
+  <view class="pay-btn" bindtap='pay'>
+    支付
+  </view>
+</view>

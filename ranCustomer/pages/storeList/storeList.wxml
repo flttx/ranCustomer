@@ -1,0 +1,37 @@
+<!--pages/storeList/storeList.wxml-->
+<view class="container">
+  <view class="swiper-tab">
+    <view class="tab-item" wx:for="{{storeType}}" wx:for-index="tabsIndex"  wx:key="tabsIndex" bindtap="changeTab" data-current="{{tabsIndex}}">
+      {{item.type_name}}
+      <view class="bar" wx:if="{{currentTab == tabsIndex}}"></view>
+    </view>
+  </view>
+
+  <swiper class="tab-box" current="{{currentTab}}" bindchange="changeSwiper">
+    <swiper-item wx:for="{{storeType}}" wx:key="index">
+      <scroll-view scroll-y style="height:100%;padding: 0 40rpx;">
+        <block wx:for="{{storeType[index].storeList}}" wx:key="index" wx:for-index="pageIndex">
+           <view class="box" catchtap="toStoreDetail" wx:for="{{item.arr}}" wx:key="index" wx:for-item="store" wx:for-index="storeIndex" data-id="{{store.id}}">
+              <image class="store-img" src="{{store.shop_thumb}}"></image>
+              <view class="store-name">
+                <text style="float: left;">然の{{store.shop_type.type_name}}</text>
+                <text style="float: right;color: #999;">{{store.shop_like_count}}</text>
+                <image src="/img/{{store.hasLiked?'thumb1.png':'thumb.png'}}" catchtap="clickThumb" data-storeIndex="{{storeIndex}}" data-arrIndex="{{pageIndex}}" data-id="{{store.id}}"></image>
+              </view>
+              <view class="store-info">
+                <text style="float: left;">{{store.shop_name}}</text>
+                <text style="float: right;">营业时间 {{store.businessTime}}</text>
+              </view>
+            </view>
+        </block>
+       
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+  
+ 
+  <login-component login="{{login}}" bindlogin="refreshUserInfo"></login-component>
+
+</view>
+
+

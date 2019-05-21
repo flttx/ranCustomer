@@ -1,0 +1,48 @@
+<!--packageMe/myInfo/myInfo.wxml-->
+<view class="container">
+  <view class="row">
+    <text class="name">头像</text>
+    <image src="{{userInfo.photo}}" class="user-img"></image>
+  </view>
+  <view class="row">
+    <text class="name">昵称</text>
+    <text class="value">{{userInfo.user_name}}</text>
+  </view>
+  <view class="row" bindtap='clickName'>
+    <text class="name">真实姓名</text>
+    <image src="/img/arrow-right.png" class="jiantou"></image>
+    <text class="value" style="margin-right: 10rpx;">{{userInfo.name}}</text>
+    
+  </view>
+  <view class="row">
+    <text class="name">性别</text>
+    <text class="value">{{userInfo.sex==1?'男':'女'}}</text>
+  </view>
+  <view class="row">
+    <text class="name">手机号码</text>
+    <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="value">{{phone}}</button>
+  </view>
+  <view class="address" bindtap="chooseAddress">
+    <view class="name">收货地址</view>
+    <image src="/img/arrow-right.png" class="jiantou"></image>
+    <text>查看地址详情</text>
+  </view>
+</view>
+
+
+<view class="mask" bindtap="hideName" wx:if="{{showName}}"></view>
+
+<view class="form" wx:if="{{showName}}">
+  <view class="input">
+    姓  <input type="text" bindinput='inputSurname'></input>
+  </view>
+  <view class="input">
+    名  <input type="text" bindinput='inputName'></input>
+  </view>
+  <view class="tip">*为保证您的物件安全，请填写真实姓名</view>
+</view>
+
+
+<view class="bottom">
+  <view class="confirm-btn">保存</view>
+</view>

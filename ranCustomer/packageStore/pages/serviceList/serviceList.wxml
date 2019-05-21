@@ -1,0 +1,29 @@
+<!--packageStore/pages/serviceList/serviceList.wxml-->
+<view class="container">
+  <view class="tabs">
+    <view class="tabs-item" wx:for="{{tabs}}" wx:for-index="tabsIndex" wx:key="tabsIndex" bindtap="changeTab" data-current="{{tabsIndex}}">{{item}}
+      <view class="bar" wx:if="{{currentTab == tabsIndex}}"></view>
+    </view>
+  </view>
+  <swiper class="tab-box" current="{{currentTab}}" bindchange="changeSwiper">
+    <swiper-item wx:for="{{state}}" wx:key="index">
+      <scroll-view scroll-y style="height:100%;">
+        <view class="box">
+          <image class="service-img" src="/img/2.jpg"></image>
+          <view class="service-info">
+            <view>精致洗车</view>
+            <view class="service-price">￥298<text class="vip-price">￥198 会员价</text></view>
+          </view>
+        </view>
+
+        <view class="box">
+          <image class="service-img" src="/img/2.jpg"></image>
+          <view class="service-info">
+            <view>精致洗车</view>
+            <view class="service-price">￥298<text class="vip-price">￥198 会员价</text></view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

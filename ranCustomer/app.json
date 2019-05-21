@@ -1,0 +1,105 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/storeList/storeList",
+    "pages/me/me",
+    "pages/comment/comment"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的地址信息将用于小程序接口展示"
+    }
+  },
+  "tabBar": {
+    "selectedColor": "green",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/comment/comment",
+        "text": "晒一晒"
+      },
+      {
+        "pagePath": "pages/storeList/storeList",
+        "text": "门店"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的"
+      }
+    ]
+  },
+  "subPackages": [
+    {
+      "root": "packageStore",
+      "pages": [
+        "pages/storeHome/storeHome",
+        "pages/storeMap/storeMap",
+        "pages/orderService/orderService",
+        "pages/orderFlower/orderFlower",
+        "pages/allComments/allComments",
+        "pages/couponDetail/couponDetail",
+        "pages/serviceList/serviceList",
+        "pages/discountDetail/discountDetail",
+        "pages/commitOrder/commitOrder",
+        "pages/commitOrderFlower/commitOrderFlower",
+        "pages/payOrder/payOrder"
+      ]
+    },
+    {
+      "root": "packageMe",
+      "pages": [
+        "pages/myInfo/myInfo",
+        "pages/coupon/coupon",
+        "pages/balance/balance",
+        "pages/integral/integral",
+        "pages/integralDetail/integralDetail",
+        "pages/recharge/recharge",
+        "pages/myFollow/myFollow",
+        "pages/recentBrowse/recentBrowse",
+        "pages/goodsList/goodsList",
+        "pages/helpCenter/helpCenter",
+        "pages/merchantEnter/merchantEnter",
+        "pages/memberCenter/memberCenter",
+        "pages/addressList/addressList",
+        "pages/addAddress/addAddress",
+        "pages/message/message"
+      ]
+    },
+    {
+      "root": "packageOrder",
+      "pages": [
+        "pages/orderList/orderList",
+        "pages/orderDetail/luxuryOrderDetail/luxuryOrderDetail",
+        "pages/orderDetail/carOrderDetail/carOrderDetail",
+        "pages/orderDetail/flowerOrderDetail/flowerOrderDetail",
+        "pages/orderDetail/couponOrderDetail/couponOrderDetail",
+        "pages/orderDetail/serviceOrderDetail/serviceOrderDetail",
+        "pages/orderDetail/goodsOrderDetail/goodsOrderDetail",
+        "pages/orderEvaluate/orderEvaluate"
+      ]
+    },
+    {
+      "root": "packageComment",
+      "pages": [
+        "pages/commentDetail/commentDetail"
+      ]
+    },
+    {
+      "root": "packageActivity",
+      "pages": [
+        "pages/activityList/activityList",
+        "pages/activityDetail/activityDetail"
+      ]
+    }
+  ],
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,89 @@
+/* packageMe/pages/addressList/addressList.wxss */
+.content{
+  
+}
+
+.scroller{
+  width: 100%;
+  height: calc(100% - 140rpx);
+}
+
+.item{
+  box-sizing: border-box;
+  margin-top: 28rpx;
+  background: #fff;
+
+}
+
+.address-info, .address-btn{
+  box-sizing: border-box;
+  padding: 31rpx 28rpx;
+}
+
+.address-info{
+  border-bottom: 1px solid #d5d5d5;
+}
+
+.user{
+  color: #666;
+  font-size: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+}
+
+.phone{
+  font-size: 28rpx;
+  margin-left: 30rpx;
+}
+
+.address{
+  color: #999;
+  font-size: 30rpx;
+  margin-top: 30rpx;
+}
+
+.address text{
+  display: block;
+  height: 36rpx;
+  line-height: 36rpx;
+}
+
+.address-btn{
+  height: 106rpx;
+}
+
+.default{
+  float: left;
+  border: 1px solid #CFA972;
+  color: #CFA972;
+  font-size: 28rpx;
+  width: 120rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+}
+
+.address-btn .btn{
+  float: right;
+  width: 100rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  text-align: center;
+  border: 1px solid;
+  color: #333;
+  margin-left: 30rpx;
+}
+
+.add-btn{
+  position: absolute;
+  bottom: 30rpx;
+  left: 30rpx;
+  width: calc(100% - 60rpx);
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color: #fff;
+  background: #000;
+}

@@ -1,0 +1,155 @@
+/* pages/comment/comment.wxss */
+.tab{
+  width: 100%;
+  height: 60rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+}
+
+.tab-box{
+  width: 400rpx;
+  height: 60rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: flex;
+  font-size: 28rpx;
+}
+
+.tab-item{
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.bar{
+  width: 80rpx;
+  height: 4rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: #666;
+}
+
+.swiper-box{
+  padding-top:60rpx;
+  height:100%;
+  box-sizing:border-box;
+}
+
+.box{
+  width: calc(100% - 80rpx);
+  padding: 20rpx 0;
+  position: relative;
+}
+
+.box image{
+  width: 100%;
+  height: 440rpx;
+  border-radius: 10rpx;
+}
+
+.img-num{
+  width: 80rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 40rpx;
+  top: 40rpx;
+  background-color: #333;
+  border-radius: 10rpx;
+  color: #fff; 
+  font-size: 26rpx;
+  line-height: 40rpx;
+  text-align: center;
+}
+
+.comment-img{
+  height: 100rpx;
+  padding: 10rpx 0;
+}
+
+.comment-img>image{
+  float: left;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+.comment-userInfo{
+  float: left;
+  height: 80rpx;
+  width: 200rpx;
+  font-size: 26rpx;
+  padding-left: 20rpx;
+}
+
+.comment-userInfo>view{
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.comment-date{
+  color: #999;
+}
+
+.operation{
+  float: right;
+  margin-top: 20rpx;
+}
+
+.operation image{
+  float: right;
+  margin-right: 10rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.operation text{
+  float: right;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #999;
+  margin-right: 20rpx;
+}
+
+.comment-text{
+  height: 80rpx;
+}
+
+.showAll{
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #999;
+  font-size: 28rpx;
+  text-align: right;
+}
+
+button{
+  float: right;
+  width: 60rpx;
+  height: 40rpx;
+  text-align: right;
+  margin-right: 10rpx;
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 32rpx;
+  line-height: 40rpx;
+  border: none;
+  background-color: white;
+}
+
+.button-hover{
+  background-color: #fff;
+  color: #fff;
+}
+
+button::after {
+  border: 0; 
+}

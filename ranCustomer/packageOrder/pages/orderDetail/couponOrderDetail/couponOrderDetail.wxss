@@ -1,0 +1,99 @@
+/* packageOrder/pages/orderDetail/couponOrderDetail/couponOrderDetail.wxss */
+.container{
+  border-top: 1px solid #eee;
+  height: calc(100% - 2rpx);
+}
+
+.coupon-head{
+  padding: 30rpx 40rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.coupon{
+  height: 150rpx;
+  border: 1px solid #000;
+  border-radius: 10rpx;
+  padding: 20rpx;
+}
+
+.store-name{
+  font-size: 26rpx;
+}
+
+.coupon-title{
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+  text-align: center;
+}
+
+.coupon-condition{
+  text-align: right;
+  font-size: 26rpx;
+  color: #999;
+}
+
+
+.content{
+  padding: 20rpx 40rpx 20rpx 0;
+  margin-left: 40rpx;
+  width: calc(100% - 80rpx);
+
+}
+
+.content:not(:last-child){
+  border-bottom: 1px solid #eee;
+}
+
+.content>view{
+  min-height: 60rpx;
+  line-height: 60rpx;
+}
+
+.title-text{
+  font-weight: bold;
+}
+
+.name, .value{
+  display: inline-block;
+}
+
+.name{
+  width: 160rpx;
+  color: #999;
+  vertical-align: top;
+}
+
+.value{
+  width: calc(100% - 160rpx);
+}
+
+
+.bottom{
+  width: 100%;
+  height: 80rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid #999;
+  background-color: #fff;
+}
+
+.btn{
+  width: 160rpx;
+  height: 60rpx;
+  float: right;
+  margin-top: 10rpx;
+  margin-right: 40rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #fff;
+  border-radius: 10rpx;
+  background-color: #000;
+}
+
+.line{
+  height: 20rpx;
+  background-color: #f8f8f8;
+}

@@ -1,0 +1,98 @@
+/**index.wxss**/
+.container{
+  overflow: hidden;
+}
+
+.tab{
+  width: 100%;
+  height: 60rpx;
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  z-index: 2;
+}
+
+.tab-item{
+  width: 320rpx;
+  height: 80%;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.tab-item>view{
+  display: inline-block;
+  width: 100rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.tab-item>view:not(:last-child){
+  border-right: 1px solid #333;
+}
+
+.banner-srcoll{
+  width: 100%;
+  height: 400rpx;
+  overflow:hidden;
+}
+
+.banners{
+  width: 100%;
+  height: 480rpx;
+  padding: 20rpx 0;
+}
+
+.banner-img{
+  width: 500rpx !important;
+  height: 480rpx;
+  /* display: inline-block; */
+  position: absolute;
+  top: 0;
+  left: calc((100% - 500rpx)/2);
+}
+
+
+
+.banner-img image{
+  width: 400rpx;
+  height: 100%;
+  margin: 0 50rpx;
+}
+
+.activity-list{
+  width: 100%;
+  padding: 20rpx 40rpx 40rpx 40rpx;
+}
+
+.daily-img{
+  width: calc(100% - 80rpx);
+  height: 240rpx;
+}
+
+.img-box{
+  width: 100%;
+  height: 200rpx;
+}
+
+.img-box image{
+  width: calc((100% - 40rpx)/2);
+  height: 100%;
+}
+
+.img-box image:first-child{
+  margin-right: 40rpx;
+}
+
+.activity-img{
+  width: calc(100% - 80rpx);
+  height: 340rpx;
+  margin: 60rpx 0;
+}
+
+.activity-img image{
+  width: 100%;
+  height: 300rpx;
+}

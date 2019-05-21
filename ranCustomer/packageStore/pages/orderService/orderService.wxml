@@ -1,0 +1,43 @@
+<!--packageStore/pages/orderService/orderService.wxml-->
+<view class="container">
+  <view class="address {{storeType == 2?'type2':''}}" bindtap="chooseAddress">
+    <!-- 奢侈品护理 -->
+    <view style="width: 100%;height: 100%;" wx:if="{{storeType == 1}}">
+      <image class="address-img"></image>
+      <view class="address-info">
+        <view class="user-info"><text>许先生</text><text class="user-phone">18318318333</text></view>
+        <view class="address-text">江苏省南京市玄武区德基写字楼巴拉巴拉巴拉把李1888基写字楼巴拉巴拉巴拉把李1888</view>
+      </view>
+      <image class="arrow"></image>
+    </view>
+    <!-- 名车护理 -->
+    <view style="width: 100%;height: 100%;display: flex;flex-direction: column;" wx:else="{{storeType == 2}}">
+      <view class="car-user">
+        <image class="order-icon"></image>
+        <view class="user-text">许先生</view>
+      </view>
+      <view class="car-user">
+        <image class="order-icon"></image>
+        <view class="user-text">18318318333</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="order-info">
+    <view class="order-line">
+      <image class="order-icon"></image>
+      <view class="order-select">预约{{storeType == 1?'上门取件':'到店护理'}}时间</view>
+    </view>
+    <view class="order-line">
+      <image class="order-icon"></image>
+      <view class="order-select">{{storeType == 1?'预计洗护数量':'护理项目'}}</view>
+    </view>
+    <view class="remark-box">
+      <view>
+        <image class="order-icon"></image>
+        <view class="order-select">备注</view>
+      </view>
+      <textarea class="remark"></textarea>
+    </view>
+  </view>
+</view>

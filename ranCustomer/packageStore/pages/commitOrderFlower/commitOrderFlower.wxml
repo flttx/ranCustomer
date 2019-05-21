@@ -1,0 +1,91 @@
+<!--packageStore/pages/commitOrderFlower/commitOrderFlower.wxml-->
+<view class="container">
+  <scroll-view style="height: 100%;background-color: #f8f8f8;" scroll-y>
+  
+  <view class="box" style="margin-top: 40rpx;">
+    <image src="/img/address.png" class="address-icon"></image>
+    <view class="address">
+      <view class="user-info">许小新<text class="user-phone">18318318333</text></view>
+      <view class="address-info doublie-line">大卡司就离开的加拉数据库里短时间的家拉萨觉得吉拉斯加大了就卡数据库的</view>
+    </view>
+    <image src="/img/jiantou.jpg" class="jiantou-icon"></image>
+  </view>
+
+  <view class="box flower-box">
+    <view class="flower-item">
+      <image src="/img/2.jpg"></image>
+      <view class="flower-info">
+        <view class="flower-name single-line">情人节花束1</view>
+        <view class="flower-desc double-line">描述描述描述</view>
+        <view class="flower-price"><text class="price">￥40</text><text class="num">数量：1</text></view>
+      </view>
+    </view>
+
+    <view class="flower-item">
+      <image src="/img/2.jpg"></image>
+      <view class="flower-info">
+        <view class="flower-name single-line">情人节花束1</view>
+        <view class="flower-desc double-line">描述描述描述</view>
+        <view class="flower-price"><text class="price">￥40</text><text class="num">数量：1</text></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="box info-box">
+    <view class="line">
+      <image src="/img/clock.png"></image>
+      <view class="line-text">送花时间<image src="/img/jiantou.jpg"></image></view>
+    </view>
+    <view class="line">
+      <image src="/img/clock.png"></image>
+      <view class="line-text">配送方式<image src="/img/jiantou.jpg"></image></view>
+    </view>
+    <view class="line">
+      <image src="/img/clock.png"></image>
+      <view class="line-text">花束用途<image src="/img/jiantou.jpg"></image></view>
+    </view>
+    <view class="line">
+      <image src="/img/clock.png"></image>
+      <view class="line-text">祝福卡片<image src="/img/jiantou.jpg"></image></view>
+    </view>
+    <view class="line">
+      <image src="/img/clock.png"></image>
+      <view class="line-text">备注<image src="/img/jiantou.jpg"></image></view>
+    </view>
+  </view>
+
+  <view class="box">
+    <view class="row">
+      使用优惠券
+      <view class="right-text">
+        <text class="">暂无可用优惠券</text>
+        <image src="/img/jiantou.jpg"></image>
+      </view>
+    </view>
+     <view class="row">
+        使用积分
+        <view class="right-text">
+          <checkbox-group bindchange="checkboxChange">
+            <label class="checkbox">
+              可用积分100，抵用￥100
+              <checkbox/>
+            </label>
+          </checkbox-group>
+        </view>
+     </view>
+     <view class="row borderTop">
+      实付金额
+      <view class="right-text red">￥200</view>
+     </view>
+
+  </view>
+
+  <view style="height: 80rpx;"></view>
+  </scroll-view>
+
+  <view class="bottom">
+    <view class="commit-btn">立即支付</view>
+    <view class="price-box">合计<text class="discount-price">￥<text class="big">40.00</text></text></view>
+    <view class="sum">共2束</view>
+  </view>
+</view>

@@ -1,0 +1,118 @@
+<!--packageStore/pages/goodsList/goodsList.wxml-->
+<view class="container">
+  <view class="swiper-tab">
+    <view class="tab-item" wx:for="{{goodsType}}" wx:for-index="tabsIndex"  wx:key="tabsIndex" bindtap="changeTab" data-current="{{tabsIndex}}">
+      {{item}}
+      <view class="bar" wx:if="{{currentTab == tabsIndex}}"></view>
+    </view>
+  </view>
+
+  <swiper class="tab-box" current="{{goodsType}}" bindchange="changeSwiper">
+    <swiper-item wx:for="{{goodsType}}" wx:key="index">
+      <scroll-view scroll-y>
+        <view class="goods-item">
+          <image src="/img/2.jpg"></image>
+          <view class="goods-info">
+            <view class="goods-name single-line">阿萨德了哈吉斯肯定会卡时间段和爱上客家话</view>
+            <view class="goods-desc triple-line">大拉开建设的了姐啊时间到了贾老师氪金大佬就萨科了解到看假两件了肯德基撒垃圾</view>
+            <view class="thumb-icon">
+              <text>2</text>
+              <image src="/img/thumb.png"></image>
+            </view>
+          </view>
+        </view>
+
+        <view class="goods-item">
+          <image src="/img/2.jpg"></image>
+          <view class="goods-info">
+            <view class="goods-name single-line">阿萨德了哈吉斯肯定会卡时间段和爱上客家话</view>
+            <view class="goods-desc triple-line">大拉开建设的了姐啊时间到了贾老师氪金大佬就萨科了解到看假两件了肯德基撒垃圾</view>
+            <view class="thumb-icon">
+              <text>2</text>
+              <image src="/img/thumb.png"></image>
+            </view>
+          </view>
+        </view>
+
+        <view class="goods-item">
+          <image src="/img/2.jpg"></image>
+          <view class="goods-info">
+            <view class="goods-name single-line">阿萨德了哈吉斯肯定会卡时间段和爱上客家话</view>
+            <view class="goods-desc triple-line">大拉开建设的了姐啊时间到了贾老师氪金大佬就萨科了解到看假两件了肯德基撒垃圾</view>
+            <view class="thumb-icon">
+              <text>2</text>
+              <image src="/img/thumb.png"></image>
+            </view>
+          </view>
+        </view>
+
+        <view class="goods-item">
+          <image src="/img/2.jpg"></image>
+          <view class="goods-info">
+            <view class="goods-name single-line">阿萨德了哈吉斯肯定会卡时间段和爱上客家话</view>
+            <view class="goods-desc triple-line">大拉开建设的了姐啊时间到了贾老师氪金大佬就萨科了解到看假两件了肯德基撒垃圾</view>
+            <view class="thumb-icon">
+              <text>2</text>
+              <image src="/img/thumb.png"></image>
+            </view>
+          </view>
+        </view>
+
+        <view class="goods-item">
+          <image src="/img/2.jpg"></image>
+          <view class="goods-info">
+            <view class="goods-name single-line">阿萨德了哈吉斯肯定会卡时间段和爱上客家话</view>
+            <view class="goods-desc triple-line">大拉开建设的了姐啊时间到了贾老师氪金大佬就萨科了解到看假两件了肯德基撒垃圾</view>
+            <view class="thumb-icon">
+              <text>2</text>
+              <image src="/img/thumb.png"></image>
+            </view>
+          </view>
+        </view>
+
+        <view class="goods-item">
+          <image src="/img/2.jpg"></image>
+          <view class="goods-info">
+            <view class="goods-name single-line">阿萨德了哈吉斯肯定会卡时间段和爱上客家话</view>
+            <view class="goods-desc triple-line">大拉开建设的了姐啊时间到了贾老师氪金大佬就萨科了解到看假两件了肯德基撒垃圾</view>
+            <view class="thumb-icon">
+              <text>2</text>
+              <image src="/img/thumb.png"></image>
+            </view>
+          </view>
+        </view>
+
+        <view class="goods-item">
+          <image src="/img/2.jpg"></image>
+          <view class="goods-info">
+            <view class="goods-name single-line">阿萨德了哈吉斯肯定会卡时间段和爱上客家话</view>
+            <view class="goods-desc triple-line">大拉开建设的了姐啊时间到了贾老师氪金大佬就萨科了解到看假两件了肯德基撒垃圾</view>
+            <view class="thumb-icon">
+              <text>2</text>
+              <image src="/img/thumb.png"></image>
+            </view>
+          </view>
+        </view>
+
+        <view class="goods-item">
+          <image src="/img/2.jpg"></image>
+          <view class="goods-info">
+            <view class="goods-name single-line">阿萨德了哈吉斯肯定会卡时间段和爱上客家话</view>
+            <view class="goods-desc triple-line">大拉开建设的了姐啊时间到了贾老师氪金大佬就萨科了解到看假两件了肯德基撒垃圾</view>
+            <view class="thumb-icon">
+              <text>2</text>
+              <image src="/img/thumb.png"></image>
+            </view>
+          </view>
+        </view>
+
+        
+
+
+        <view style='height: 20rpx;'></view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+
+
+</view>

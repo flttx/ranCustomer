@@ -1,0 +1,51 @@
+<!--packageStore/pages/couponDetail/couponDetail.wxml-->
+<view class="container">
+  <view class="coupon-head">
+    <view class="coupon">
+      <view class="store-name single-line">然CLUB (德基广场店)</view>
+      <view class="coupon-title">50元代金券</view>
+      <view class="coupon-condition">免预约 | 随时退</view>
+    </view>
+  </view>
+
+  <view class="box">
+    <view class="title">使用规则</view>
+    <view class="desc-box">
+      <view>
+        <view class="desc-title" style="height: 80rpx;">有效期：</view>
+        <view class="desc-content">
+          <view>2019.03.04至2020.03.04</view>
+          <view>（法定节假日不可用）</view>
+        </view>
+      </view>
+      <view>
+        <view class="desc-title">使用时间：</view>
+        <view class="desc-content">门店营业时间内均可</view>
+      </view>
+      <view>
+        <view class="desc-title">适用范围：</view>
+        <view class="desc-content">除“精致洗车”外，全场通用</view>
+      </view>
+      <view>
+        <view class="desc-title">适用门店：</view>
+        <view class="desc-content">仅限<text>然CLUB（德基广场店）</text>使用</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="box">
+    <view class="title">其他说明</view>
+  </view>
+
+  <view class="box">
+    <view class="title">退改说明</view>
+  </view>
+
+  <view class="bottom">
+    <view class="price-box">
+      <text class="discount-price">￥<text class="big">40</text></text>
+      <text class="original-price">￥50</text>
+      <view class="buy-btn" bindtap="toCommitOrderCoupon">立即抢购</view>
+    </view>
+  </view>
+</view>

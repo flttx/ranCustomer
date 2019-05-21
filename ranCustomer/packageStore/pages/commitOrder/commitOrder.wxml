@@ -1,0 +1,36 @@
+<wxs module="filter" src="../../../utils/filter.wxs"></wxs>
+<view class="container">
+  <view class="box">
+    <view class="line">{{goods_name}}<text class="right-text">￥{{filter.toFix(price)}}</text></view>
+    <view class="line">数量
+      <view class="right-text">
+        <text class="add-btn" bindtap="minusNum">-</text>  <text class="num">{{number}}</text>  <text class="minus-btn" bindtap="addNum">+</text>
+      </view>
+    </view>
+    <view class="line">所属品牌<text class="right-text">然CLUB</text></view>
+    <view class="line borderTop">小计<text class="right-text red">￥{{filter.toFix(sumPrice)}}</text></view>
+  </view>
+
+  <view class="box">
+    <view class="line">使用积分
+      <view class="right-text">
+        <checkbox-group bindchange="checkboxChange">
+          <label class="checkbox">
+            可用积分{{pay_points}}
+            <checkbox disabled="{{disableCheckbox}}"/>
+          </label>
+        </checkbox-group>
+      </view>
+    </view>
+    <view class="line borderTop">实付金额<text class="right-text red">￥{{filter.toFix(realPrice)}}</text></view>
+  </view>
+
+  <view class="box">
+    <view class="line">手机号码<text class="right-text grey">{{phoneNumber}}</text></view>
+  </view>
+
+  <view class="bottom">
+    <view class="commit-btn" bindtap="commitOrder">提交订单</view>
+    <view class="price-box">合计<text class="discount-price">￥<text class="big">{{filter.toFix(realPrice)}}</text></text></view>
+  </view>
+</view>

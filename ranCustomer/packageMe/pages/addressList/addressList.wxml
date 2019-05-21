@@ -1,0 +1,24 @@
+<!--packageMe/pages/addressList/addressList.wxml-->
+<view class="content">
+  <scroll-view class="scroller">
+    <view class="item" wx:for="{{addressList}}" wx:key="index">
+      <view class="address-info">
+        <view class="user">
+          {{item.name}}<text class="phone">{{item.phone}}</text>
+        </view>
+        <view class="address">
+          <text class="region">{{item.region}}</text>
+          <text class="addressText">{{item.address}}</text>
+        </view>
+      </view>
+      <view class="address-btn">
+        <text class="default">默认地址</text>
+        <text class="btn" bindtap="deleteAddress" data-index="{{index}}">删除</text>
+        <text class="btn" bindtap='editAddress' data-index="{{index}}">编辑</text>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="add-btn" bindtap="toAddAddress">
+    新增收货地址
+  </view>
+</view>

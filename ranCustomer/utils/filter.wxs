@@ -1,0 +1,11 @@
+
+//金额保留两位小数
+var filter = {
+  toFix: function(value){
+    return value.toFixed(2);
+  }
+}
+
+module.exports={
+  toFix: filter.toFix
+}

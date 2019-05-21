@@ -1,0 +1,21 @@
+<!--packageStore/pages/orderFlower/orderFlower.wxml-->
+<view class="container">
+  <view class="banners">
+    <swiper style="width: 100%;height: 100%;" circular>
+      <swiper-item wx:for="{{banners}}" wx:key="index" class="banner-img"  data-current="{{index}}">
+        <image src="{{item.img_url}}"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <view class="desc-box">
+    <view class="flower-name">情人节花束1</view>
+    <view class="flower-price"> ￥400.00</view>
+    <view class="flower-desc">大石街道哈哈快读好书空间的哈萨克计划的卡仕达空间哈卡实践活动看哈会计师点击</view>
+  </view>
+
+  <view class="bottom">
+    <view class="" style="float: left;" bindtap="toCommitOrderFlower">我的花篮</view>
+    <view class="" style="float: right;">加入花篮</view>
+  </view>
+</view>

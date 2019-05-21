@@ -1,0 +1,139 @@
+<!--packageOrder/orderList/orderList.wxml-->
+<view class="container">
+  <view class="tabs">
+    <view class="tabs-item" wx:for="{{tabs}}" wx:for-index="tabsIndex" wx:key="tabsIndex" bindtap="changeTab" data-current="{{tabsIndex}}">{{item}}
+      <view class="bar" wx:if="{{currentTab == tabsIndex}}"></view>
+    </view>
+  </view>
+  <swiper class="tab-box" current="{{currentTab}}" bindchange="changeSwiper">
+    <swiper-item wx:for="{{state}}" wx:key="index">
+      <scroll-view scroll-y style="height:100%;padding-left: 40rpx;">
+        <view class="box">
+          <view class="box-title">
+            <text class="order-type">门店订单</text>
+            <text class="order-status">已下单</text>
+          </view>
+          <view class="order-info">
+            <image class="order-img" src="/img/1.jpg"></image>
+            <view class="order-info-box">
+              <view class="store-name">奢侈品护理店</view>
+              <view class="order-price"><text>50元代金券</text><text style="margin-left: 20rpx;">数量：1</text></view>
+              <view class="order-price">总价：￥40.00</view>
+            </view>
+          </view>
+          <view class="order-bottom">
+            <view class="order-btn" bindtap="toOrderDetail" data-id="1">查看订单</view>
+          </view>
+        </view>
+
+        <view class="box">
+          <view class="box-title">
+            <text class="order-type">优惠券订单</text>
+            <text class="order-status">已下单</text>
+          </view>
+          <view class="order-info">
+            <image class="order-img" src="/img/1.jpg"></image>
+            <view class="order-info-box">
+              <view class="store-name">奢侈品护理店</view>
+              <view class="order-price"><text>50元代金券</text><text style="margin-left: 20rpx;">数量：1</text></view>
+              <view class="order-price">总价：￥40.00</view>
+            </view>
+          </view>
+          <view class="order-bottom">
+            <view class="order-btn" bindtap="toOrderDetail" data-id="4">查看订单</view>
+          </view>
+        </view>
+
+        <view class="box">
+          <view class="box-title">
+            <text class="order-type">优惠服务订单</text>
+            <text class="order-status">已下单</text>
+          </view>
+          <view class="order-info">
+            <image class="order-img" src="/img/1.jpg"></image>
+            <view class="order-info-box">
+              <view class="store-name">奢侈品护理店</view>
+              <view class="order-price"><text>50元代金券</text><text style="margin-left: 20rpx;">数量：1</text></view>
+              <view class="order-price">总价：￥40.00</view>
+            </view>
+          </view>
+          <view class="order-bottom">
+            <view class="order-btn" bindtap="toOrderDetail" data-id="5">查看订单</view>
+          </view>
+        </view>
+
+        <view class="box">
+          <view class="box-title">
+            <text class="order-type">门店订单</text>
+            <text class="order-status">已下单</text>
+          </view>
+          <view class="order-info">
+            <image class="order-img" src="/img/1.jpg"></image>
+            <view class="order-info-box">
+              <view class="store-name">名车护理店</view>
+              <view class="order-price"><text>50元代金券</text><text style="margin-left: 20rpx;">数量：1</text></view>
+              <view class="order-price">总价：￥40.00</view>
+            </view>
+          </view>
+          <view class="order-bottom">
+            <view class="order-btn" bindtap="toOrderDetail" data-id="2">查看订单</view>
+          </view>
+        </view>
+
+        <view class="box">
+          <view class="box-title">
+            <text class="order-type">门店订单</text>
+            <text class="order-status">已下单</text>
+          </view>
+          <view class="order-info">
+            <image class="order-img" src="/img/1.jpg"></image>
+            <view class="order-info-box">
+              <view class="store-name">花艺店</view>
+              <view class="order-price"><text>50元代金券</text><text style="margin-left: 20rpx;">数量：1</text></view>
+              <view class="order-price">总价：￥40.00</view>
+            </view>
+          </view>
+          <view class="order-bottom">
+            <view class="order-btn" bindtap="toOrderDetail" data-id="3">查看订单</view>
+          </view>
+        </view>
+
+        <view class="box">
+          <view class="box-title">
+            <text class="order-type">好货订单</text>
+            <text class="order-status">已下单</text>
+          </view>
+          <view class="order-info">
+            <image class="order-img" src="/img/1.jpg"></image>
+            <view class="order-info-box">
+              <view class="store-name">花艺店</view>
+              <view class="order-price"><text>50元代金券</text><text style="margin-left: 20rpx;">数量：1</text></view>
+              <view class="order-price">总价：￥40.00</view>
+            </view>
+          </view>
+          <view class="order-bottom">
+            <view class="order-btn" bindtap="toOrderDetail" data-id="6">查看订单</view>
+          </view>
+        </view>
+
+        <view class="box">
+          <view class="box-title">
+            <text class="order-type">好货订单</text>
+            <text class="order-status">待评价</text>
+          </view>
+          <view class="order-info">
+            <image class="order-img" src="/img/1.jpg"></image>
+            <view class="order-info-box">
+              <view class="store-name">花艺店</view>
+              <view class="order-price"><text>50元代金券</text><text style="margin-left: 20rpx;">数量：1</text></view>
+              <view class="order-price">总价：￥40.00</view>
+            </view>
+          </view>
+          <view class="order-bottom">
+            <view class="order-btn" bindtap="toOrderEvaluate">评价</view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

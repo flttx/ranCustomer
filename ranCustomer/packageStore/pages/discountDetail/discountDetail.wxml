@@ -1,0 +1,70 @@
+<!--packageStore/pages/discountDetail/discountDetail.wxml-->
+<view class="container">
+  <view class="head">
+    <image class="head-img" src="{{serve_detail.serve_img}}"></image>
+    <view class="head-info">
+      <view class="store-name">{{serve_detail.type_name}}（{{serve_detail.shop_name}}）</view>
+      <view class="discount-name">{{serve_detail.serve_name}}</view>
+      <view class="tip">免预约 | 随时退</view>
+    </view>
+  </view>
+
+  <view class="box">
+    <view class="title">服务内容</view>
+    <view class="desc-box">
+      <view class="li" wx:for="{{serve_detail.serve_item}}" wx:key="index">· {{item.serve_item_name}}<text class="price">￥{{item.serve_item_price}}</text></view>
+      <view class="li">合计 <text class="price">￥{{serve_detail.market_price}}</text></view>
+    </view>
+  </view>
+
+  <view class="box">
+    <view class="title">使用规则</view>
+    <view class="desc-box">
+      <view class="line">
+        <view class="desc-title">有效期：</view>
+        <view class="desc-content">
+          <view>{{serve_detail.valid_start_time}}至{{serve_detail.valid_end_time}}</view>
+          <view wx:if="{{serve_detail.valid_except}}">（{{serve_detail.valid_except}}）</view>
+        </view>
+      </view>
+      <view class="line">
+        <view class="desc-title">使用时间：</view>
+        <view class="desc-content">门店营业时间内均可</view>
+      </view>
+      <view class="line">
+        <view class="desc-title">适用范围：</view>
+        <view class="desc-content">{{serve_detail.usable_range!=""?serve_detail.usable_range:"全场通用"}}</view>
+      </view>
+      <view class="line">
+        <view class="desc-title">适用门店：</view>
+        <view class="desc-content">仅限<text>{{serve_detail.type_name}}（{{serve_detail.shop_name}}）</text>使用</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="box">
+    <view class="title">其他说明</view>
+    <view class="desc-box">
+      <view><text>{{serve_detail.else_msg}}</text></view>
+    </view>
+  </view>
+
+  <view class="box">
+    <view class="title">退改说明</view>
+    <view class="desc-box">
+      <view><text>{{serve_detail.bc_msg}}</text></view>
+    </view>
+  </view>
+
+
+  <view style="height: 100rpx;"></view>
+
+
+  <view class="bottom-box">
+    <text class="bottom-price">￥<text class="big">{{serve_detail.is_promote==1?serve_detail.promote_price:serve_detail.shop_price}}</text><text class="original-price">￥{{serve_detail.market_price}}</text></text>
+
+    <view class="bottom-btn" bindtap='clickPurchase'>立即抢购</view>
+  </view>
+
+  <login-component login="{{login}}" bindlogin="refreshUserInfo"></login-component>
+</view>

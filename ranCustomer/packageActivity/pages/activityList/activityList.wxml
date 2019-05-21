@@ -1,0 +1,20 @@
+<!--packageActivity/pages/activityList/activityList.wxml-->
+<view class="container">
+  <view class="tabs">
+    <view class="tabs-item" wx:for="{{tabs}}" wx:for-index="tabsIndex" wx:key="tabsIndex" bindtap="changeTab" data-current="{{tabsIndex}}">{{item.topic_type_name}}
+      <view class="bar" wx:if="{{currentTab == tabsIndex}}"></view>
+    </view>
+  </view>
+  <swiper class="tab-box" current="{{currentTab}}" bindchange="changeSwiper">
+    <swiper-item wx:for="{{tabs}}" wx:key="tabIndex">
+      <scroll-view scroll-y bindscrolltolower="loadMoreData">
+        <block wx:for="{{item.list}}" wx:key="pageIndex" wx:for-index="pageIndex">
+          <view class="item" wx:for="{{item.arr}}" wx:key="index" wx:for-item="topic" bindtap="toActivityDetail" data-id="{{topic.id}}">
+            <image src="{{topic.topic_img_thumb}}"></image>
+            <view class="title">{{topic.topic_name}}</view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

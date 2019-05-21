@@ -1,0 +1,79 @@
+/* packageMe/pages/balance/balance.wxss */
+.container{
+  overflow: hidden;
+}
+
+.header{
+  height: 120rpx;
+  background-color: #999;
+  padding: 100rpx 50rpx;
+}
+
+.info{
+  height: 120rpx;
+  color: #fff;
+  position: relative;
+}
+
+.title{
+  font-size: 26rpx;
+}
+
+.balance{
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 52rpx;
+}
+
+.btn{
+  width: 120rpx;
+  height: 60rpx;
+  background-color: #fff; 
+  color: #000;
+  border-radius: 10rpx;
+  font-size: 26rpx;
+  line-height: 60rpx;
+  text-align: center;
+  position: absolute;
+  right: 0;
+  top: 40rpx;
+}
+
+.list-title{
+  font-size: 30rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding-left: 40rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.list-item{
+  height: 120rpx;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-size: 30rpx;
+}
+
+.list-item>view{
+  flex: 1;
+}
+
+.list-type{
+  padding-top: 20rpx;
+}
+
+.list-date{
+  color: #999;
+}
+
+.num{
+  display: inline-block;
+  height: 20rpx;
+  position: absolute;
+  top: 40rpx;
+  right: 0;
+  text-align: right;
+  font-size: 32rpx;
+}

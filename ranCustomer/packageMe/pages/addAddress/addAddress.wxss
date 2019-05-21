@@ -1,0 +1,98 @@
+/* packageMe/pages/addAddress/addAddress.wxss */
+
+
+.input-row{
+  height: 110rpx;
+  line-height: 110rpx;
+  padding: 0 20rpx 0 31rpx;
+  border-bottom: 2rpx solid #eee;
+  box-sizing: border-box;
+  background: #fff;
+  position: relative;
+}
+
+.input-row input{
+  float: left;
+  width: calc(100% - 250rpx);
+  height: 110rpx;
+  line-height: 110rpx;
+  margin-left: 55rpx;
+  font-size: 30rpx;
+}
+
+.label{
+  float: left;
+  height: 110rpx;
+  line-height: 110rpx;
+  width: 188rpx;
+}
+
+.label image{
+  float: left;
+  width: 35rpx;
+  height: 35rpx;
+  margin-top: 38rpx;
+}
+
+.label text{
+  float: left;
+  width: 128rpx;
+  font-size: 32rpx;
+  margin-left: 24rpx;
+}
+
+.jiantou{
+  position: absolute;
+  right: 0;
+  top: 35rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.textarea-row{
+  height: 160rpx;
+  padding: 0 31rpx;
+  border-bottom: 2rpx solid #eee;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.textarea-row .label image{
+  width: 28rpx;
+  height: 38rpx;
+}
+
+.textarea-row textarea{
+  float: left;
+  width: calc(100% - 250rpx);
+  margin-left: 55rpx;
+  font-size: 30rpx;
+  height: 140rpx;
+  margin-top: 10rpx;
+}
+
+radio-group{
+  margin: 32rpx 0 0 31rpx;
+  height: 32rpx;
+}
+
+radio-group radio{
+  transform:scale(0.75);
+}
+
+radio-group label{
+  text-align: left;
+}
+
+.add-btn{
+  position: absolute;
+  bottom: 30rpx;
+  left: 30rpx;
+  width: calc(100% - 60rpx);
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color: #fff;
+  background: #000;
+}

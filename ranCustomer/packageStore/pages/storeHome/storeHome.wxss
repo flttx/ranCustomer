@@ -1,0 +1,540 @@
+/* packageStore/storeHome/storeHome.wxss */
+.container{
+  width: 100%;
+  height: 100%;
+  font-size: 32rpx;
+  background-color: #f8f8f8;
+}
+
+.store-head{
+  width: 100%;
+  height: 460rpx;
+  position: relative;
+}
+
+.store-head video{
+  width: 100%;
+  height: 100%;
+}
+
+.cover-img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.cover-img image{
+  width: 100%;
+  height: 100%;
+}
+
+.play-icon{
+  width: 26rpx;
+  border-top:26rpx solid transparent;
+  border-left:36rpx solid #fff;
+  border-bottom:22rpx solid transparent;
+  position: absolute;
+  top: 180rpx;
+  left: 50%;
+  margin-left: -13rpx;
+  z-index: 2;
+}
+
+.store-head swiper{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.img-num{
+  width: 80rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 80rpx;
+  top: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 28rpx;
+  z-index: 10;
+  background-color: #333;
+  border-radius: 10rpx;
+}
+
+.store-img{
+  width: 100%;
+  height: 100%;
+}
+
+.btn-box{
+  position: absolute;
+  bottom: 70rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 220rpx;
+  height: 50rpx;
+  z-index: 10;
+}
+
+.video-btn, .img-btn{
+  width: 100rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 26rpx;
+  border-radius: 10rpx;
+  background-color: #999;
+}
+
+.video-btn{
+  float: left;
+}
+
+.img-btn{
+  float: right;
+}
+
+.active{
+  background-color: #333;
+  color: #fff;
+}
+
+.store-info{
+  /* width: 100%; */
+  padding: 40rpx 0 0 40rpx;
+  background-color: #fff;
+}
+
+.store-name{
+  width: calc(100% - 40rpx);
+  height: 60rpx;
+}
+
+.store-name-text{
+  float: left;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+.store-name image{
+  float: right;
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 10rpx;
+}
+
+.thumb-num{
+  float: right;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #999;
+}
+
+.store-tip{
+  width: 100%;
+  height: 40rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.store-tip text{
+  float: left;
+  margin-right: 20rpx;
+  padding: 0 10rpx;
+  border-radius: 10rpx; 
+  border: 1px solid #999;
+}
+
+.store-intro{
+  /* width: calc(100% - 60rpx); */
+  position: relative;
+  padding: 20rpx 20rpx 60rpx 0;
+  font-size: 30rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.up-btn{
+  position: absolute;
+  bottom: 20rpx;
+  right: 40rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.store-address{
+  /* width: calc(100% - 40rpx); */
+  height: 140rpx;
+  position: relative;
+  font-size: 30rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.store-address-info{
+  width: 80%;
+  height: 70rpx;
+  line-height: 70rpx;
+  float: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.store-phone{
+  width: 20%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.store-phone-box{
+  width: 100%;
+  height: 80rpx;
+  margin-top: 30rpx;
+  border-left: 1px solid #eee;
+}
+
+.store-phone-box image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: calc(50% - 20rpx);
+  margin-top: 20rpx;
+}
+
+.store-order{
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.store-order image{
+  float: right;
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 20rpx;
+  margin-right: 40rpx;
+}
+
+.line{
+  height: 20rpx;
+}
+
+.tabs{
+  width: calc(100% - 40rpx);
+  height: 60rpx;
+  display: flex;
+  background-color: #fff;
+  padding: 20rpx 20rpx 0 20rpx;
+}
+
+.fixed{
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.tabs-item{
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+  border-bottom: 1px solid #eee;
+}
+
+.bar{
+  width: 80rpx;
+  height: 6rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: #666;
+}
+
+.service{
+  padding: 20rpx 0;
+}
+
+.title-line{
+  padding: 0 40rpx;
+}
+
+.title{
+  font-weight: bold;
+}
+
+.showAll{
+  float: right;
+  font-size: 26rpx;
+  color: #999;
+  vertical-align: top;
+}
+
+.service-item{
+  display: inline-block;
+  width: 400rpx;
+  margin-left: 40rpx;
+  font-size: 30rpx;
+}
+
+.service-item-img{
+  width: 100%;
+  height: 240rpx;
+  border-radius: 10rpx;
+}
+
+.service-item-text{
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.vip-price{
+  display: inline-block;
+  font-size: 26rpx;
+  padding: 4rpx;
+  background-color: #000;
+  color: #fff;
+  border-radius: 10rpx;
+  margin-left: 10rpx;
+}
+
+.service-scroll{
+  width: 100%;
+  height: 340rpx;
+  padding: 40rpx 0;
+  white-space:nowrap;
+}
+
+.discount{
+  padding: 30rpx 0;
+}
+
+.coupon-box{
+  margin-left: 40rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.coupon{
+  height: 80rpx;
+  font-size: 30rpx;
+  line-height: 80rpx;
+}
+
+.coupon-info{
+  margin:0 40rpx 40rpx 0;
+  border: 1px solid #999;
+  border-radius: 10rpx;
+  padding: 30rpx 40rpx;
+  height: 140rpx;
+  position: relative;
+}
+  
+.coupon-info>view{
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.coupon-name{
+  width: calc(100% - 130rpx);
+}
+
+.coupon-condition{
+  width: calc(100% - 130rpx);
+  height: 80rpx !important;
+  font-size: 26rpx;
+  color: #999;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  display:-webkit-box;
+  -webkit-line-clamp:2; /*这个数字是设置要显示省略号的行数*/
+  -webkit-box-orient:vertical;
+}
+
+.buy-btn{
+  position: absolute;
+  height: 40rpx;
+  width: 120rpx;
+  top: calc((100% - 60rpx)/2);
+  right: 40rpx;
+  padding: 10rpx 0;
+  background-color: #000;
+  color: #fff;
+  border-radius: 20rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.discount-box{
+  margin-left: 40rpx;
+}
+
+.discount-item{
+  padding-right: 60rpx;
+  height: 160rpx;
+  margin-bottom: 40rpx;
+}
+
+.discount-item image{
+  width: 160rpx;
+  height: 160rpx;
+  float: left;
+  border-radius: 10rpx;
+}
+
+.discount-info{
+  width: calc(100% - 180rpx);
+  margin-left: 20rpx;
+  float: left;
+  height: 100%;
+  position: relative;
+  font-size: 30rpx;
+}
+
+.discount-info image{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 0;
+  top: 60rpx;
+}
+
+.discount-name, .discount-desc{
+  width: calc(100% - 50rpx);
+}
+
+.discount-desc{
+  height: 70rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.discount-price{
+  position: absolute;
+  bottom: 0;
+}
+
+.original-price{
+  text-decoration: line-through;
+  color: #999;
+  margin-left: 20rpx;
+}
+
+.comment-item{
+  margin-left: 40rpx;
+  padding: 40rpx 0;
+  border-bottom: 1px solid #eee;
+}
+
+.comment-user{
+  height: 80rpx;
+}
+
+.comment-user-img{
+  float: left;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  border: 1px solid;
+}
+
+.comment-user-info{
+  float: left;
+  margin-left: 20rpx;
+  height: 80rpx;
+  position: relative;
+}
+
+.comment-user-name{
+  font-size: 26rpx;
+}
+
+.comment-user-date{
+  font-size: 24rpx;
+  color: #999;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.comment-content{
+  padding: 20rpx 40rpx 30rpx 0;
+  height: 80rpx;
+  position: relative;
+}
+
+.comment-text{
+  height: 70rpx;
+  font-size: 26rpx;
+}
+
+.toMore{
+  font-size: 26rpx;
+  color: #999;
+  position: absolute;
+  right: 44rpx;
+  bottom: 10rpx;
+}
+
+.comment-img-box{
+  height: 200rpx;
+}
+
+.comment-img{
+  width: calc((100% - 80rpx)/2);
+  height: 100%;
+  border-radius: 10rpx;
+  display: inline-block;
+  margin-right: 40rpx;
+  position: relative;
+}
+
+.comment-cover-img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  border-radius: 10rpx;
+}
+
+.comment-cover-img image{
+  width: 100%;
+  height: 100%;
+}
+
+.comment-cover-img .play-icon{
+  top: 80rpx;
+}
+
+
+.showAllComment{
+  padding: 0 60rpx 0 40rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.showAllComment image{
+  float: right;
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 15rpx;
+}
+
+
+
+
+
+
+.box{
+  padding: 30rpx 0;
+  background-color: #fff;
+}
+
+

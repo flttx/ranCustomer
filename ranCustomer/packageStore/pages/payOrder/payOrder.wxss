@@ -1,0 +1,59 @@
+/* packageStore/pages/payOrder/payOrder.wxss */
+
+.content{
+  overflow: hidden;
+}
+
+.price{
+  margin-top: 80rpx;
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.price text{
+  color: red;
+}
+
+.big{
+  font-size: 40rpx;
+}
+
+.time{
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 26rpx;
+  color: #999;
+  text-align: center;
+}
+
+.title{
+  margin-top: 80rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+}
+
+radio-group{
+  width: 80%;
+  margin: 40rpx 10%;
+}
+
+.radio{
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.radio radio{
+  float: right;
+}
+
+.pay-btn{
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border: 1px solid;
+  border-radius: 12rpx;
+  margin: 40rpx calc(50% - 100rpx);
+}

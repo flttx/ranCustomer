@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "login-component": "/components/login-component"
+  },
+  "navigationBarTitleText": "线下体验店"
+}

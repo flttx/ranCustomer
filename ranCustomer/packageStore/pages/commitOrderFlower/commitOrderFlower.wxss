@@ -1,0 +1,232 @@
+/* packageStore/pages/commitOrderFlower/commitOrderFlower.wxss */
+.container{
+  font-size: 28rpx;
+}
+
+.box{
+  border-radius: 10rpx;
+  background-color: #fff;
+  margin: 0 20rpx 40rpx 20rpx;
+  width: calc(100% - 40rpx);
+  position: relative;
+}
+
+.address-icon{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  left: 20rpx;
+  top: 60rpx;
+}
+
+.address{
+  height: 120rpx;
+  padding: 20rpx;
+  margin-left: 70rpx;
+  width: calc(100% - 160rpx);
+}
+
+.jiantou-icon{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 10rpx;
+  top: 60rpx;
+}
+
+.user-phone{
+  margin-left: 20rpx;
+  color: #999;
+}
+
+.address-info{
+  font-size: 26rpx;
+  margin-top: 10rpx;
+}
+
+.flower-box{
+  padding: 20rpx 40rpx;
+  width: calc(100% - 120rpx);
+}
+
+.flower-item{
+  padding: 20rpx 0;
+  height: 140rpx;
+}
+
+.flower-item:not(:last-child){
+  border-bottom: 1px solid #eee;
+}
+
+.flower-item image{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 10rpx;
+  float: left;
+}
+
+.flower-info{
+  float: left;
+  width: calc(100% - 160rpx);
+  margin-left: 20rpx;
+  position: relative;
+  height: 140rpx;
+}
+
+.flower-desc{
+  font-size: 26rpx;
+  height: 70rpx;
+  color: #999;
+}
+
+.flower-price{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 26rpx;
+}
+
+.flower-price .price{
+  color: red;
+}
+
+.flower-price .num{
+  float: right;
+  color: #999;
+}
+
+.info-box{
+  padding: 20rpx 0 40rpx 0;
+}
+
+.line{
+  margin-left: 40rpx;
+  height: 60rpx;
+}
+
+.line:not(:first-child){
+  margin-top: 20rpx;
+}
+
+.line image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 10rpx;
+  float: left;
+}
+
+.line-text{
+  float: left;
+  width: calc(100% - 50rpx);
+  height: 60rpx;
+  line-height: 60rpx;
+  border-bottom: 1px solid #eee;
+  margin-left: 10rpx;
+}
+
+.line-text image{
+  float: right;
+  margin-right: 20rpx;
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 20rpx;
+}
+
+.row{
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 20rpx 0 40rpx;
+  width: calc(100% - 60rpx);
+}
+
+.right-text{
+  float: right;
+  height: 80rpx;
+}
+
+.right-text text{
+  color: #999;
+  font-size: 26rpx;
+}
+
+.right-text image{
+  float: right;
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 25rpx;
+}
+
+.checkbox{
+  font-size: 26rpx;
+  color: #999;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+  background-color: #999;
+  color: #fff; 
+  border-radius: 5rpx;
+}
+
+checkbox .wx-checkbox-input{
+  height: 30rpx;
+  width: 30rpx;
+  margin-top: -4rpx;
+}
+
+.borderTop{
+  border-top: 1px solid #eee;
+}
+
+.red{
+  color: red;
+}
+
+.bottom{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80rpx;
+  background-color: #fff;
+}
+
+.commit-btn{
+  font-size: 30rpx;
+  color: #fff;
+  background-color: #000;
+  width: 160rpx;
+  height: 60rpx;
+  border-radius: 10rpx;
+  line-height: 60rpx;
+  text-align: center;
+  float: right;
+  margin-right: 50rpx;
+  margin-top: 10rpx;
+}
+
+.price-box{
+  float: right;
+  margin-right: 20rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 26rpx;
+}
+
+.discount-price{
+  color: red;
+}
+
+.big{
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.sum{
+  float: right;
+  margin-right: 40rpx;
+  color: #999;
+  font-size: 26rpx;
+  height: 80rpx;
+  line-height: 86rpx;
+}

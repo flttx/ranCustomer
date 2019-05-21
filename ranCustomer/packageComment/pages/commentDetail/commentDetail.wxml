@@ -1,0 +1,60 @@
+<!--packageComment/commentDetail/commentDetail.wxml-->
+<view class="container">
+  <scroll-view scroll-y style="height:100%;">
+    <view class="box">
+      <view class="img-num">1/1</view>
+      <image src="/img/2.jpg" class="banner-img"></image>
+      <view class="comment-box">
+        <view class="comment-img">
+          <image></image>
+          <view class="comment-userInfo">
+            <view>用户名</view>
+            <view class="comment-date">2天前</view>
+          </view>
+          <view class="operation"></view>
+        </view>
+        <view class="comment-text">大厦大红年货的哈市大口径哈萨克结婚登记看哈撒即可的航空局安徽科技山东黄金卡户籍卡
+        </view>
+        <view class="store-box">
+          <image class="store-img"></image>
+          <view class="store-info">
+            <view class="store-name">然club名车护理（德基广场店）</view>
+            <view class="store-address">
+              玄武区新街口德基广场二期停车场B3/B4玄武区新街口德基广场二期停车场B3/B4asdj 
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="line"></view>
+    <view class="user-box">
+      <view><text class="title">评论</text><text class="comment-num">(5)</text></view>
+      <view>
+        <view class="comment-img" style="padding: 20rpx 0 0 0;">
+          <image></image>
+          <view class="comment-userInfo">
+            <view>{{userInfo.nickName}}</view>
+            <view class="comment-date">2天前</view>
+          </view>
+        </view>
+        <view class="user-comment">
+          大厦狂欢节德生科技哈桑看将会对快接啊时框架会
+        </view>
+        <view class="reply-box">
+          <view class="reply-content"><text class="sender">用户1</text>：<text>电视剧爱好的近看哈撒即可大恒科技按时肯定会啊</text></view>
+          <view><text class="replyer">用户2</text>回复<text class="sender">用户1</text>：<text>大事记汇顶科技爱山科几点回家卡上客家话到卡卡霍建华</text></view>
+        </view>
+      </view>
+    </view>
+    <view style="width: 100%;height: 90rpx;"></view>
+  </scroll-view>
+
+  <view class="send-box">
+    <input class="send-input" placeholder='想说啥说啥'></input>
+    <button open-type='share'>
+      <image src="/img/share.png"></image>
+    </button>
+    <text>2</text>
+    <image src="/img/thumb.png"></image>
+  </view>
+</view>

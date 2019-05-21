@@ -1,0 +1,9 @@
+<!--packageMe/pages/integralDetail/integralDetail.wxml-->
+<view class="container">
+  <view class="row" wx:for="{{payPointsList}}" wx:key="index">
+    <view class="text">{{item.change_name}}</view>
+    <view class="time">{{item.created_at}}</view>
+    <view class="num">{{item.point_change}}</view>
+  </view>
+
+</view>

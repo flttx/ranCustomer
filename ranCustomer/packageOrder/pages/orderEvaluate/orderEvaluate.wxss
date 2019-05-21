@@ -1,0 +1,104 @@
+/* packageOrder/pages/orderEvaluate/orderEvaluate.wxss */
+.container{
+  padding-top: 40rpx;
+  height: calc(100% - 40rpx);
+  background-color: #f8f8f8;
+}
+
+.textarea-box{
+  margin: 0 40rpx;
+  height: 480rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  position: relative;
+}
+
+textarea{
+  width: calc(100% - 20rpx);
+  height: 400rpx;
+  padding: 10rpx;
+  border: none;
+}
+
+.tip{
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: right;
+  padding-right: 20rpx;
+  color: #999;
+}
+
+.imgAndVideo{
+  margin: 40rpx;
+}
+
+.item{
+  width: calc((100% - 80rpx)/3);
+  height: 140rpx;
+  display: inline-block;
+  border-radius: 10rpx;
+  margin-bottom: 40rpx;
+}
+
+.item video, .item image:not(.icon){
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+  vertical-align: top;
+}
+
+.item:not(:nth-child(3n)){
+  margin-right: 40rpx;
+}
+
+.upload{
+  border: 1px dashed #666;
+  background-color: #fff;
+}
+
+.icon{
+  width: 60rpx;
+  height: 60rpx;
+  margin-top: 20rpx;
+  margin-left: calc((100% - 60rpx)/2);
+}
+
+.upload>view{
+  width: 100%;
+  text-align: center;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.thumb-box{
+  height: 60rpx;
+}
+
+.thumb-box image{
+  width: 60rpx;
+  height: 60rpx;
+  float: right;
+  margin-right: 10rpx;
+}
+
+.thumb-box text{
+  float: right;
+  color: #999;
+  margin-right: 40rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+
+
+.btn{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+}

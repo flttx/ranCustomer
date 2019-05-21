@@ -1,0 +1,171 @@
+<!--packageStore/storeHome/storeHome.wxml-->
+<view class="container">
+  <scroll-view scroll-y style="height: 100%;" bindscroll="pageScroll" scroll-top="{{scrollTop}}">
+    <view class="store-head">
+    <view class="cover-img" style="display:{{(playing == false&&selectVideo == true)?'block':'none'}}" catchtap="playVideo">
+      <image src="{{shop_detail.shop_video_img}}"></image>
+      <view class="play-icon"></view>
+    </view>
+     <view class="img-num" wx:if="{{!selectVideo && imgList.length>0}}">{{currentImg+1}}/{{imgList.length}}</view>
+      <video
+    id="myVideo"
+    src="{{shop_detail.shop_video}}" controls wx:if="{{selectVideo}}" bindplay="playVideo">
+    </video>
+    
+      <swiper wx:if="{{!selectVideo}}" bindchange="changeImg" current="{{currentImg}}">
+        <swiper-item wx:for="{{imgList}}" wx:for-index="imgIndex" wx:key="imgIndex" wx:for-item="imgItem" data-current="{{imgIndex}}">
+          <image src="{{imgItem.shop_img}}" class="store-img"></image>
+        </swiper-item>
+       
+      </swiper>
+      <view class="btn-box">
+        <view class="video-btn {{selectVideo?'active':''}}" catchtap="selectVideo">视频</view>
+        <view class="img-btn {{selectVideo?'':'active'}}" catchtap="selectImg">图片</view>
+      </view>
+    </view>
+
+    <view class="store-info">
+      <view class="store-name">
+        <text class="store-name-text">{{shop_detail.shop_type.type_name}}（{{shop_detail.shop_name}}）</text>
+        <text class="thumb-num">{{shop_detail.shop_like_count}}</text>
+        <image src="/img/{{shop_detail.hasLiked?'thumb1.png':'thumb.png'}}" catchtap="clickThumb"></image>
+      </view>
+      <view class="store-tip">
+        <text>{{shop_detail.shop_type.type_name}}</text><text>可预约</text>
+      </view>
+      <view class="store-intro" style="padding-bottom:{{textIsOver?'60rpx':'20rpx'}}">
+         {{introText}}
+         <text class="up-btn" wx:if="{{textIsOver}}" bindtap="showAllText">{{clickShowAllText?'收起':'查看'}}</text>
+      </view>
+      <view class="store-address">
+        <view class="store-address-info" bindtap="toStoreMap">
+          <text>营业时间 {{shop_detail.start_time}}-{{shop_detail.end_time}}</text>
+        </view>
+        <view class="store-address-info" bindtap="toStoreMap">
+          <text>{{shop_detail.address}}</text>
+        </view>
+        <view class="store-phone" catchtap="phoneCall">
+          <view class="store-phone-box">
+            <image src="/img/phone.png"></image>
+          </view>
+        </view>
+      </view>
+      <view class="store-order" bindtap="toStoreOrder">
+        <text>预约上门</text>
+        <image src="/img/jiantou.jpg"></image>
+      </view>
+    </view>
+    <view class="line"></view>
+
+    <view class="tabs {{tabFixed?'fixed':''}}" id="myTab">
+      <view class="tabs-item" wx:for="{{tabs}}" wx:for-index="tabsIndex" wx:key="tabsIndex" bindtap="changeTab" data-current="{{tabsIndex}}">{{item}}
+        <view class="bar" wx:if="{{currentTab == tabsIndex}}"></view>
+      </view>
+    </view>
+
+    <view class="box" id="item0">
+      <view class="title-line"><text class="title">服务项目</text><text class="showAll" bindtap="toServiceList">查看全部></text></view>
+      <scroll-view scroll-x class="service-scroll">
+        <view class="service-item">
+          <image class="service-item-img" src="/img/1.jpg"></image>
+          <view class="service-item-text">精致洗车</view>
+          <view class="service-item-text">￥298<text class="vip-price">￥198会员价</text></view>
+        </view>
+        <view class="service-item">
+          <image class="service-item-img" src="/img/1.jpg"></image>
+          <view>精致洗车</view>
+          <view>￥298<text class="vip-price">￥198会员价</text></view>
+        </view>
+      </scroll-view>
+    </view>
+
+    <view class="line"></view>
+
+    <view class="box" id="item1">
+      <view class="title-line"><text class="title">门店优惠</text></view>
+      <view class="coupon-box">
+        <view class="coupon">优惠券</view>
+        <view class="coupon-info" bindtap="toCouponDetail" wx:for="{{couponList}}" wx:key="index" style="background: url({{item.img}}) cover;)">
+          <view class="coupon-name single-line">{{item.name}}</view>
+          <view class="coupon-condition">免预约 | 随时退</view>
+          <view class="coupon-price">￥{{item.pay_money}}</view>
+          <view class="buy-btn" catchtap="clickPurchase" data-index="{{index}}">抢购</view>
+        </view>
+      </view>
+      <view class="discount-box">
+        <view class="coupon">优惠服务</view>
+        <view class="discount-item" bindtap="toDiscountDetail" wx:for="{{serveList}}" wx:key="index" wx:for-item="serve" 
+        data-id="{{serve.id}}">
+          <image src="{{serve.serve_img}}"></image>
+          <view class="discount-info">
+            <view class="discount-name single-line">{{serve.serve_name}}</view>
+            <view class="discount-desc double-line">{{serve.serve_brief}}</view>
+            <view class="discount-price">￥{{serve.is_promote==1?serve.promote_price:serve.shop_price}}<text class="original-price">￥{{serve.market_price}}</text></view>
+            <image src="/img/jiantou.jpg"></image>
+          </view>
+        </view>
+      </view>
+
+     
+    </view>
+
+     <view class="line"></view>
+
+      <view class="box" id="item2" style="padding-bottom: 0;">
+        <view class="title-line"><text class="title">用户晒一晒</text><text class="showAll" bindtap="toAllComments">查看全部></text></view>
+        <view class="comment-item">
+          <view class="comment-user">
+            <image class="comment-user-img"></image>
+            <view class="comment-user-info">
+              <view class="comment-user-name">用户名</view>
+              <view class="comment-user-date">1天前</view>
+            </view>
+          </view>
+          <view class="comment-box">
+            <view class="comment-content">
+              <view class="comment-text double-line">大哈速度快几哈开始的建行卡好看哈是肯定会空间撒汇顶科技华实践活动空间哈市就大哈速度快几哈开始的建行卡好看哈是肯定会空间撒汇顶科技华实践活动空间哈市就</view>
+              <text class="toMore">全文></text>
+            </view>
+            <view class="comment-img-box">
+              <image class="comment-img" src="/img/1.jpg"></image>
+              <image class="comment-img" src="/img/2.jpg"></image>
+            </view>
+          </view>
+        </view>
+
+        <view class="comment-item">
+          <view class="comment-user">
+            <image class="comment-user-img"></image>
+            <view class="comment-user-info">
+              <view class="comment-user-name">用户名</view>
+              <view class="comment-user-date">1天前</view>
+            </view>
+          </view>
+          <view class="comment-box">
+            <view class="comment-content">
+              <view class="comment-text double-line">大哈速度快几哈开始的建行卡好看哈是肯定会空间撒汇顶科技华实践活动空间哈市就大哈速度快几哈开始的建行卡好看哈是肯定会空间撒汇顶科技华实践活动空间哈市就</view>
+              <text class="toMore">全文></text>
+            </view>
+            <view class="comment-img-box">
+              <video class="comment-img" src="http://static.huijinjiu.com/201904030944425ca4100a1cda1.mp4" show-fullscreen-btn="true" id="comment-item0">
+                <view class="comment-cover-img" catchtap="playCommentVideo" data-id="comment-item0" wx:if="{{!item0Playing}}">
+                  <image src="/img/1.jpg"></image>
+                  <view class="play-icon"></view>
+                </view>
+              </video>
+              <image class="comment-img" src="/img/2.jpg"></image>
+            </view>
+          </view>
+        </view>
+
+        <view class="showAllComment" bindtap="toAllComments">
+          查看全部晒一晒  <image src="/img/jiantou.jpg"></image>
+        </view>
+
+      </view>
+      <view class="line"></view>
+  </scroll-view>
+
+
+  <login-component login="{{login}}" bindlogin="refreshUserInfo"></login-component>
+</view>

@@ -1,0 +1,100 @@
+<!--packageOrder/pages/orderDetail/luxuryOrderDetail/luxuryOrderDetail.wxml-->
+<view class="container">
+  <scroll-view scroll-y style="height: 100%;width: 100%;">
+    <view class="info">
+      <view class="title"><text class="title-text">服务项目</text></view>
+      <view class="item" style="height: {{showAll?'300rpx':'160rpx'}}">
+        <image src="/img/2.jpg"></image>
+        <view class="item-info">
+          <view class="item-name">箱包 Gucci 蓝色<text style="float: right;color: #999">已开单</text></view>
+          <view class="item-spec double-line">翻新</view>
+          <view class="item-price">￥400<text class="original-price"></text></view>
+        </view>
+        <view class="state" wx:if="{{showAll}}">
+          <view class="state-item"><image src="/img/2.jpg"></image><view>已开单</view></view>
+          <view class="state-item"><image src="/img/2.jpg"></image><view>送洗中</view></view>
+          <view class="state-item"><image src="/img/2.jpg"></image><view>洗护中</view></view>
+          <view class="state-item"><image src="/img/2.jpg"></image><view>待收货</view></view>
+          <view class="state-item"><image src="/img/2.jpg"></image><view>已收货</view></view>
+        </view>
+      </view>
+
+      <view class="item" style="height: {{showAll?'300rpx':'160rpx'}}">
+        <image src="/img/2.jpg"></image>
+        <view class="item-info">
+          <view class="item-name">箱包 Gucci 蓝色<text style="float: right;color: #999">已开单</text></view>
+          <view class="item-spec double-line">翻新</view>
+          <view class="item-price">￥400<text class="original-price"></text></view>
+        </view>
+        <view class="state" wx:if="{{showAll}}">
+          <view class="state-item"><image src="/img/2.jpg"></image><view>已开单</view></view>
+          <view class="state-item"><image src="/img/2.jpg"></image><view>送洗中</view></view>
+          <view class="state-item"><image src="/img/2.jpg"></image><view>洗护中</view></view>
+          <view class="state-item"><image src="/img/2.jpg"></image><view>待收货</view></view>
+          <view class="state-item"><image src="/img/2.jpg"></image><view>已收货</view></view>
+        </view>
+      </view>
+
+      <view class="price-info" wx:if="{{showAll}}">
+        <view class="row">订单总价<text style="float: right;">￥800.00</text></view>
+        <view class="row">配送<text style="float: right;">+￥0.00</text></view>
+        <view class="row">优惠券<text style="float: right;">-￥100.00</text></view>
+        <view class="row">账户余额<text style="float: right;">-￥100.00</text></view>
+      </view>
+      <view class="real-price" style="color: {{showAll?'red':'black'}}">
+        实付款：￥800.00
+      </view>
+      <view class="btn-box">
+        <view class="showAll" bindtap="showAllInfo">{{showAll?'收起∧':'查看详细信息∨'}}</view>
+      </view>
+    </view>
+
+    <view class="line"></view>
+
+    <view class="content">
+      <view class="title"><text class="title-text">订单信息</text><text style="float: right;color: #999;">已下单</text></view>
+      <view>
+        <view class="name">订单号：</view>
+        <view class="value">201903130001</view>
+      </view>
+      <view>
+        <view class="name">下单时间：</view>
+        <view class="value">2019-03-13 15:12</view>
+      </view>
+      <view>
+        <view class="name">取件时间：</view>
+        <view class="value">2019-03-14 15:12</view>
+      </view>
+      <view>
+        <view class="name">预计数量：</view>
+        <view class="value">3</view>
+      </view>
+      <view>
+        <view class="name">备注：</view>
+        <view class="value">打季后赛的好看和觉得库哈斯就得很快及啊设计都会旧喀什接电话很快就大事记好</view>
+      </view>
+    </view>
+
+  <view class="content">
+    <view class="title"><text class="title-text">用户信息</text></view>
+    <view>
+      <view class="name">用户昵称：</view>
+      <view class="value">用户名</view>
+    </view>
+    <view>
+      <view class="name">联系方式：</view>
+      <view class="value">18305112121</view>
+    </view>
+    <view>
+      <view class="name">取件地址：</view>
+      <view class="value">是及啊设计进度计划嘉实多框架会卡数据库的哈烧开后</view>
+    </view>
+  </view>
+
+  <view style="height: 80rpx;"></view>
+
+  </scroll-view>
+  <view class="bottom">
+    <view class="btn">联系客服</view>
+  </view>
+</view>

@@ -1,0 +1,144 @@
+/* pages/me/me.wxss */
+.container{
+  background-color: #eee; 
+}
+
+.header{
+  width: 100%;
+  height: 400rpx;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+}
+
+.bind-phone{
+  font-size: 32rpx;
+  text-align: center;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #fff;
+  background: transparent;
+}
+
+.header>view{
+  flex: 1;
+}
+
+.avatarUrl{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  margin: 50rpx 0 0 50rpx;
+  float: left;
+  overflow: hidden;
+}
+.avatarUrl image{
+  width: 100%;
+  height: 100%;
+}
+
+.info{
+  float: left;
+  margin-top: 50rpx;
+  color: #fff;
+  font-size: 30rpx;
+  padding: 20rpx ;
+}
+
+.nickName{
+  font-size: 34rpx;
+  padding-bottom: 4rpx;
+}
+
+.login{
+  background: transparent;
+  color: #fff;
+  font-size: 32rpx;
+}
+
+.my-coupon{
+  display: flex;
+}
+
+.my-coupon>view{
+  flex: 1;
+  margin-top: 20rpx;
+}
+
+.my-coupon view{
+  text-align: center;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.body{
+  position: absolute;
+  top: 340rpx;
+  margin: 0 40rpx;
+  width: calc(100% - 80rpx);
+}
+
+.card{
+  background-color: #fff;
+  border-radius: 10rpx;
+  font-size: 32rpx;
+}
+
+.card:not(:last-child){
+  margin-bottom: 40rpx;
+}
+
+.vip{
+  height: 120rpx;
+  line-height: 120rpx;
+  padding-left: 40rpx;
+}
+
+.my-service{
+  height: 240rpx;
+}
+
+.title{
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 20rpx;
+}
+
+.my-service-item{
+  height: 140rpx;
+  display: flex;
+}
+
+
+.my-service-item>view{
+  flex: 1;
+  text-align: center;
+}
+
+
+.icon{
+  width: 100%;
+  height: 100rpx;
+}
+
+.icon image{
+  width: 100%;
+  height: 100%;
+}
+
+.login::after {
+  border: 0; 
+}
+
+.my-info{
+  position: relative;
+}
+
+.message-img{
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  right: 50rpx;
+  top: calc(50% - 20rpx);
+}

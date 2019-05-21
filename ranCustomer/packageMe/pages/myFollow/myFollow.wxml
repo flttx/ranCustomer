@@ -1,0 +1,139 @@
+<!--packageMe/pages/myFollow/myFollow.wxml-->
+<view class="container">
+  <scroll-view scroll-y>
+    <view class="store-item">
+      <image class="store-img" src="/img/2.jpg"></image>
+      <view class="store-info">
+        <view class="store-name">
+          <view class="store-name-text single-line">然の奢侈品护理店</view>
+          <view class="thumb-box">
+            <text>2</text>
+            <image src="/img/thumb.png"></image>
+          </view>
+        </view>
+        <view class="store-desc">德基广场店</view>
+        <view class="store-time">营业时间 10:00-22:00</view>
+      </view>
+    </view>
+
+    <view class="store-item">
+      <image class="store-img" src="/img/2.jpg"></image>
+      <view class="store-info">
+        <view class="store-name">
+          <view class="store-name-text single-line">然の奢侈品护理店</view>
+          <view class="thumb-box">
+            <text>2</text>
+            <image src="/img/thumb.png"></image>
+          </view>
+        </view>
+        <view class="store-desc">德基广场店</view>
+        <view class="store-time">营业时间 10:00-22:00</view>
+      </view>
+    </view>
+
+    <view class="store-item">
+      <image class="store-img" src="/img/2.jpg"></image>
+      <view class="store-info">
+        <view class="store-name">
+          <view class="store-name-text single-line">然の奢侈品护理店</view>
+          <view class="thumb-box">
+            <text>2</text>
+            <image src="/img/thumb.png"></image>
+          </view>
+        </view>
+        <view class="store-desc">德基广场店</view>
+        <view class="store-time">营业时间 10:00-22:00</view>
+      </view>
+    </view>
+
+    <view class="store-item">
+      <image class="store-img" src="/img/2.jpg"></image>
+      <view class="store-info">
+        <view class="store-name">
+          <view class="store-name-text single-line">然の奢侈品护理店</view>
+          <view class="thumb-box">
+            <text>2</text>
+            <image src="/img/thumb.png"></image>
+          </view>
+        </view>
+        <view class="store-desc">德基广场店</view>
+        <view class="store-time">营业时间 10:00-22:00</view>
+      </view>
+    </view>
+
+    <view class="store-item">
+      <image class="store-img" src="/img/2.jpg"></image>
+      <view class="store-info">
+        <view class="store-name">
+          <view class="store-name-text single-line">然の奢侈品护理店</view>
+          <view class="thumb-box">
+            <text>2</text>
+            <image src="/img/thumb.png"></image>
+          </view>
+        </view>
+        <view class="store-desc">德基广场店</view>
+        <view class="store-time">营业时间 10:00-22:00</view>
+      </view>
+    </view>
+
+    <view class="store-item">
+      <image class="store-img" src="/img/2.jpg"></image>
+      <view class="store-info">
+        <view class="store-name">
+          <view class="store-name-text single-line">然の奢侈品护理店</view>
+          <view class="thumb-box">
+            <text>2</text>
+            <image src="/img/thumb.png"></image>
+          </view>
+        </view>
+        <view class="store-desc">德基广场店</view>
+        <view class="store-time">营业时间 10:00-22:00</view>
+      </view>
+    </view>
+
+    <view class="store-item">
+      <image class="store-img" src="/img/2.jpg"></image>
+      <view class="store-info">
+        <view class="store-name">
+          <view class="store-name-text single-line">然の奢侈品护理店</view>
+          <view class="thumb-box">
+            <text>2</text>
+            <image src="/img/thumb.png"></image>
+          </view>
+        </view>
+        <view class="store-desc">德基广场店</view>
+        <view class="store-time">营业时间 10:00-22:00</view>
+      </view>
+    </view>
+
+    <view class="store-item">
+      <image class="store-img" src="/img/2.jpg"></image>
+      <view class="store-info">
+        <view class="store-name">
+          <view class="store-name-text single-line">然の奢侈品护理店</view>
+          <view class="thumb-box">
+            <text>2</text>
+            <image src="/img/thumb.png"></image>
+          </view>
+        </view>
+        <view class="store-desc">德基广场店</view>
+        <view class="store-time">营业时间 10:00-22:00</view>
+      </view>
+    </view>
+
+    <view class="store-item">
+      <image class="store-img" src="/img/2.jpg"></image>
+      <view class="store-info">
+        <view class="store-name">
+          <view class="store-name-text single-line">然の奢侈品护理店</view>
+          <view class="thumb-box">
+            <text>2</text>
+            <image src="/img/thumb.png"></image>
+          </view>
+        </view>
+        <view class="store-desc">德基广场店</view>
+        <view class="store-time">营业时间 10:00-22:00</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

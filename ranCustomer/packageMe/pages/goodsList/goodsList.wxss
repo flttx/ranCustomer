@@ -1,0 +1,104 @@
+/* packageStore/pages/goodsList/goodsList.wxss */
+.container{
+  font-size: 32rpx;
+}
+
+.swiper-tab{
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.tab-item{
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.bar{
+  width: 100rpx;
+  height: 6rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: #666;
+}
+
+.tab-box{
+  padding-top:60rpx;
+  height:100%;
+  box-sizing:border-box;
+}
+
+scroll-view{
+  width: calc(100% - 80rpx);
+  height:100%;
+  padding: 0 40rpx;
+}
+
+.goods-item{
+  height: 200rpx;
+  padding: 40rpx 0 0 0;
+}
+
+.goods-item image{
+  width: 200rpx;
+  height: 200rpx;
+  float: left;
+  border-radius: 10rpx;
+}
+
+.goods-info{
+  float: left;
+  height: 200rpx;
+  width: calc(100% - 240rpx);
+  margin-left: 40rpx;
+  position: relative;
+}
+
+.goods-desc{
+  height: 100rpx;
+  font-size: 26rpx;
+  color: #999;
+  padding-top: 10rpx;
+}
+
+.thumb-icon{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 40rpx;
+}
+
+.thumb-icon image{
+  float: right;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.thumb-icon text{
+  float: right;
+  font-size: 28prx;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #999;
+  margin-left: 10rpx;
+}
+
+/* 两行超出部分省略号 */
+.triple-line{
+  text-overflow:ellipsis;
+  overflow:hidden;
+  display:-webkit-box;
+  -webkit-line-clamp:3; /*这个数字是设置要显示省略号的行数*/
+  -webkit-box-orient:vertical;
+}
+
+
+

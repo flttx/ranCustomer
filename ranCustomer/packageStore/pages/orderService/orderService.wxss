@@ -1,0 +1,134 @@
+/* packageStore/pages/orderService/orderService.wxss */
+.container{
+  background-color: #f8f8f8;
+  padding: 40rpx 40rpx 0 40rpx;
+  width: calc(100% - 80rpx);
+  height: calc(100% - 40rpx);
+}
+
+.address{
+  padding: 30rpx 40rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  height: 140rpx;
+}
+
+.type2{
+  padding: 0 0 30rpx 40rpx;
+}
+
+.address-img{
+  width: 60rpx;
+  height: 60rpx;
+  float: left;
+  margin-top: 50rpx;
+}
+
+.address-info{
+  float: left;
+  width: calc(100% - 140rpx);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 10rpx;
+}
+
+.user-info{
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 32rpx;
+}
+
+.address-text{
+  height: 80rpx;
+  font-size: 28rpx;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  display:-webkit-box;
+  -webkit-line-clamp:2; /*这个数字是设置要显示省略号的行数*/
+  -webkit-box-orient:vertical;
+}
+
+.user-phone{
+  color: #999;
+  margin-left: 20rpx;
+}
+
+.arrow{
+  float: right;
+  width: 60rpx;
+  height: 60rpx;
+  margin-top: 50rpx;
+}
+
+.car-user{
+  flex: 1;
+}
+
+.user-text{
+  float: left;
+  margin-left: 10rpx;
+  width: calc(100% - 70rpx);
+  height: 100%;
+  line-height: 80rpx;
+  font-size: 30rpx;
+}
+
+.car-user:first-child .user-text{
+  border-bottom: 1px solid #eee;
+}
+
+.order-info{
+  margin-top: 40rpx;
+  padding-left: 40rpx;
+  padding-bottom: 30rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+
+.order-line{
+  height: 80rpx;
+  font-size: 30rpx;
+}
+
+.order-icon{
+  float: left;
+  width: 60rpx;
+  height: 60rpx;
+  margin-top: 20rpx;
+}
+
+.order-select{
+  float: left;
+  margin-top: 30rpx;
+  margin-left: 10rpx;
+  padding-bottom: 10rpx;
+  width: calc(100% - 70rpx);
+  color: #999;
+}
+
+.order-line .order-select{
+  border-bottom: 1px solid #eee;
+}
+
+.remark-box{
+  font-size: 30rpx;
+  height: 270rpx;
+  position: relative;
+}
+
+.remark-box>view{
+  height: 80rpx;
+}
+
+.remark{
+  width: calc(100% - 70rpx);
+  margin-left: 10rpx;
+  height: 160rpx;
+  border: 1px solid #333;
+  border-radius: 10rpx;
+  padding: 10rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

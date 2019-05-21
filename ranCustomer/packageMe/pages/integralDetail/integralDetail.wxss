@@ -1,0 +1,33 @@
+/* packageMe/pages/integralDetail/integralDetail.wxss */
+.container{
+  padding: 0 40rpx;
+  width: calc(100% - 80rpx);
+}
+
+.row{
+  height: 100rpx;
+  border-bottom: 1px solid #999;
+  position: relative;
+}
+
+.row view:not(.num){
+  width: calc(100% - 80rpx);
+  height: 40rpx;
+}
+
+.text{
+  margin-top: 10rpx;
+}
+
+.time{
+  color: #999;
+  font-size: 28rpx;
+}
+
+.num{
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 80rpx;
+  line-height: 80rpx;
+}

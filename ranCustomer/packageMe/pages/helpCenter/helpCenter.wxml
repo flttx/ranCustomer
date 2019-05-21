@@ -1,0 +1,17 @@
+<!--packageMe/pages/helpCenter/helpCenter.wxml-->
+<view class="container">
+  <view class="title">常见问题</view>
+  <view class="question-box" wx:for="{{questionList}}" wx:key="index">
+    <view class="question-title" bindtap="showAnswer" data-index="{{index}}">
+      {{item.title}}
+      <image src="/img/{{clicked?'up.png':'down.png'}}"></image>
+    </view>
+    <view wx:if="{{item.clicked}}" class="answer">
+      {{item.answer}}
+    </view>
+  </view> 
+
+  <button class="add-btn" open-type="contact">
+    联系客服
+  </button>
+</view>

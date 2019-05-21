@@ -1,0 +1,19 @@
+<!--packageMe/pages/balance/balance.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="info">
+      <view class="title">账户余额</view>
+      <view class="balance">{{userInfo.user_money}}元</view>
+      <view class="btn" bindtap="toRecharge">充值</view>
+    </view>
+  </view>
+  <view class="list-title">余额明细</view>
+  <scroll-view scroll-y style="height: calc(100% - 420rpx);padding: 0 40rpx;width: calc(100% - 80rpx);">
+    <view class="list-item" wx:for="{{accountList}}" wx:key="index">
+      <view class="list-type">{{item.change_name}}</view>
+      <view class="list-date">{{item.created_at}}</view>
+      <text class="num">{{item.money_change}}</text>
+    </view>
+
+  </scroll-view>
+</view>

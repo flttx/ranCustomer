@@ -1,0 +1,74 @@
+<!--packageStore/pages/allComments/allComments.wxml-->
+<view class="container">
+  <view class="tab">
+    <view class="tab-box">
+      <view wx:for="{{tabs}}" wx:key="item" data-current="{{index}}" class="tab-item" bindtap="changeTab">
+        {{item}}
+        <view class="bar" wx:if="{{currentTab == index}}"></view>
+      </view>
+    </view>
+  </view>
+
+   <swiper class="swiper-box" current="{{currentTab}}" bindchange="changeSwiper">
+    <swiper-item wx:for="{{state}}" wx:key="index">
+      <scroll-view scroll-y style="width:100%;height:100%;">
+        <view class="comment-item">
+          <view class="comment-user">
+            <image class="comment-user-img"></image>
+            <view class="comment-user-info">
+              <view class="comment-user-name">用户名</view>
+              <view class="comment-user-date">1天前</view>
+            </view>
+          </view>
+          <view class="comment-box">
+            <view class="comment-content">
+              <view class="comment-text double-line">大哈速度快几哈开始的建行卡好看哈是肯定会空间撒汇顶科技华实践活动空间哈市就大哈速度快几哈开始的建行卡好看哈是肯定会空间撒汇顶科技华实践活动空间哈市就</view>
+              <text class="toMore" bindtap="toCommentDetail">全文></text>
+            </view>
+            <view class="comment-img-box">
+              <video class="comment-img" src="http://static.huijinjiu.com/201904030944425ca4100a1cda1.mp4" show-fullscreen-btn="true">
+                <view class="comment-cover-img" catchtap="playCommentVideo">
+                  <image src="/img/1.jpg"></image>
+                  <view class="play-icon"></view>
+                </view>
+              </video>
+              <image class="comment-img" src="/img/2.jpg"></image>
+            </view>
+            <view class="operation">
+             <button open-type='share'><image src="/img/share.png"></image></button>
+              <text>5</text>
+              <image src="/img/comment.png"></image>
+              <text>2</text>
+              <image src="/img/thumb1.png"></image>
+            </view>
+          </view>
+        </view>
+
+        <view class="comment-item" bindtap="toCommentDetail">
+          <view class="comment-user">
+            <image class="comment-user-img"></image>
+            <view class="comment-user-info">
+              <view class="comment-user-name">用户名</view>
+              <view class="comment-user-date">1天前</view>
+            </view>
+          </view>
+          <view class="comment-box">
+            <view class="comment-content">
+              <view class="comment-text double-line">大哈速度快几哈开始的建行卡好看哈是肯定会空间撒汇顶科技华实践活动空间哈市就大哈速度快几哈开始的建行卡好看哈是肯定会空间撒汇顶科技华实践活动空间哈市就</view>
+              <text class="toMore">全文></text>
+            </view>
+            <view class="comment-img-box">
+              <video class="comment-img" src="http://static.huijinjiu.com/201904030944425ca4100a1cda1.mp4" show-fullscreen-btn="true">
+                <view class="comment-cover-img">
+                  <image src="/img/1.jpg"></image>
+                  <view class="play-icon"></view>
+                </view>
+              </video>
+              <image class="comment-img" src="/img/2.jpg"></image>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

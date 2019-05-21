@@ -1,0 +1,92 @@
+/* packageMe/pages/recentBrowse/recentBrowse.wxss */
+.clear-icon{
+  height: 30rpx;
+}
+
+.clear-icon image{
+  float: right;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.clear-icon text{
+  float: right;
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 28rpx;
+  color: #999;
+  margin-right: 40rpx;
+}
+
+scroll-view{
+  height: calc(100% - 30rpx);
+  padding-left: 40rpx;
+  width: calc(100% - 40rpx);
+}
+
+.store-item{
+  width: calc(100% - 40rpx);
+  height: 160rpx;
+  padding: 40rpx 40rpx 40rpx 0;
+  border-bottom: 1px solid #eee;
+}
+
+.store-img{
+  width: 240rpx;
+  height: 160rpx;
+  float: left;
+}
+
+.store-info{
+  float: left;
+  width: calc(100% - 280rpx);
+  height: 160rpx;
+  margin-left: 40rpx;
+  position: relative;
+}
+
+.store-name{
+  height: 40rpx;
+}
+
+.store-name-text{
+  float: left;
+  width: calc(100% - 120rpx);
+  font-size: 32rpx;
+}
+
+.thumb-box{
+  float: right;
+  width: 120rpx;
+  height: 40rpx;
+}
+
+.thumb-box image{
+  float: right;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.thumb-box text{
+  float: right;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.store-desc{
+  height: 40rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  margin-top: 20rpx;
+  color: #999;
+}
+
+.store-time{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #999;
+  font-size: 28rpx;
+}

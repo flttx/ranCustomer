@@ -1,0 +1,51 @@
+/* packageMe/pages/helpCenter/helpCenter.wxss */
+.container{
+  font-size: 30rpx;
+}
+
+.title{
+  color: #999;
+  font-size: 24rpx;
+  padding: 21rpx 30rpx;
+  border-bottom: 1px solid #eee;
+  background: #f8f8f8;
+}
+
+.question-box{
+  box-sizing: border-box;
+  border-bottom: 1px solid #eee;
+  padding: 10rpx 40rpx 10rpx 30rpx;
+}
+
+.question-title{
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+}
+
+.question-title image{
+  float: right;
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 15rpx;
+}
+
+.answer{
+  margin: 20rpx 0 20rpx 0;
+  color: #999;
+  font-size: 24rpx;
+  line-height: 30rpx;
+}
+
+.add-btn{
+  position: absolute;
+  bottom: 30rpx;
+  left: 30rpx;
+  width: calc(100% - 60rpx);
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color: #fff;
+  background: #000;
+}

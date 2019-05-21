@@ -1,0 +1,145 @@
+/* packageOrder/pages/orderDetail/carOrderDetail/carOrderDetail.wxss */
+.container{
+  border-top: 1px solid #eee;
+  height: calc(100% - 2rpx);
+}
+
+.color{
+  display: inline-block;
+  width: 100rpx;
+  height: 40rpx;
+  background-color: #000;
+  margin-top: 10rpx;
+}
+
+.info .title{
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.item{
+  width: 100%;
+  height: 160rpx;
+  padding-bottom: 20rpx;
+  padding-top: 20rpx;
+}
+
+.item image{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 10rpx;
+  float: left;
+}
+
+.item-info{
+  float: left;
+  width: calc(100% - 180rpx);
+  height: 160rpx;
+  margin-left: 20rpx;
+  position: relative;
+}
+
+.item-name, .item-price{
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.original-price{
+  color: red;
+  text-decoration: line-through;
+  margin-left: 10rpx;
+}
+
+.price-info{
+  border-top: 1px solid #eee;
+}
+
+.price-info>view{
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.real-price{
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: right;
+}
+
+.btn-box{
+  height: 60rpx;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.showAll{
+  padding: 5rpx 10rpx;
+  font-size: 28rpx;
+  border-radius: 10rpx;
+  border: 1px solid #999;
+  margin: 0 auto;
+}
+
+
+.info, .content{
+  padding: 20rpx 40rpx 20rpx 0;
+  margin-left: 40rpx;
+  width: calc(100% - 80rpx);
+
+}
+
+.content:not(:last-child){
+  border-bottom: 1px solid #eee;
+}
+
+.content>view{
+  min-height: 60rpx;
+  line-height: 60rpx;
+}
+
+.title-text{
+  font-weight: bold;
+}
+
+.name, .value{
+  display: inline-block;
+}
+
+.name{
+  width: 160rpx;
+  color: #999;
+  vertical-align: top;
+}
+
+.value{
+  width: calc(100% - 160rpx);
+}
+
+
+.bottom{
+  width: 100%;
+  height: 80rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid #999;
+  background-color: #fff;
+}
+
+.btn{
+  width: 160rpx;
+  height: 60rpx;
+  float: right;
+  margin-top: 10rpx;
+  margin-right: 40rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #fff;
+  border-radius: 10rpx;
+  background-color: #000;
+}
+
+.line{
+  height: 20rpx;
+  background-color: #f8f8f8;
+}

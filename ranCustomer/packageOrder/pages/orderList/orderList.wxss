@@ -1,0 +1,106 @@
+/* packageOrder/orderList/orderList.wxss */
+.container{
+  width: 100%;
+  height: 100%;
+  font-size: 32rpx;
+}
+.tabs{
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.tabs-item{
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.bar{
+  width: 80rpx;
+  height: 6rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: #666;
+}
+
+.tab-box{
+  padding-top:60rpx;
+  height:100%;
+  box-sizing:border-box;
+}
+
+.box{
+  width: calc(100% - 60rpx);
+  padding: 20rpx 20rpx 20rpx 0;
+  border-bottom: 1px solid #eee;
+}
+
+.box-title{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.order-type{
+  float: left;
+}
+
+.order-status{
+  float: right;
+  color: #999;
+}
+
+.order-info{
+  height: 120rpx;
+  padding: 10rpx 0;
+}
+
+.order-img{
+  width: 200rpx;
+  height: 100%;
+  float: left;
+}
+
+.order-info-box{
+  margin-left: 20rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  float: left;
+  font-size: 28rpx;
+}
+
+.order-info-box>view{
+  flex: 1;
+}
+
+.order-price{
+  color: #999;
+}
+
+.order-bottom{
+  height: 60rpx;
+  position: relative;
+}
+
+.order-btn{
+  width: 160rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border: 1px solid #666;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+}

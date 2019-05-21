@@ -1,0 +1,8 @@
+<!--components/login-component.wxml-->
+ <view class='mask' wx:if='{{login}}'>
+    <view class='pop1'>
+      <text class='text'>您还未登录</text>
+      <text class='text1'>(请先登录再进行此操作)</text>
+      <button open-type='getUserInfo' bindgetuserinfo="login" class="login" lang='zh_CN'>现在登录</button>
+  </view>
+</view>

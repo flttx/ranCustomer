@@ -1,0 +1,39 @@
+/* components/login-component.wxss */
+.mask{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .4);
+  z-index: 10;
+}
+
+.pop1{
+  width: 400rpx;
+  height: 400rpx;
+  position: absolute;
+  top: calc(50% - 200rpx);
+  left: calc(50% - 200rpx);
+  background-color: #fff;
+}
+
+.pop1 button{
+  width: 90%;
+  border-radius: 10rpx;
+  position: absolute;
+  bottom: 20rpx;
+  left: 5%;
+}
+
+.pop1 text{
+  display: block;
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.pop1 .text{
+  margin-top: 100rpx;
+}
+
+

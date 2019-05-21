@@ -1,0 +1,45 @@
+<!--packageMe/pages/message/message.wxml-->
+<view class="content">
+  <view class="tabs">
+    <view wx:for="{{tabs}}" class="tab-item" wx:key="index" data-index="{{index}}" bindtap="changeTab">
+      {{item}}
+      <text class="new-icon"></text>
+      <text class="bar" wx:if="{{currentIndex == index}}"></text>
+    </view>
+  </view>
+
+  <swiper scroll-y bindchange="changeSwiper" current='{{currentIndex}}'>
+    <swiper-item wx:for="{{tabs}}" wx:key="index">
+      <block wx:if="{{index==0}}">
+        <view class="item" wx:for="{{systemMessages}}" wx:for-index="i" wx:key="i">
+          <view class="img-box"></view>
+          <view class="item-info">
+            <view class="title">{{item.title}}<text class="new-icon" wx:if="{{!item.hasRead}}"></text></view>
+            <view class="item-content">{{item.content}}</view>
+          </view>
+          <view class="time">
+            {{item.time}}
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="comment-item">
+          <view class="comment-info">
+            <view class="user-img"></view>
+            <view class="comment-title">何某<text style="margin: 0 10rpx;">评论</text>了您的动态：</view>
+            <view class="comment-content">哇塞，这真是amazing呢！</view>
+          </view>
+          <view class="comment-img"></view>
+        </view>
+
+        <view class="comment-item">
+          <view class="comment-info">
+            <view class="user-img" style="margin-top: 19rpx;"></view>
+            <view class="comment-title">何某<text style="margin: 0 10rpx;">赞</text>了您的动态</view>
+          </view>
+          <view class="comment-img"></view>
+        </view>
+      </block>
+    </swiper-item>
+  </swiper>
+</view>

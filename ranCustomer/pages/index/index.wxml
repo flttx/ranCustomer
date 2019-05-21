@@ -1,0 +1,49 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="tab">
+    <view class="tab-item">
+      <view bindtap="toActivity">活动</view>
+      <view>TOP榜</view>
+      <view bindtap="toGoodsList">好货</view>
+    </view>
+  </view>
+  <scroll-view scroll-y style="height: 100%;margin-top: 60rpx;">
+    <view class="banners">
+      <swiper style="width: 100%;height: 100%;" circular>
+        <swiper-item wx:for="{{banners}}" wx:key="index" class="banner-img"  data-current="{{index}}">
+          <image src="{{item.img_url}}"></image>
+        </swiper-item>
+      </swiper>
+    </view>
+
+    <view class="activity-list">
+      <view class="daily-img">
+        <view class="img-title">RAN DAILY</view>
+        <view class="img-box">
+          <image class="daily-img-item" wx:for="{{dailyImg}}" wx:key="index" src="{{item.url}}"></image>
+        </view>
+      </view>
+      <view class="activity-img" wx:for="{{activities}}" wx:key="index">
+        <view class="img-title">{{item.type_name}}</view>
+        <image class="daily-img-item" src="{{item.img_url}}"></image>
+      </view>
+
+      <!-- <view class="activity-img">
+        <view class="img-title">门店TOP榜</view>
+        <image class="daily-img-item" src="{{storeImg}}"></image>
+      </view>
+
+      <view class="activity-img">
+        <view class="img-title">好货上新</view>
+        <image class="daily-img-item" src="{{haohuoImg}}"></image>
+      </view>
+
+      <view class="activity-img">
+        <view class="img-title">专题页</view>
+        <image class="daily-img-item" src="{{zhuantiImg}}"></image>
+      </view> -->
+
+    </view>
+
+  </scroll-view>
+</view>

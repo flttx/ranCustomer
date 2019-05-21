@@ -1,0 +1,22 @@
+<!--packageMe/pages/integral/integral.wxml-->
+<view class="container">
+  <view class="head">
+    <view class="circle">
+      <view class="integral-text">我的积分</view>
+      <view class="integral-value">{{userInfo.pay_points}}</view>
+    </view>
+    <view class="menu-box">
+      <view class="menu-item" bindtap='toIntegralDetail'>
+        <view><text>明细</text><image src="/img/play.png"></image></view>
+        <image class="menu-icon" src="/img/integral.png"></image>
+      </view>
+      <view class="menu-item" bindtap="sign">
+        <view><text>签到</text><image src="/img/play.png"></image></view>
+        <image class="menu-icon" src="/img/sign.png"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="line"></view>
+
+</view>
