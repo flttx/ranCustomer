@@ -1,6 +1,7 @@
 // pages/me/me.js
 const app = getApp();
 const network = require('../../utils/network.js');
+const util = require('../../utils/util.js');
 
 Page({
 
@@ -12,7 +13,8 @@ Page({
     userId: '',
     hasPhone: true,
     hasLogin: false,
-    token: ''
+    token: '',
+    buttonClicked: false, //防止重复点击
   },
 
   /**
@@ -76,99 +78,133 @@ Page({
    * 跳转订单列表
    */
   toOrderList: function(){
-    wx.navigateTo({
-      url: '../../packageOrder/pages/orderList/orderList',
-    })
+    if(!this.data.buttonClicked){
+      util.buttonClicked(this);
+      wx.navigateTo({
+        url: '../../packageOrder/pages/orderList/orderList',
+      });
+    }
+    
   },
 
   /**
    * 跳转个人信息
    */
   toMyInfo: function(){
-    wx.navigateTo({
-      url: '../../packageMe/pages/myInfo/myInfo',
-    })
+    if (!this.data.buttonClicked) {
+      util.buttonClicked(this);
+      wx.navigateTo({
+        url: '../../packageMe/pages/myInfo/myInfo',
+      });
+    }
   },
 
   /**
    * 跳转优惠券
    */
   toCoupon: function(){
-    wx.navigateTo({
-      url: '../../packageMe/pages/coupon/coupon',
-    })
+    if (!this.data.buttonClicked) {
+      util.buttonClicked(this);
+      wx.navigateTo({
+        url: '../../packageMe/pages/coupon/coupon',
+      });
+    }
   },
 
   /**
    * 跳转余额
    */
   toBalance: function() {
-    wx.navigateTo({
-      url: '../../packageMe/pages/balance/balance',
-    })
+    if (!this.data.buttonClicked) {
+      util.buttonClicked(this);
+      wx.navigateTo({
+        url: '../../packageMe/pages/balance/balance',
+      });
+    }
   },
 
   /**
    * 跳转积分
    */
   toIntegral: function(){
-    wx.navigateTo({
-      url: '../../packageMe/pages/integral/integral',
-    })
+    if (!this.data.buttonClicked) {
+      util.buttonClicked(this);
+      wx.navigateTo({
+        url: '../../packageMe/pages/integral/integral',
+      });
+    }
   },
 
   /**
    * 跳转好货
    */
   toGoodsList: function(){
-    wx.navigateTo({
-      url: '../../packageMe/pages/goodsList/goodsList',
-    })
+    if (!this.data.buttonClicked) {
+      util.buttonClicked(this);
+      wx.navigateTo({
+        url: '../../packageMe/pages/goodsList/goodsList',
+      });
+    }
   },
 
   /**
    * 跳转我的关注
    */
   toMyFollow: function(){
-    wx.navigateTo({
-      url: '../../packageMe/pages/myFollow/myFollow',
-    })
+    if (!this.data.buttonClicked) {
+      util.buttonClicked(this);
+      wx.navigateTo({
+        url: '../../packageMe/pages/myFollow/myFollow',
+      });
+    }
   },
 
   /**
    * 跳转最近浏览
    */
   toRecentBrowse: function () {
-    wx.navigateTo({
-      url: '../../packageMe/pages/recentBrowse/recentBrowse',
-    })
+    if (!this.data.buttonClicked) {
+      util.buttonClicked(this);
+      wx.navigateTo({
+        url: '../../packageMe/pages/recentBrowse/recentBrowse',
+      });
+    }
   },
 
   /**
    * 跳转帮助中心
    */
   toHelpCenter: function(){
-    wx.navigateTo({
-      url: '../../packageMe/pages/helpCenter/helpCenter',
-    })
+    if (!this.data.buttonClicked) {
+      util.buttonClicked(this);
+      wx.navigateTo({
+        url: '../../packageMe/pages/helpCenter/helpCenter',
+      });
+    }
   },
 
   /**
    * 跳转商户入驻
    */
   toMerchantEnter: function(){
-    wx.navigateTo({
-      url: '../../packageMe/pages/merchantEnter/merchantEnter',
-    })
+    if (!this.data.buttonClicked) {
+      util.buttonClicked(this);
+      wx.navigateTo({
+        url: '../../packageMe/pages/merchantEnter/merchantEnter',
+      });
+    }
   },
 
   /**
    * 跳转通知消息
    */
   toMessage: function(){
-    wx.navigateTo({
-      url: '../../packageMe/pages/message/message',
-    })
+    if (!this.data.buttonClicked) {
+      util.buttonClicked(this);
+      wx.navigateTo({
+        url: '../../packageMe/pages/message/message',
+      });
+    }
   },
 
   /**

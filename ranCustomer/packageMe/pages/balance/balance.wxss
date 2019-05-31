@@ -1,79 +1,177 @@
 /* packageMe/pages/balance/balance.wxss */
-.container{
-  overflow: hidden;
+.content{
+  padding-top: 26rpx;
 }
 
 .header{
-  height: 120rpx;
-  background-color: #999;
-  padding: 100rpx 50rpx;
+  background-color: #E0B75F;
+  margin: 0 40rpx 26rpx;
+  padding-top: 85rpx;
+  padding-bottom: 70rpx;
 }
 
 .info{
-  height: 120rpx;
   color: #fff;
   position: relative;
 }
 
 .title{
-  font-size: 26rpx;
+  text-align: center;
+  font-size: 28rpx;
 }
 
 .balance{
-  height: 100rpx;
-  line-height: 100rpx;
-  font-size: 52rpx;
-}
-
-.btn{
-  width: 120rpx;
-  height: 60rpx;
-  background-color: #fff; 
-  color: #000;
-  border-radius: 10rpx;
-  font-size: 26rpx;
-  line-height: 60rpx;
+  margin-top: 19rpx;
+  font-size: 50rpx;
   text-align: center;
-  position: absolute;
-  right: 0;
-  top: 40rpx;
+  font-family: DINAlternate-Bold;
 }
 
-.list-title{
-  font-size: 30rpx;
-  height: 100rpx;
-  line-height: 100rpx;
-  padding-left: 40rpx;
-  border-bottom: 1px solid #eee;
+.balance text{
+  font-size: 28rpx;
+  margin-left: 23rpx;
 }
 
-.list-item{
-  height: 120rpx;
-  border-bottom: 1px solid #eee;
+.icon-row{
+  background: #fff;
   display: flex;
-  flex-direction: column;
-  position: relative;
-  font-size: 30rpx;
 }
 
-.list-item>view{
+.icon-box{
   flex: 1;
+  justify-content: center;
+  padding: 38rpx 20rpx;
 }
 
-.list-type{
-  padding-top: 20rpx;
+.icon-box image{
+  width: 42rpx;
+  height: 50rpx;
+  vertical-align: top;
+  margin-left: calc(50% - 67rpx);
 }
 
-.list-date{
+
+.icon-box:last-child image{
+  margin-left: calc(50% - 107rpx);
+}
+
+.icon-box text{
+  display: inline-block;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin-left: 19rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.recharge-box{
+  margin-top: 30rpx;
+  background: #fff;
+  padding: 34rpx 0;
+}
+
+.recharge-title{
+  font-size: 34rpx;
+  color: #333;
+  padding-left: 39rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 600;
+
+}
+
+.recharge-item{
+  display: inline-block;
+  margin: 26rpx 30rpx;
+  width: calc((100% - 90rpx)/2);
+  height: 160rpx;
+  box-shadow: 0px 2px 4px #eee;
+  padding-top: 40rpx;
+}
+
+.recharge-item:nth-child(2n){
+  margin-left: 0;
+}
+
+
+.recharge-amount{
+  font-size: 50rpx;
+  color: #333;
+  text-align: center;
+}
+
+.recharge-amount text{
+  font-size: 40rpx;
+}
+
+.recharge-points{
+  margin-top: 19rpx;
+  font-size: 24rpx;
+  color: #D9AB42;
+  text-align: center;
+}
+
+
+.tips{
+  position: fixed;
+  bottom: 120rpx;
+  width: 100%;
+  text-align: center;
+  font-size: 22rpx;
   color: #999;
 }
 
-.num{
-  display: inline-block;
-  height: 20rpx;
+.tips text{
+  color: #D9AB42;
+}
+
+.add-btn{
+  position: fixed;
+  bottom: 30rpx;
+  left: 30rpx;
+  width: calc(100% - 60rpx);
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color: #fff;
+  background: #000;
+}
+
+
+
+.info-box{
   position: absolute;
-  top: 40rpx;
-  right: 0;
-  text-align: right;
+  top: 30%;
+  left: 100rpx;
+  width: calc(100% - 200rpx);
+  z-index: 11;
+}
+
+.info-content{
+  width: 100%;
+  padding: 30rpx 45rpx 40rpx;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.info-content .title{
+  text-align: center;
+  font-size: 32rpx;
+  color: #333;
+}
+
+.info-content .info-text{
+  font-size: 32rpx;
+  color: #333;
+  margin-top: 50rpx;
+}
+
+.info-box .btn{
+  margin: 40rpx 95rpx 0;
+  height: 80rpx;
+  background: #000;
+  line-height: 80rpx;
+  text-align: center;
+  color: #fff;
   font-size: 32rpx;
 }

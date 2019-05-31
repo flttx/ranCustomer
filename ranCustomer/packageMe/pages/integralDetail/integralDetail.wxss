@@ -1,13 +1,20 @@
 /* packageMe/pages/integralDetail/integralDetail.wxss */
-.container{
-  padding: 0 40rpx;
-  width: calc(100% - 80rpx);
+.content{
+ 
+}
+
+.body{
+  background: #fff;
+  padding: 0 15rpx;
 }
 
 .row{
-  height: 100rpx;
-  border-bottom: 1px solid #999;
   position: relative;
+  padding: 13rpx 30rpx 13rpx;
+}
+
+.row:not(:last-child){
+  border-bottom: 1px solid #eee;
 }
 
 .row view:not(.num){
@@ -17,17 +24,20 @@
 
 .text{
   margin-top: 10rpx;
+  font-size: 28rpx;
+  color: #333;
 }
 
 .time{
   color: #999;
-  font-size: 28rpx;
+  font-size: 22rpx;
+  margin-top: 13rpx;
 }
 
 .num{
   position: absolute;
-  right: 0;
-  top: 0;
-  height: 80rpx;
-  line-height: 80rpx;
+  right: 30rpx;
+  top: calc(50% - 14rpx);
+  color: #D9AB42;
+  font-size: 28rpx;
 }

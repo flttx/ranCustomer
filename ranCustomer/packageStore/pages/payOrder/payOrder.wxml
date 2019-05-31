@@ -1,22 +1,45 @@
 <!--packageStore/pages/payOrder/payOrder.wxml-->
 <view class="content">
-  <view class="price">订单金额：<text>￥<text class="big">{{price}}</text></text></view>
-  <view class="time">支付剩余：{{minute}}:{{second}}</view>
+  <view class="shadow-box"></view>
+  <view class="price-box">
+    <view class="text">订单待支付</view>
+    <view class="price">￥<text class="big">{{price}}</text></view>
+    <view class="time">剩余时间：{{minute}}:{{second}}，逾期自动取消订单</view>
+  </view>
 
+
+<view class="pay-box">
   <view class="title">
-      选择支付方式
+    选择支付方式
   </view>
   <radio-group class="radio-group" bindchange="radioChange">
     <label class="radio">
+      <image src="/img/wepay.png"></image>
       <radio value="1" checked="true" />
-      账户余额支付<text>（剩余￥{{userInfo.user_money}}）</text>
-    </label>
-    <label class="radio">
-      <radio value="2"/>
       微信支付
     </label>
+    <label class="radio">
+      <image src="/img/wepay.png"></image>
+      <radio value="2"/>
+      余额支付<text class="balanceTip" wx:if="{{balace<realPrice}}">（余额不足，立即充值）</text>
+    </label>
+    
   </radio-group>
+</view>
+<view class="tip"><text>支付说明</text><text class="tip-icon" catchtap="clickTip">?</text></view>
+  
   <view class="pay-btn" bindtap='pay'>
-    支付
+    确认付款    ￥{{price}}
   </view>
+</view>
+
+
+<view class="mask" wx:if="{{showInfo}}" bindtap="hideMask"></view>
+
+<view class="info-box" wx:if="{{showInfo}}">
+  <view class="info-content">
+    <view class="title">弹窗标题</view>
+    <view class="info-text"> 打开姐啊来得及卡机胜利大街阿数据库连接来看看垃圾圣诞节空间</view>
+  </view>
+  <view class="btn" catchtap="hideMask">按钮</view>
 </view>

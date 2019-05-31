@@ -11,7 +11,7 @@
   <swiper scroll-y bindchange="changeSwiper" current='{{currentIndex}}'>
     <swiper-item wx:for="{{tabs}}" wx:key="index">
       <block wx:if="{{index==0}}">
-        <view class="item" wx:for="{{systemMessages}}" wx:for-index="i" wx:key="i">
+        <view class="item" wx:for="{{systemMessages}}" wx:for-index="i" wx:key="i" bindtap="toMessageDetail">
           <view class="img-box"></view>
           <view class="item-info">
             <view class="title">{{item.title}}<text class="new-icon" wx:if="{{!item.hasRead}}"></text></view>
@@ -30,14 +30,30 @@
             <view class="comment-content">哇塞，这真是amazing呢！</view>
           </view>
           <view class="comment-img"></view>
+          <view class="reply-box">
+            <text>回复：</text>
+            <input></input>
+          </view>
         </view>
 
         <view class="comment-item">
           <view class="comment-info">
-            <view class="user-img" style="margin-top: 19rpx;"></view>
+            <view class="user-img"></view>
             <view class="comment-title">何某<text style="margin: 0 10rpx;">赞</text>了您的动态</view>
           </view>
           <view class="comment-img"></view>
+        </view>
+
+        <view class="comment-item hasRead">
+          <view class="comment-info">
+            <view class="user-img"></view>
+            <view class="comment-title">何某<text style="margin: 0 10rpx;">评论</text>了您的动态：</view>
+            <view class="comment-content">哇塞，这真是amazing呢！</view>
+          </view>
+          <view class="comment-img"></view>
+          <view class="reply-box">
+            <text>回复：谢谢您嘞</text>
+          </view>
         </view>
       </block>
     </swiper-item>

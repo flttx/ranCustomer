@@ -10,14 +10,17 @@ Page({
    */
   data: {
     userInfo: wx.getStorageSync("userInfo"),  //用户信息
-    accountList: [], //账户流水
+    rechargeList: [{ amount: 100, points: 1000 }, { amount: 200, points: 2000 }, { amount: 500, points: 5000 },
+      { amount: 1000, points: 10000 }], //充值配置
+    showInfo: false, //显示积分提示
+    buttonClicked: false, //防止重复点击
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getAccount();
+    
   },
 
   /**
@@ -69,30 +72,30 @@ Page({
 
   },
 
-  //获取账户流水
-  getAccount(){
-    let that = this;
-    let param = {
-      token: this.data.userInfo.token
-    };
-    network.ajax(network.USER_ACCOUNT, "post", param, res=>{
-      res.data.map(function(value){
-        if (Number(value.money_change)>0){
-          value.money_change = "+" + value.money_change;
-        }
+  //点击充值说明
+  clickShowInfo() {
+    if (!this.data.buttonClicked) {
+      util.buttonClicked(this);
+      this.setData({
+        showInfo: true
       });
-      that.setData({
-        accountList: res.data
-      });
+    }
+  },
+
+  hideMask() {
+    
+    this.setData({
+      showInfo: false
     });
   },
 
-  /**
-   * 跳转充值
-   */
-  toRecharge: function(){
-    wx.navigateTo({
-      url: '../recharge/recharge',
-    })
+  //跳转余额明细
+  toBalanceDetail(){
+    if (!this.data.buttonClicked) {
+      util.buttonClicked(this);
+      wx.navigateTo({
+        url: '../balanceDetail/balanceDetail',
+      });
+    }
   }
 })

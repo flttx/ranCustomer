@@ -163,24 +163,27 @@ Page({
     param.goods_id = that.data.goods_id;
     param.number = that.data.number;
     param.pay_points_type = that.data.pay_points_type;
-    network.ajax(network.PLACE_ORDER, "post", param, res=>{
+    // network.ajax(network.PLACE_ORDER, "post", param, res=>{
+      // wx.navigateTo({
+      //   url: '../payOrder/payOrder?price=' + that.data.realPrice + '&order_sn=' + res.data.order_sn,
+      // });
       wx.navigateTo({
-        url: '../payOrder/payOrder?price=' + that.data.realPrice + '&order_sn=' + res.data.order_sn,
+        url: '../payOrder/payOrder?price=' + that.data.realPrice,
       });
-    }, err=>{
-      if(err.code == 401){
-        that.setData({
-          login: true
-        });
-      } else {
-        if(err.msg){
-          wx.showToast({
-            title: err.msg,
-            icon: "none"
-          });
-        }
+    // }, err=>{
+    //   if(err.code == 401){
+    //     that.setData({
+    //       login: true
+    //     });
+    //   } else {
+    //     if(err.msg){
+    //       wx.showToast({
+    //         title: err.msg,
+    //         icon: "none"
+    //       });
+    //     }
         
-      }
-    }, "提交中...");
+    //   }
+    // }, "提交中...");
   }
 })

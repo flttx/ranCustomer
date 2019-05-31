@@ -71,7 +71,12 @@
         "pages/memberCenter/memberCenter",
         "pages/addressList/addressList",
         "pages/addAddress/addAddress",
-        "pages/message/message"
+        "pages/message/message",
+        "pages/couponDetail/couponDetail",
+        "pages/balanceDetail/balanceDetail",
+        "pages/goodDetail/goodDetail",
+        "pages/messageDetail/messageDetail",
+        "pages/cartSettlement/cartSettlement"
       ]
     },
     {

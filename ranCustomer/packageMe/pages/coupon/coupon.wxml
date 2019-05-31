@@ -1,24 +1,130 @@
 <!--packageMe/pages/coupon/coupon.wxml-->
-<view class="container">
-  <view class="tabs">
-    <view class="tabs-item" wx:for="{{tabs}}" wx:for-index="tabsIndex" wx:key="tabsIndex" bindtap="changeTab" data-current="{{tabsIndex}}">{{item}}
-      <view class="bar" wx:if="{{currentTab == tabsIndex}}"></view>
-    </view>
+<view class="content">
+  <view class="search-row">
+    <input placeholder='输入兑换码'></input>
+    <view class="btn">兑换</view>
   </view>
-  <swiper class="tab-box" current="{{currentTab}}" bindchange="changeSwiper">
-    <swiper-item wx:for="{{state}}" wx:key="index">
-      <scroll-view scroll-y style="height:100%;padding: 40rpx 40rpx 40rpx 40rpx;">
-        <view class="box">
-          <view class="coupon-title">优惠券名称优惠券名称优惠券名称优惠券名称优惠券名称优惠券名称优惠券名称优惠券名称优惠券名称优惠券名称</view>
-          <view class="coupon-price">￥100</view>
+ 
+      <scroll-view scroll-y>
+        <view class="box" bindtap='toCouponDetail'>
           <view class="coupon-info">
-            <view>满200元可用</view>
-            <view>使用期限：<text>2019-03-12</text><text style="margin: 0 10rpx">至</text><text>2020-03-12</text></view>
-            <view bindtap="showDetail">详细说明</view>
-            <view wx:if="{{isShowDetail}}">大街上客户端接口哈吉斯快递很快就爱上空间</view>
+            <view class="coupon-price">
+              <view class="price-amount">
+                20
+                <view class="price-unit">￥</view>
+              </view>
+              
+            </view>
+            <text class="coupon-title single-line">母亲节鲜花券</text>
+          </view>
+          <view class="coupon-desc">
+            <view>
+              <text>· 仅限于Nous</text>
+              <text>· 有效期：2019.4.23-2019.8.23</text>
+            </view>
+            <image src="/img/xianhua.png"></image>
+          </view>
+        </view>
+
+        <view class="box">
+          <view class="coupon-info">
+            <view class="coupon-price">
+              <view class="price-amount">
+                60
+                <view class="price-unit">￥</view>
+              </view>
+              
+            </view>
+            <text class="coupon-title">现金洗车券</text>
+          </view>
+          <view class="coupon-desc">
+            <view>
+              <text>· 仅限于帕拉丁</text>
+              <text>· 有效期：2019.4.23-2019.8.23</text>
+            </view>
+            <image src="/img/qiche.png"></image>
+          </view>
+        </view>
+
+        <view class="box">
+          <view class="coupon-info">
+            <view class="coupon-price">
+              <view class="price-amount">
+                60
+                <view class="price-unit">￥</view>
+              </view>
+              
+            </view>
+            <text class="coupon-title">洗护抵用券</text>
+          </view>
+          <view class="coupon-desc">
+            <view>
+              <text>· 仅限于MISS LUSSO</text>
+              <text>· 有效期：2019.4.23-2019.8.23</text>
+            </view>
+            <image src="/img/baobao.png"></image>
+          </view>
+        </view>
+
+        <view class="box">
+          <view class="coupon-info">
+            <view class="coupon-price">
+              <view class="price-amount">
+                60
+                <view class="price-unit">￥</view>
+              </view>
+              
+            </view>
+            <text class="coupon-title">洗护抵用券</text>
+          </view>
+          <view class="coupon-desc">
+            <view>
+              <text>· 仅限于MISS LUSSO</text>
+              <text>· 有效期：2019.4.23-2019.8.23</text>
+            </view>
+            <image src="/img/baobao.png"></image>
+          </view>
+        </view>
+
+        <view class="box">
+          <view class="coupon-info">
+            <view class="coupon-price">
+              <view class="price-amount">
+                60
+                <view class="price-unit">￥</view>
+              </view>
+              
+            </view>
+            <text class="coupon-title">洗护抵用券</text>
+          </view>
+          <view class="coupon-desc">
+            <view>
+              <text>· 仅限于MISS LUSSO</text>
+              <text>· 有效期：2019.4.23-2019.8.23</text>
+            </view>
+            <image src="/img/baobao.png"></image>
+          </view>
+        </view>
+
+        <view class="box">
+          <view class="coupon-info">
+            <view class="coupon-price">
+              <view class="price-amount">
+                60
+                <view class="price-unit">￥</view>
+              </view>
+              
+            </view>
+            <text class="coupon-title">洗护抵用券</text>
+          </view>
+          <view class="coupon-desc">
+            <view>
+              <text>· 仅限于MISS LUSSO</text>
+              <text>· 有效期：2019.4.23-2019.8.23</text>
+            </view>
+            <image src="/img/baobao.png"></image>
           </view>
         </view>
       </scroll-view>
-    </swiper-item>
-  </swiper>
+
 </view>

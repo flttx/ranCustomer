@@ -6,7 +6,7 @@
 
 .banner-img{
   width: 100%;
-  height: 480rpx;
+  height: 520rpx;
 }
 
 .img-num{
@@ -23,29 +23,92 @@
   text-align: center;
 }
 
+.product-box{
+  height: 182rpx;
+  padding: 28rpx 44rpx;
+  box-sizing: border-box;
+}
+
+.product-box image{
+  float: left;
+  width: 122rpx;
+  height: 122rpx;
+}
+
+.product-info{
+  float: left;
+  margin-left: 40rpx;
+  height: 122rpx;
+  position: relative;
+  width: calc(100% - 164rpx);
+}
+
+.product-info>text{
+  display: block;
+}
+
+.product-name{
+  font-size: 30rpx;
+  color: #333;
+}
+
+.product-desc{
+  color: #666;
+  font-size: 28rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.product-price{
+  position: absolute;
+  width: 100%;
+  height: 30rpx;
+  bottom: 0;
+  left: 0;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.product-price .tag{
+  margin-left: 30rpx;
+  padding: 0 14rpx;
+  background: #EBB76A;
+  color: #fff;
+  border-radius: 20rpx;
+}
+
+
+
 .comment-box{
-  padding: 40rpx;
+  /* padding: 30rpx; */
+  margin: 30rpx;
+  padding-bottom: 10rpx;
+  border-bottom: 1px solid #DCDCDC;
 }
 
 .comment-img{
-  height: 100rpx;
-  padding: 0 20rpx;
+  height: 80rpx;
 }
 
 .comment-img image{
   float: left;
-  width: 80rpx;
-  height: 80rpx;
+  width: 70rpx;
+  height: 70rpx;
   border-radius: 50%;
   border: 1px solid;
 }
 
 .comment-userInfo{
   float: left;
-  height: 80rpx;
+  height: 40rpx;
   width: 200rpx;
   font-size: 28rpx;
   padding-left: 20rpx;
+}
+
+.comment-user-name{
+  color: #999;
+  font-size: 24rpx;
 }
 
 .comment-userInfo>view{
@@ -54,15 +117,29 @@
   line-height: 40rpx;
 }
 
+.user-name{
+  font-size: 30rpx;
+  color: #010101;
+}
+
 .comment-date{
   font-size: 26rpx;
   color: #999;
 }
 
 .comment-text{
+  margin-top: 20rpx;
   font-size: 28rpx;
-  margin-bottom: 40rpx;
   padding: 0 20rpx;
+  color: #666;
+}
+
+.showAll{
+  height: 28rpx;
+  text-align: right;
+  font-size: 28rpx;
+  color: #333;
+  padding-right: 20rpx;
 }
 
 .store-box{
@@ -105,14 +182,51 @@
   padding: 10rpx 0;
 }
 
+.operation-box{
+  height: 30rpx;
+  margin-top: 20rpx;
+}
+
+.operation-box image{
+  float: left;
+  width: 31rpx;
+  height: 28rpx;
+  margin-top: 2rpx;
+}
+
+.operation-box text{
+  float: left;
+  margin-left: 10rpx;
+  color: #333;
+  font-size: 30rpx;
+  margin-right: 60rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+}
+
 .line{
   width: 100%;
   height: 20rpx;
   background-color: #F8F8F8;
 }
 
+image.comment-user-img{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.comment-user-box{
+  height: 40rpx;
+}
+
 .user-box{
-  padding: 20rpx 50rpx;
+  padding: 0 50rpx;
+}
+
+.comment-count{
+  height: 30rpx;
+  font-size: 22rpx;
+  color: #666;
   margin-bottom: 20rpx;
 }
 
@@ -126,81 +240,106 @@
 }
 
 .user-comment{
-  font-size: 28rpx;
-  padding-left: 100rpx;
+  font-size: 26rpx;
+  padding-left: 60rpx;
+  margin-top: 10rpx;
+  color: #333;
 }
 
 .reply-box{
-  margin-left: 100rpx;
-  margin-top: 10rpx;
-  padding-left: 10rpx;
-  border-left: 10px solid #f8f8f8;
-  font-size: 28rpx;
+  margin-left: 60rpx;
+  margin-top: 30rpx;
+  font-size: 24rpx;
+
 }
 
-.sender, .replyer{
+.reply-content image{
+  width: 30rpx;
+  height: 30rpx;
+  border: 1px solid;
+  border-radius: 50%;
+  vertical-align: top;
+}
+
+.reply-name{
+  margin-left: 10rpx;
+  font-size: 22rpx;
   color: #999;
 }
 
+.sender, .replyer{
+  color: #333;
+  display: block;
+  margin-top: 7rpx;
+  margin-left: 40rpx;
+  margin-bottom: 20rpx;
+}
+
+.replyer-name{
+  color: #999;
+}
+
+.showComment{
+  color: #D9AB42;
+  font-size: 24rpx;
+  margin: 20rpx 0 30rpx 40rpx;
+}
+
 .send-box{
-  width: calc(100% - 80rpx);
+  width: calc(100% - 60rpx);
   height: 60rpx;
-  padding: 20rpx 40rpx;
+  padding: 15rpx 30rpx;
   background-color: #fff;
   position: fixed;
   bottom: 0;
   left: 0;
-  border-top: 1px solid #999;
 }
 
+.border-bottom{
+  border-bottom: 1px solid #DCDCDC;
+}
+
+.showAllComment{
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #333;
+  text-align: center;
+  font-size: 26rpx;
+  border-top: 1px solid #DCDCDC;
+}
+
+
+
+
+
 .send-input{
-  border: 0;
-  width: 400rpx;
+  width: calc(100% - 120rpx);
   height: 60rpx;
   line-height: 60rpx;
   font-size: 28rpx;
   padding-left: 20rpx;
-  border-radius: 10rpx;
-  background-color: #f8f8f8;
   float: left;
+  border: 1px solid #DCDCDC;
 }
 
-.send-box image{
-  float: right;
-  width: 48rpx;
-  height: 48rpx;
-  margin-right: 10rpx;
-  margin-top: 6rpx;
-}
-
-.send-box text{
+.send-btn{
   float: right;
   height: 60rpx;
   line-height: 60rpx;
-  color: #999;
-  font-size: 28rpx;
-  margin-right: 40rpx;
-}
-
-button{
-  float: right;
-  width: 60rpx;
-  height: 60rpx;
-  text-align: right;
-  margin-right: 10rpx;
-  padding-right: 0;
-  padding-left: 0;
+  color: #D9AB42;
   font-size: 32rpx;
-  line-height: 40rpx;
-  border: none;
+}
+
+.share-btn{
+  float: left;
+  width: 40rpx;
+  height: 32rpx;
+  border: none !important;
   background-color: white;
+  padding: 0;
+  border-radius: 0;
 }
 
-.button-hover{
-  background-color: #fff;
-  color: #fff;
-}
-
-button::after {
-  border: 0; 
+.share-btn image{
+  margin-top: 1rpx;
 }

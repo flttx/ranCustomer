@@ -9,6 +9,14 @@ const formatTime = date => {
   return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
 
+const formatDate = date => {
+  const year = date.getFullYear()
+  const month = date.getMonth() + 1
+  const day = date.getDate()
+
+  return [year, month, day].map(formatNumber).join('/');
+}
+
 const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
@@ -46,9 +54,20 @@ function buttonClicked(self) {
   }, 500);
 }
 
+//数字转千分位
+function formatNum(num) {
+  num += '';
+  if (!num.includes('.')) num += '.';
+  return num.replace(/(\d)(?=(\d{3})+\.)/g, function ($0, $1) {
+    return $1 + ',';
+  }).replace(/\.$/, '');
+}
+
 
 module.exports = {
   formatTime: formatTime,
+  formatDate: formatDate,
   buttonClicked: buttonClicked,
+  formatNum: formatNum,
   url: 'https://wxapi.xinglinjiuye.cn/'
 }

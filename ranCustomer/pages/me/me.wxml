@@ -1,79 +1,88 @@
 <!--pages/me/me.wxml-->
-<view class="container">
-  <view class="header">
-    <button wx:if="{{userInfo.photo && !hasPhone}}" open-type='getPhoneNumber' bindgetphonenumber='getPhoneNumber' class="bind-phone">请先绑定手机号>>></button>
-    <view class="my-info">
-      <view class="avatarUrl" bindtap="toMyInfo">
-        <image src="{{userInfo.photo}}" background-size="cover">
-      </image>
-      </view>
-      <view class="info">
-        <view class="nickName" bindtap="toMyInfo" wx:if="{{userInfo.user_name}}">{{userInfo.user_name}}</view>
-        <button wx:else open-type='getUserInfo' bindgetuserinfo='login' lang="zh_CN" class="login">用户登录</button>
-        <view bindtap="toMyInfo" wx:if="{{userInfo.user_name}}">个人信息></view>
-      </view>
-      <image src="/img/tongzhi.png" class="message-img" catchtap='toMessage'></image>
-    </view>
-    <view class="my-coupon">
-      <view bindtap="toBalance">
-        <view>{{userInfo.user_money}}</view>
-        <view>余额</view>
-      </view>
-      <view bindtap="toCoupon">
-        <view>{{userInfo.coupon_user?userInfo.coupon_user:0}}</view>
-        <view>优惠券</view>
-      </view>
-      <view bindtap="toIntegral">
-        <view>{{userInfo.pay_points}}</view>
-        <view>积分</view>
-      </view>
-    </view>
-  </view>
+<view class="content">
+  <scroll-view scroll-y style="height: 100%;">
 
-  <view class="body">
-    <view class="card vip">VIP特权介绍</view>
-    <view class="card my-service">
-      <view class="title">我的服务</view>
-      <view class="my-service-item">
-        <view bindtap="toOrderList">
-          <view class="icon"><image></image></view>
-          <view>我的订单</view>
+    <view class="header">
+      <view class="user-box">
+
+        <button wx:if="{{userInfo.photo && !hasPhone}}" open-type='getPhoneNumber' bindgetphonenumber='getPhoneNumber' class="bind-phone">请先绑定手机号>>></button>
+        <view class="my-info">
+          <view class="avatarUrl" bindtap="toMyInfo">
+            <image src="{{userInfo.photo}}" background-size="cover">
+            </image>
+          </view>
+          <view class="info">
+            <view class="nickName" bindtap="toMyInfo" wx:if="{{userInfo.user_name}}">{{userInfo.user_name}}</view>
+            <button wx:else open-type='getUserInfo' bindgetuserinfo='login' lang="zh_CN" class="login">用户登录</button>
+            <view class="toMyInfo" bindtap="toMyInfo" wx:if="{{userInfo.user_name}}">个人信息></view>
+          </view>
+          <view class="yellow-line"></view>
+        </view>
+        <view class="balance-box">
+          <view class="balance-amount">
+            <text bindtap='toBalance'><text class="balance-unit" bindtap='toBalance'>￥</text>{{userInfo.user_money}}</text></view>
+          <view class="balance-text"><text bindtap='toBalance'>账户余额</text></view>
+        </view>
+
+
+
+
+
+      </view>
+
+      <view class="my-coupon">
+
+        <view bindtap="toIntegral">
+          <view class="amount">{{userInfo.pay_points}}</view>
+          <view>积分</view>
         </view>
         <view bindtap="toCoupon">
-          <view class="icon"><image></image></view>
-          <view>优惠券</view>
+          <view class="amount">{{userInfo.coupon_user?userInfo.coupon_user:0}}</view>
+          <view>卡券</view>
         </view>
-        <view bindtap="toIntegral">
-          <view class="icon"><image></image></view>
-          <view>我的积分</view>
+        <view bindtap="toMessage">
+          <view class="amount">0</view>
+          <view>消息</view>
         </view>
-        <view bindtap="toGoodsList">
-          <view class="icon"><image></image></view>
-          <view>好货</view>
-        </view>
+
       </view>
     </view>
-    <view class="card my-service">
-      <view class="title">其他服务</view>
-      <view class="my-service-item">
-        <view>
-          <view class="icon"><image></image></view>
-          <view>邀请好友</view>
-        </view>
-        <view bindtap="toHelpCenter">
-          <view class="icon"><image></image></view>
-          <view>帮助中心</view>
-        </view>
-        <view bindtap='toMerchantEnter'>
-          <view class="icon"><image></image></view>
-          <view>商户入驻</view>
-        </view>
-        <view>
-          <view class="icon"><image></image></view>
-          <view>关于我们</view>
+
+    <view class="body">
+      <view class="card my-service">
+        <view class="my-service-item">
+          <view bindtap="toOrderList">
+            <image src="/img/order.png"></image>
+            <view class="label">我的订单</view>
+          </view>
+          <view bindtap="toGoodsList">
+            <image src="/img/goods.png"></image>
+            <view class="label">好货</view>
+          </view>
+          <view bindtap="toMyFollow">
+            <image src="/img/follow.png"></image>
+            <view class="label">我的关注</view>
+          </view>
         </view>
       </view>
-      
+      <view class="card my-service">
+        <view class="my-service-item">
+          <view>
+            <image src="/img/about.png"></image>
+            <view class="label">关于我们</view>
+          </view>
+          <view bindtap="toHelpCenter">
+            <image src="/img/help.png"></image>
+            <view class="label">帮助中心</view>
+          </view>
+          <view>
+            <image src="/img/invite.png"></image>
+            <view class="label">邀请好友</view>
+          </view>
+        </view>
+
+      </view>
     </view>
-  </view>
+
+  </scroll-view>
 </view>

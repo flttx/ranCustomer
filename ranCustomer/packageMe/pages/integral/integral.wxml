@@ -1,22 +1,53 @@
 <!--packageMe/pages/integral/integral.wxml-->
-<view class="container">
+<view class="content">
   <view class="head">
-    <view class="circle">
-      <view class="integral-text">我的积分</view>
-      <view class="integral-value">{{userInfo.pay_points}}</view>
-    </view>
-    <view class="menu-box">
-      <view class="menu-item" bindtap='toIntegralDetail'>
-        <view><text>明细</text><image src="/img/play.png"></image></view>
-        <image class="menu-icon" src="/img/integral.png"></image>
+    <view class="date-box">
+      <view class="calendar {{index==0?'current':'other'}}" wx:for="{{weekDay}}" wx:key="index">
+        <view class="month">{{item.month}}.</view>
+        <view class="day">{{item.day}}</view>
       </view>
-      <view class="menu-item" bindtap="sign">
-        <view><text>签到</text><image src="/img/play.png"></image></view>
-        <image class="menu-icon" src="/img/sign.png"></image>
+      <view class="sign-box">
+          <text class="points">{{userInfo.pay_points}}</text>
+          <view class="sign-btn" bindtap="sign">立即签到</view>
+          <view class="point-info">
+            <text>当前积分</text>
+            <image src="/img/info.png" bindtap="clickShowInfo"></image>
+            |
+            <text style="margin-left: 20rpx" bindtap="toIntegralDetail">积分明细</text>
+          </view>
       </view>
     </view>
+
+
+
+ 
   </view>
 
-  <view class="line"></view>
 
+   <view class="body">
+    <view class="body-title">积分商城</view>
+      <scroll-view scroll-y style="height: calc(100% - 74rpx);">
+        <view class="exchange-item" wx:for="{{exchangeList}}" wx:key="index">
+          <view class="exchange-img"></view>
+          <view class="exchange-name">{{item.name}}</view>
+          <view class="exchange-points">{{item.points}}分</view>
+          <view class="exchange-btn">
+            <text>立即换购</text>
+          </view>
+        </view>
+
+        <view style="height: 20rpx;"></view>
+      </scroll-view>
+    </view>
+
+
+  <view class="mask" wx:if="{{showInfo}}" bindtap="hideMask"></view>
+
+  <view class="info-box" wx:if="{{showInfo}}">
+    <view class="info-content">
+      <view class="title">弹窗标题</view>
+      <view class="info-text"> 打开姐啊来得及卡机胜利大街阿数据库连接来看看垃圾圣诞节空间</view>
+    </view>
+    <view class="btn" catchtap="hideMask">按钮</view>
+  </view>
 </view>

@@ -1,139 +1,43 @@
 <!--packageMe/pages/myFollow/myFollow.wxml-->
-<view class="container">
-  <scroll-view scroll-y>
-    <view class="store-item">
-      <image class="store-img" src="/img/2.jpg"></image>
-      <view class="store-info">
-        <view class="store-name">
-          <view class="store-name-text single-line">然の奢侈品护理店</view>
-          <view class="thumb-box">
-            <text>2</text>
-            <image src="/img/thumb.png"></image>
-          </view>
-        </view>
-        <view class="store-desc">德基广场店</view>
-        <view class="store-time">营业时间 10:00-22:00</view>
+<view class="content">
+  <view class="tab">
+    <view class="tab-box">
+      <view wx:for="{{tabs}}" wx:key="item" data-current="{{index}}" class="tab-item {{currentIndex == index?'active':''}}" bindtap="changeTab">
+        {{item}}
+        <view class="bar" wx:if="{{currentIndex == index}}"></view>
       </view>
     </view>
+  </view>
 
-    <view class="store-item">
-      <image class="store-img" src="/img/2.jpg"></image>
-      <view class="store-info">
-        <view class="store-name">
-          <view class="store-name-text single-line">然の奢侈品护理店</view>
-          <view class="thumb-box">
-            <text>2</text>
-            <image src="/img/thumb.png"></image>
+  <swiper class="swiper-box" current="{{currentIndex}}" bindchange="changeSwiper">
+    <swiper-item>
+      <scroll-view scroll-y>
+        <view class="list">
+          <view class="store-item">
+            <image class="store-img" src="/img/2.jpg"></image>
+            <view class="store-info">
+              <view class="store-title">MISS LUSSO
+                <text>德基广场店</text>
+              </view>
+              <view class="address double-line">江苏省南京市玄武区新街口德基广场二期负一楼C161</view>
+            </view>
           </view>
         </view>
-        <view class="store-desc">德基广场店</view>
-        <view class="store-time">营业时间 10:00-22:00</view>
-      </view>
-    </view>
+        <view class="noMore">没有更多了</view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y>
+        <view class="product-list">
+          <view class="product-item" wx:for="{{productList}}" wx:key="index" style="border-bottom:{{productList.length%2==0&&index==productList.length-2?'0':''}}">
+            <view class="product-img"></view>
+            <view class="product-name">{{item.name}}</view>
+            <view class="product-price">￥{{item.price}}</view>
+          </view>
+        </view>
+        <view class="noMore">没有更多了</view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
 
-    <view class="store-item">
-      <image class="store-img" src="/img/2.jpg"></image>
-      <view class="store-info">
-        <view class="store-name">
-          <view class="store-name-text single-line">然の奢侈品护理店</view>
-          <view class="thumb-box">
-            <text>2</text>
-            <image src="/img/thumb.png"></image>
-          </view>
-        </view>
-        <view class="store-desc">德基广场店</view>
-        <view class="store-time">营业时间 10:00-22:00</view>
-      </view>
-    </view>
-
-    <view class="store-item">
-      <image class="store-img" src="/img/2.jpg"></image>
-      <view class="store-info">
-        <view class="store-name">
-          <view class="store-name-text single-line">然の奢侈品护理店</view>
-          <view class="thumb-box">
-            <text>2</text>
-            <image src="/img/thumb.png"></image>
-          </view>
-        </view>
-        <view class="store-desc">德基广场店</view>
-        <view class="store-time">营业时间 10:00-22:00</view>
-      </view>
-    </view>
-
-    <view class="store-item">
-      <image class="store-img" src="/img/2.jpg"></image>
-      <view class="store-info">
-        <view class="store-name">
-          <view class="store-name-text single-line">然の奢侈品护理店</view>
-          <view class="thumb-box">
-            <text>2</text>
-            <image src="/img/thumb.png"></image>
-          </view>
-        </view>
-        <view class="store-desc">德基广场店</view>
-        <view class="store-time">营业时间 10:00-22:00</view>
-      </view>
-    </view>
-
-    <view class="store-item">
-      <image class="store-img" src="/img/2.jpg"></image>
-      <view class="store-info">
-        <view class="store-name">
-          <view class="store-name-text single-line">然の奢侈品护理店</view>
-          <view class="thumb-box">
-            <text>2</text>
-            <image src="/img/thumb.png"></image>
-          </view>
-        </view>
-        <view class="store-desc">德基广场店</view>
-        <view class="store-time">营业时间 10:00-22:00</view>
-      </view>
-    </view>
-
-    <view class="store-item">
-      <image class="store-img" src="/img/2.jpg"></image>
-      <view class="store-info">
-        <view class="store-name">
-          <view class="store-name-text single-line">然の奢侈品护理店</view>
-          <view class="thumb-box">
-            <text>2</text>
-            <image src="/img/thumb.png"></image>
-          </view>
-        </view>
-        <view class="store-desc">德基广场店</view>
-        <view class="store-time">营业时间 10:00-22:00</view>
-      </view>
-    </view>
-
-    <view class="store-item">
-      <image class="store-img" src="/img/2.jpg"></image>
-      <view class="store-info">
-        <view class="store-name">
-          <view class="store-name-text single-line">然の奢侈品护理店</view>
-          <view class="thumb-box">
-            <text>2</text>
-            <image src="/img/thumb.png"></image>
-          </view>
-        </view>
-        <view class="store-desc">德基广场店</view>
-        <view class="store-time">营业时间 10:00-22:00</view>
-      </view>
-    </view>
-
-    <view class="store-item">
-      <image class="store-img" src="/img/2.jpg"></image>
-      <view class="store-info">
-        <view class="store-name">
-          <view class="store-name-text single-line">然の奢侈品护理店</view>
-          <view class="thumb-box">
-            <text>2</text>
-            <image src="/img/thumb.png"></image>
-          </view>
-        </view>
-        <view class="store-desc">德基广场店</view>
-        <view class="store-time">营业时间 10:00-22:00</view>
-      </view>
-    </view>
-  </scroll-view>
 </view>

@@ -1,0 +1,12 @@
+<!--packageMe/pages/balanceDetail/balanceDetail.wxml-->
+<view class="content">
+  <view class="body">
+    <view class="row" wx:for="{{accountList}}" wx:key="index">
+      <view class="text">{{item.change_name}}</view>
+      <view class="time">{{item.created_at}}</view>
+      <view class="num">{{item.money_change}}</view>
+    </view>
+  </view>
+  
+
+</view>

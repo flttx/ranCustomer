@@ -1,19 +1,48 @@
 <!--packageMe/pages/balance/balance.wxml-->
-<view class="container">
+<view class="content">
   <view class="header">
     <view class="info">
-      <view class="title">账户余额</view>
-      <view class="balance">{{userInfo.user_money}}元</view>
-      <view class="btn" bindtap="toRecharge">充值</view>
+      <view class="title">当前余额</view>
+      <view class="balance">{{userInfo.user_money}}<text>元</text></view>
     </view>
   </view>
-  <view class="list-title">余额明细</view>
-  <scroll-view scroll-y style="height: calc(100% - 420rpx);padding: 0 40rpx;width: calc(100% - 80rpx);">
-    <view class="list-item" wx:for="{{accountList}}" wx:key="index">
-      <view class="list-type">{{item.change_name}}</view>
-      <view class="list-date">{{item.created_at}}</view>
-      <text class="num">{{item.money_change}}</text>
+  <view class="icon-row">
+    <view class="icon-box">
+      <image src="/img/mingxi.png" bindtap="toBalanceDetail"></image>
+      <text bindtap="toBalanceDetail">账户明细</text>
     </view>
+    <view class="icon-box">
+      <image src="/img/shuoming.png" bindtap='clickShowInfo'></image>
+      <text bindtap='clickShowInfo'>充值说明</text>
+    </view>
+  </view>
 
-  </scroll-view>
+  <view class="recharge-box">
+    <view class="recharge-title">充值金额</view>
+    <scroll-view scroll-y style="height: 510rpx;">
+      <view class="recharge-item" wx:for="{{rechargeList}}" wx:key="index">
+        <view class="recharge-amount">{{item.amount}}<text>元</text></view>
+        <view class="recharge-points">赠送{{item.points}}积分</view>
+      </view>
+
+    </scroll-view>
+  </view>
+  
+
+  <view class="mask" wx:if="{{showInfo}}" bindtap="hideMask"></view>
+
+  <view class="info-box" wx:if="{{showInfo}}">
+    <view class="info-content">
+      <view class="title">弹窗标题</view>
+      <view class="info-text"> 打开姐啊来得及卡机胜利大街阿数据库连接来看看垃圾圣诞节空间</view>
+    </view>
+    <view class="btn" catchtap="hideMask">按钮</view>
+  </view>
+
+</view>
+
+
+ <view class="tips">点击充值，即表示您已同意<text bindtap='clickShowInfo'>《充值协议》</text></view>
+ <view class="add-btn" bindtap="commit">
+  充值
 </view>

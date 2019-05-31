@@ -8,10 +8,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tabs: ['推荐','热门'],
+    tabs: ['热门','推荐'],
     currentTab: 0,
-    state: [1, 2],
-    userInfo: {}
+    userInfo: {},
+    hotList: [],
+    commentList: []
   },
 
   /**

@@ -34,7 +34,7 @@
     <textarea placeholder='详细地址：如道路、门牌号、小区、楼栋号、单元室等' bindinput='inputAddress' value="{{address}}"></textarea>
   </view>
   <radio-group>
-    <label class="radio" bindtap="clickRadio">
+    <label class="radio" bindtap="clickRadio" style="color:{{setDefault?'#D9AB42':''}}">
       <radio checked="{{setDefault}}"/>
       设置默认地址
     </label>

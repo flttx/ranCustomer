@@ -37,7 +37,7 @@
           使用优惠券
           <view class="right-text">
             <text class="">暂无可用优惠券</text>
-            <image src="/img/jiantou.jpg"></image>
+            <image src="/img/arrow-right.png"></image>
           </view>
         </view>
         <view class="row">

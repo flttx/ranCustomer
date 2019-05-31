@@ -4,7 +4,7 @@
   <view class="question-box" wx:for="{{questionList}}" wx:key="index">
     <view class="question-title" bindtap="showAnswer" data-index="{{index}}">
       {{item.title}}
-      <image src="/img/{{clicked?'up.png':'down.png'}}"></image>
+      <image src="/img/{{item.clicked?'up.png':'down.png'}}"></image>
     </view>
     <view wx:if="{{item.clicked}}" class="answer">
       {{item.answer}}

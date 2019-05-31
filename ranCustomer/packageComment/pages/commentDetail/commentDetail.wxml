@@ -4,18 +4,36 @@
     <view class="box">
       <view class="img-num">1/1</view>
       <image src="/img/2.jpg" class="banner-img"></image>
+      <view class="product-box">
+        <image src="/img/2.jpg"></image>
+        <view class="product-info">
+          <text class="product-name">产品名称</text>
+          <text class="product-desc">产品描述描述</text>
+          <text class="product-price">￥389<text class="tag">新人立减</text></text>
+        </view>
+      </view>
+      <view class="line"></view>
       <view class="comment-box">
         <view class="comment-img">
           <image></image>
           <view class="comment-userInfo">
-            <view>用户名</view>
+            <view class="user-name">用户名</view>
             <view class="comment-date">2天前</view>
           </view>
           <view class="operation"></view>
         </view>
-        <view class="comment-text">大厦大红年货的哈市大口径哈萨克结婚登记看哈撒即可的航空局安徽科技山东黄金卡户籍卡
+        <view class="comment-text">{{commentText}}
         </view>
-        <view class="store-box">
+        <view class="showAll" wx:if="textIsOver" catchtap="showAllText">{{showAll?'收起内容':'展开全部'}}</view>
+        <view class="operation-box">
+          <image src="/img/thumb.png"></image>
+          <text>888</text>
+          <image src="/img/comment.png"></image>
+          <text>888</text>
+          <button open-type="share" class="share-btn"><image src="/img/share.png"></image></button>
+          
+        </view>
+        <!-- <view class="store-box">
           <image class="store-img"></image>
           <view class="store-info">
             <view class="store-name">然club名车护理（德基广场店）</view>
@@ -23,38 +41,68 @@
               玄武区新街口德基广场二期停车场B3/B4玄武区新街口德基广场二期停车场B3/B4asdj 
             </view>
           </view>
-        </view>
+        </view> -->
       </view>
     </view>
-    <view class="line"></view>
+    
     <view class="user-box">
-      <view><text class="title">评论</text><text class="comment-num">(5)</text></view>
+      <view class="comment-count">共122条评论</view>
       <view>
-        <view class="comment-img" style="padding: 20rpx 0 0 0;">
-          <image></image>
+        <view class="comment-img comment-user-box" style="padding: 20rpx 0 0 0;">
+          <image class="comment-user-img"></image>
           <view class="comment-userInfo">
-            <view>{{userInfo.nickName}}</view>
-            <view class="comment-date">2天前</view>
+            <view class="comment-user-name">用户昵称</view>
+            <!-- <view class="comment-date">2天前</view> -->
+          </view>
+        </view>
+        <view class="user-comment">
+          大厦狂欢节德生科技哈桑看将会对快接啊时框架会
+        </view>
+        <view class="reply-box border-bottom">
+          <view class="reply-content">
+            <image></image><text class="reply-name">用户昵称2</text>
+            <text class="sender">真的，我差点都信了！</text>
+          </view>
+          <view class="reply-content">
+            <image></image><text class="reply-name">用户昵称3</text>
+            <text class="sender">回复<text class="replyer-name">用户昵称2</text>：真的，我差点都信了！</text>
+          </view>
+          <view class="showComment">展开6条回复</view>
+        </view>
+      </view>
+
+       <view>
+        <view class="comment-img comment-user-box" style="padding: 20rpx 0 0 0;">
+          <image class="comment-user-img"></image>
+          <view class="comment-userInfo">
+            <view class="comment-user-name">用户昵称</view>
+            <!-- <view class="comment-date">2天前</view> -->
           </view>
         </view>
         <view class="user-comment">
           大厦狂欢节德生科技哈桑看将会对快接啊时框架会
         </view>
         <view class="reply-box">
-          <view class="reply-content"><text class="sender">用户1</text>：<text>电视剧爱好的近看哈撒即可大恒科技按时肯定会啊</text></view>
-          <view><text class="replyer">用户2</text>回复<text class="sender">用户1</text>：<text>大事记汇顶科技爱山科几点回家卡上客家话到卡卡霍建华</text></view>
+          <view class="reply-content">
+            <image></image><text class="reply-name">用户昵称2</text>
+            <text class="sender">真的，我差点都信了！</text>
+            <view class="showComment">展开6条回复</view>
+          </view>
         </view>
       </view>
+
+
+    <view class="showAllComment">展开所有评论</view>
+
+
     </view>
-    <view style="width: 100%;height: 90rpx;"></view>
+    <view class="line"></view>
+    <view style="width: 100%;height: 100rpx;"></view>
+    
   </scroll-view>
 
   <view class="send-box">
-    <input class="send-input" placeholder='想说啥说啥'></input>
-    <button open-type='share'>
-      <image src="/img/share.png"></image>
-    </button>
-    <text>2</text>
-    <image src="/img/thumb.png"></image>
+    <input class="send-input" placeholder='写评论'></input>
+    <view class="send-btn">发送</view>
   </view>
 </view>

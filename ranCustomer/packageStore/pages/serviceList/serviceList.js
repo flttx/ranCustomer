@@ -1,21 +1,31 @@
 // packageStore/pages/serviceList/serviceList.js
+const app = getApp();
+const util = require('../../../utils/util.js');
+const network = require('../../../utils/network.js');
+
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    tabs: ["清洁类", "修复类"],
-    state: [1, 2],
+    tabs: [],
     currentTab: 0,
-
+    shop_id: '',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if(options.shop_id){
+      this.setData({
+        shop_id: options.shop_id
+      });
+      this.getPriceList();
+    }
+    
   },
 
   /**
@@ -65,6 +75,19 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  //获取价目表
+  getPriceList() {
+    let that = this;
+    let param = {};
+    param.shop_id = that.data.shop_id;
+    network.ajax(network.PRICE_LIST, "post", param, res => {
+      that.setData({
+        tabs: res.data
+      });
+
+    });
   },
 
   /**

@@ -1,21 +1,50 @@
 <!--packageStore/pages/orderFlower/orderFlower.wxml-->
+<wxs module="filter" src="../../../utils/filter.wxs"></wxs>
 <view class="container">
   <view class="banners">
-    <swiper style="width: 100%;height: 100%;" circular>
+    <swiper style="width: 100%;height: 100%;" circular current="{{currentIndex}}" bindchange="changeSwiper">
       <swiper-item wx:for="{{banners}}" wx:key="index" class="banner-img"  data-current="{{index}}">
-        <image src="{{item.img_url}}"></image>
+        <image src="{{item.flower_img_thumb}}" bindtap="previewImg" data-index="index"></image>
       </swiper-item>
     </swiper>
   </view>
 
   <view class="desc-box">
-    <view class="flower-name">情人节花束1</view>
-    <view class="flower-price"> ￥400.00</view>
-    <view class="flower-desc">大石街道哈哈快读好书空间的哈萨克计划的卡仕达空间哈卡实践活动看哈会计师点击</view>
+    <view class="flower-name">{{banners[currentIndex].flower_name}}</view>
+    <view class="flower-price"> ￥{{banners[currentIndex].price}}</view>
+    <view class="flower-desc">{{banners[currentIndex].flower_brief}}</view>
   </view>
 
   <view class="bottom">
-    <view class="" style="float: left;" bindtap="toCommitOrderFlower">我的花篮</view>
-    <view class="" style="float: right;">加入花篮</view>
+    <view class="" style="float: left;" bindtap="clickMyBasket">我的花篮</view>
+    <view class="" style="float: right;" bindtap="addBasket">加入花篮</view>
+  </view>
+
+  <login-component login="{{login}}" bindlogin="refreshUserInfo"></login-component>
+</view>
+
+<view class="mask" wx:if="{{showBasket}}" bindtap='hideMask'></view>
+<view class="basket-box" wx:if="{{showBasket}}">
+  <view class="flower-box" wx:if="{{basketList.length>0}}">
+    <view class="flower-item" wx:for="{{basketList}}" wx:key="index" wx:if="{{item.number>0}}">
+      <view class="flower-img"></view>
+      <view class="flower-info">
+        <view class="name">{{item.flower_name}}</view>
+        <view class="desc single-line">{{item.flower_brief}}</view>
+        <view class="price">￥<text>{{item.price}}</text></view>
+      </view>
+      <image src="/img/close-circle.png" class="delete-icon" catchtap="clickDelete" data-index="{{index}}"></image>
+      <view class="flower-num">
+        <image src="/img/minus.png" class="minus-icon" catchtouchstart="startMinus" catchtouchend="endMinus" data-index="{{index}}"></image>
+        <text>{{item.number}}</text>
+        <image src="/img/add.png" class="add-icon" catchtouchstart="startAdd" catchtouchend="endAdd" data-index="{{index}}"></image>
+      </view>
+    </view>
+
+  </view>
+  <view class="bottom-box">
+    <view class="order-btn" catchtap="toCommitOrderFlower">立即预订</view>
+    <view class="sumPrice">合计：<text>￥{{filter.toFix(sumPrice)}}</text></view>
+    <view class="sumCount">共{{sumCount}}束</view>
   </view>
 </view>

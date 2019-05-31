@@ -80,10 +80,11 @@ Page({
         if (value.point_change>0){
           value.point_change = "+" + value.point_change
         }
+        value.created_at = util.formatDate(new Date(value.created_at.split(" ")[0]));
       });
       that.setData({
         payPointsList: res.data
       });
-    });
+    }, null, "加载中...");
   }
 })

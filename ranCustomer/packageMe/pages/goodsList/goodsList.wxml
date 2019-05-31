@@ -1,118 +1,123 @@
 <!--packageStore/pages/goodsList/goodsList.wxml-->
 <view class="container">
-  <view class="swiper-tab">
-    <view class="tab-item" wx:for="{{goodsType}}" wx:for-index="tabsIndex"  wx:key="tabsIndex" bindtap="changeTab" data-current="{{tabsIndex}}">
-      {{item}}
-      <view class="bar" wx:if="{{currentTab == tabsIndex}}"></view>
+  <view class="header">
+    <image class="bg3" src="/img/bg3.png"></image>
+    <image class="bg2" src="/img/bg2.png"></image>
+    <image class="bg1" src="/img/bg1.png"></image>
+    <view class="swiper-tab">
+      <view class="tab-item {{currentTab == tabsIndex?'active':''}}" wx:for="{{goodsType}}" wx:for-index="tabsIndex" wx:key="tabsIndex" bindtap="changeTab" data-current="{{tabsIndex}}">
+        {{item}}
+        <view class="bar" wx:if="{{currentTab == tabsIndex}}"></view>
+      </view>
     </view>
+    <view class="ch-text" style="margin-left: 54rpx;">“ 生活不止眼前的苟且，</view>
+    <view class="ch-text line2" style="margin-left: 260rpx;">还有诗和远方。”</view>
+
+    <view class="en-text">The bestt wishes for you, and I will love you forever.</view>
   </view>
 
-  <swiper class="tab-box" current="{{goodsType}}" bindchange="changeSwiper">
+
+  <swiper class="tab-box" current="{{currentTab}}" bindchange="changeSwiper">
     <swiper-item wx:for="{{goodsType}}" wx:key="index">
       <scroll-view scroll-y>
-        <view class="goods-item">
+        <view class="goods-item" bindtap='toGoodDetail'>
           <image src="/img/2.jpg"></image>
-          <view class="goods-info">
-            <view class="goods-name single-line">阿萨德了哈吉斯肯定会卡时间段和爱上客家话</view>
-            <view class="goods-desc triple-line">大拉开建设的了姐啊时间到了贾老师氪金大佬就萨科了解到看假两件了肯德基撒垃圾</view>
-            <view class="thumb-icon">
-              <text>2</text>
-              <image src="/img/thumb.png"></image>
+          <view class="good-info">
+            <view class="good-name single-line">情人节蓝海星辰系列情人节蓝海星辰系列</view>
+            <view class="good-desc doublie-line">情人节蓝海星辰系列情人节蓝海星辰系列</view>
+            <view class="thumb-box">
+              <image src="/img/sc.png"></image>
+              <text>3999</text>
             </view>
           </view>
         </view>
 
         <view class="goods-item">
           <image src="/img/2.jpg"></image>
-          <view class="goods-info">
-            <view class="goods-name single-line">阿萨德了哈吉斯肯定会卡时间段和爱上客家话</view>
-            <view class="goods-desc triple-line">大拉开建设的了姐啊时间到了贾老师氪金大佬就萨科了解到看假两件了肯德基撒垃圾</view>
-            <view class="thumb-icon">
-              <text>2</text>
-              <image src="/img/thumb.png"></image>
-            </view>
+          <view class="good-info">
+            <view class="good-name single-line">情人节蓝海星辰系列情人节蓝海星辰系列</view>
+            <view class="good-desc doublie-line">情人节蓝海星辰系列情人节蓝海星辰系列</view>
           </view>
         </view>
 
         <view class="goods-item">
           <image src="/img/2.jpg"></image>
-          <view class="goods-info">
-            <view class="goods-name single-line">阿萨德了哈吉斯肯定会卡时间段和爱上客家话</view>
-            <view class="goods-desc triple-line">大拉开建设的了姐啊时间到了贾老师氪金大佬就萨科了解到看假两件了肯德基撒垃圾</view>
-            <view class="thumb-icon">
-              <text>2</text>
-              <image src="/img/thumb.png"></image>
-            </view>
+          <view class="good-info">
+            <view class="good-name single-line">情人节蓝海星辰系列情人节蓝海星辰系列</view>
+            <view class="good-desc doublie-line">情人节蓝海星辰系列情人节蓝海星辰系列</view>
           </view>
         </view>
-
-        <view class="goods-item">
-          <image src="/img/2.jpg"></image>
-          <view class="goods-info">
-            <view class="goods-name single-line">阿萨德了哈吉斯肯定会卡时间段和爱上客家话</view>
-            <view class="goods-desc triple-line">大拉开建设的了姐啊时间到了贾老师氪金大佬就萨科了解到看假两件了肯德基撒垃圾</view>
-            <view class="thumb-icon">
-              <text>2</text>
-              <image src="/img/thumb.png"></image>
-            </view>
-          </view>
-        </view>
-
-        <view class="goods-item">
-          <image src="/img/2.jpg"></image>
-          <view class="goods-info">
-            <view class="goods-name single-line">阿萨德了哈吉斯肯定会卡时间段和爱上客家话</view>
-            <view class="goods-desc triple-line">大拉开建设的了姐啊时间到了贾老师氪金大佬就萨科了解到看假两件了肯德基撒垃圾</view>
-            <view class="thumb-icon">
-              <text>2</text>
-              <image src="/img/thumb.png"></image>
-            </view>
-          </view>
-        </view>
-
-        <view class="goods-item">
-          <image src="/img/2.jpg"></image>
-          <view class="goods-info">
-            <view class="goods-name single-line">阿萨德了哈吉斯肯定会卡时间段和爱上客家话</view>
-            <view class="goods-desc triple-line">大拉开建设的了姐啊时间到了贾老师氪金大佬就萨科了解到看假两件了肯德基撒垃圾</view>
-            <view class="thumb-icon">
-              <text>2</text>
-              <image src="/img/thumb.png"></image>
-            </view>
-          </view>
-        </view>
-
-        <view class="goods-item">
-          <image src="/img/2.jpg"></image>
-          <view class="goods-info">
-            <view class="goods-name single-line">阿萨德了哈吉斯肯定会卡时间段和爱上客家话</view>
-            <view class="goods-desc triple-line">大拉开建设的了姐啊时间到了贾老师氪金大佬就萨科了解到看假两件了肯德基撒垃圾</view>
-            <view class="thumb-icon">
-              <text>2</text>
-              <image src="/img/thumb.png"></image>
-            </view>
-          </view>
-        </view>
-
-        <view class="goods-item">
-          <image src="/img/2.jpg"></image>
-          <view class="goods-info">
-            <view class="goods-name single-line">阿萨德了哈吉斯肯定会卡时间段和爱上客家话</view>
-            <view class="goods-desc triple-line">大拉开建设的了姐啊时间到了贾老师氪金大佬就萨科了解到看假两件了肯德基撒垃圾</view>
-            <view class="thumb-icon">
-              <text>2</text>
-              <image src="/img/thumb.png"></image>
-            </view>
-          </view>
-        </view>
-
-        
-
-
-        <view style='height: 20rpx;'></view>
+        <view class="noMore">没有更多推荐了</view>
       </scroll-view>
+
     </swiper-item>
   </swiper>
 
+  <view class="cart-icon">
+    <view style="position: relative;">
+      <view class="fold-row" wx:if="{{unfold}}">
+        <view catchtap='clickCartIcon'>
+          <image src="/img/cart.png"></image>
+          <view class="cart-num" wx:if="{{cartNum!=''}}">{{cartNum}}</view>
+        </view>
+        <text></text>
+        <view>
+          <button open-type="contact">
+            <image src="/img/pl.png"></image>
+            <view class="cart-num">2</view>
+          </button>
+        </view>
+      </view>
+      <view class="cart" catchtap='clickCart'>
+        <image src="/img/arrow-{{unfold?'down':'up'}}.png"></image>
 
+      </view>
+
+    </view>
+
+  </view>
+
+
+
+
+</view>
+
+<view class="mask" wx:if="{{showCart}}" catchtap='hideMask'></view>
+<view class="cart-box" id="cart-box" wx:if="{{showCart}}">
+  <view class="cart-title">购物车</view>
+  <view class="scroller">
+    <block wx:for="{{cartList}}" wx:key="index" wx:for-item="cart">
+    <view class="type">{{cart.type}}</view>
+    <view class="good-box">
+      <view class="item" wx:for="{{cart.goodList}}" wx:for-index="goodIndex" wx:key="goodIndex" wx:for-item="good">
+        <radio checked="{{good.selected || selectAll}}" catchtap="clickRadio" data-index="{{index}}" data-goodIndex="{{goodIndex}}"/>
+        <view class="item-img"></view>
+        <view class="item-info">
+          <view class="item-name">{{good.good_name}}</view>
+          <view class="item-desc">
+            <view class="desc-text" wx:for="{{good.good_spec}}" wx:for-item="spec" wx:key="index">{{spec}}</view>
+          </view>
+          <text class="item-price">￥<text>{{good.price}}</text></text>
+        </view>
+        <view class="item-num">
+          <text class="minus" catchtouchstart='startMinus' catchtouchend='endMinus' data-index="{{index}}" data-goodIndex="{{goodIndex}}">-</text> {{good.num}}
+          <text class="add" catchtouchstart='startAdd' catchtouchend='endAdd' data-index="{{index}}" data-goodIndex="{{goodIndex}}">+</text>
+        </view>
+      </view>
+   
+    </view>
+   </block>
+  </view>
+  <view class="btn-box">
+    <label catchtap="clickSelectAll" style="color:{{selectAll?'#D9AB42':''}}">
+      <radio checked="{{selectAll}}" />全选</label>
+    <view class="buy" bindtap="toCartSettlement">去结算
+      <image src="/img/toBuy.png"></image>
+    </view>
+    <view class="sum-price">合计:
+      <text style="font-size: 30rpx;">￥</text>
+      <text style="font-size: 40rpx">{{goodSumPrice}}</text>
+    </view>
+    <view class="tip">（不含运费）</view>
+  </view>
 </view>

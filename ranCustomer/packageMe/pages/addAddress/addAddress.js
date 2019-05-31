@@ -35,9 +35,13 @@ Page({
       array = wx.getStorageSync("cityData");
       that.initData();
     } else {
+      wx.showLoading({
+        title: '初始化...',
+      });
       wx.request({
         url: 'https://wxapi.xinglinjiuye.cn/js/cityData.js',
         success: res => {
+          wx.hideLoading();
           array = res.data;
           wx.setStorageSync("cityData", res.data);
           that.initData();
@@ -116,12 +120,44 @@ Page({
   //选择器选择事件
   bindMultiPickerChange(e){
     let cityIndex = e.detail.value;
-    //选择的地址文本
-    let selectedAddress = array[cityIndex[0]].name + array[cityIndex[0]].children[cityIndex[1]].name + array[cityIndex[0]].children[cityIndex[1]].children[cityIndex[2]].name + array[cityIndex[0]].children[cityIndex[1]].children[cityIndex[2]].children[cityIndex[3]].name;
+    console.log(cityIndex);
+
+    let province = array[cityIndex[0]].name;
+    let city = array[cityIndex[0]].children[cityIndex[1]].name;
+    let district = '', street = '';
     //选择的地址编码
-    let areaCode = array[cityIndex[0]].children[cityIndex[1]].children[cityIndex[2]].children[cityIndex[3]].code;
+    let areaCode = "";
+     //选择的地址文本
+    let selectedAddress = "";
+    if (array[cityIndex[0]].children[cityIndex[1]].children.length > 0) {
+      district = array[cityIndex[0]].children[cityIndex[1]].children[cityIndex[2]].name;
+    } else {
+      areaCode = array[cityIndex[0]].children[cityIndex[1]].code;
+      selectedAddress = province + city;
+      this.setData({
+        region: selectedAddress,
+        areaCode: areaCode
+      });
+      return;
+    }
+    if (array[cityIndex[0]].children[cityIndex[1]].children[cityIndex[2]].children.length > 0) {
+      street = array[cityIndex[0]].children[cityIndex[1]].children[cityIndex[2]].children[cityIndex[3]].name;
+    } else {
+      areaCode = array[cityIndex[0]].children[cityIndex[1]].children[cityIndex[2]].code;
+      selectedAddress = province + city + district;
+      this.setData({
+        region: selectedAddress,
+        areaCode: areaCode
+      });
+      return;
+    }
+   
+    selectedAddress = province + city + district + street;
+    
+    areaCode = array[cityIndex[0]].children[cityIndex[1]].children[cityIndex[2]].children[cityIndex[3]].code;
     this.setData({
-      region: selectedAddress
+      region: selectedAddress,
+      areaCode: areaCode
     });
     console.log(selectedAddress);
     console.log(areaCode);
@@ -152,19 +188,23 @@ Page({
             code: array[selectedIndex].children[i].code
           });
         }
-        for (let j = 0, len = array[selectedIndex].children[0].children.length; j < len; j++) {
-          list2.push({
-            name: array[selectedIndex].children[0].children[j].name,
-            code: array[selectedIndex].children[0].children[j].code
-          });
-        }
-        for (let k = 0, len = array[selectedIndex].children[0].children[0].children.length; k < len; k++) {
-          list3.push({
-            name: array[selectedIndex].children[0].children[0].children[k].name,
-            code: array[selectedIndex].children[0].children[0].children[k].code
-          });
-        }
+        if (array[selectedIndex].children.length > 0) {
+          for (let j = 0, len = array[selectedIndex].children[0].children.length; j < len; j++) {
+            list2.push({
+              name: array[selectedIndex].children[0].children[j].name,
+              code: array[selectedIndex].children[0].children[j].code
+            });
+          }
 
+          if (array[selectedIndex].children[0].children.length > 0){
+            for (let k = 0, len = array[selectedIndex].children[0].children[0].children.length; k < len; k++) {
+              list3.push({
+                name: array[selectedIndex].children[0].children[0].children[k].name,
+                code: array[selectedIndex].children[0].children[0].children[k].code
+              });
+            }
+          }
+        }
 
         citiesIndex = [selectedIndex, 0, 0, 0];
         break;
@@ -178,12 +218,15 @@ Page({
           });
         }
 
-        for (let j = 0, len = array[provinceIndex].children[selectedIndex].children[0].children.length; j < len; j++) {
-          list3.push({
-            name: array[provinceIndex].children[selectedIndex].children[0].children[j].name,
-            code: array[provinceIndex].children[selectedIndex].children[0].children[j].code
-          });
+        if (array[provinceIndex].children[selectedIndex].children.length > 0) {
+          for (let j = 0, len = array[provinceIndex].children[selectedIndex].children[0].children.length; j < len; j++) {
+            list3.push({
+              name: array[provinceIndex].children[selectedIndex].children[0].children[j].name,
+              code: array[provinceIndex].children[selectedIndex].children[0].children[j].code
+            });
+          }
         }
+        
         citiesIndex = [provinceIndex, selectedIndex, 0, 0];
         break;
       case 2: //滚动第三列
@@ -196,8 +239,6 @@ Page({
             code: array[provinceIndex].children[cityIndex].children[selectedIndex].children[i].code
           });
         }
-        console.log(list2);
-        console.log(list3);
         citiesIndex = [provinceIndex, cityIndex, selectedIndex, 0];
         break;
       case 3: //滚动第四列

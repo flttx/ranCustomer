@@ -46,13 +46,13 @@
         </view>
         <view class="store-phone" catchtap="phoneCall">
           <view class="store-phone-box">
-            <image src="/img/phone.png"></image>
+            <image src="/img/dianhua.png"></image>
           </view>
         </view>
       </view>
       <view class="store-order" bindtap="toStoreOrder">
-        <text>预约上门</text>
-        <image src="/img/jiantou.jpg"></image>
+        <text>{{storeType==1?'预约到店':(storeType==2?'预约上门':'立即预订')}}</text>
+        <image src="/img/arrow-right.png"></image>
       </view>
     </view>
     <view class="line"></view>
@@ -66,15 +66,10 @@
     <view class="box" id="item0">
       <view class="title-line"><text class="title">服务项目</text><text class="showAll" bindtap="toServiceList">查看全部></text></view>
       <scroll-view scroll-x class="service-scroll">
-        <view class="service-item">
-          <image class="service-item-img" src="/img/1.jpg"></image>
-          <view class="service-item-text">精致洗车</view>
-          <view class="service-item-text">￥298<text class="vip-price">￥198会员价</text></view>
-        </view>
-        <view class="service-item">
-          <image class="service-item-img" src="/img/1.jpg"></image>
-          <view>精致洗车</view>
-          <view>￥298<text class="vip-price">￥198会员价</text></view>
+        <view class="service-item" wx:for="{{priceList}}" wx:key="index">
+          <image class="service-item-img" src="{{item.price_list_img}}"></image>
+          <view class="service-item-text single-line">{{item.price_list_name}}</view>
+          <view class="service-item-text">￥{{item.market_price}}<text class="vip-price">￥{{item.vip_price}}会员价</text></view>
         </view>
       </scroll-view>
     </view>
@@ -92,7 +87,7 @@
           <view class="buy-btn" catchtap="clickPurchase" data-index="{{index}}">抢购</view>
         </view>
       </view>
-      <view class="discount-box">
+      <view class="discount-box" wx:if="{{storeType!=3}}">
         <view class="coupon">优惠服务</view>
         <view class="discount-item" bindtap="toDiscountDetail" wx:for="{{serveList}}" wx:key="index" wx:for-item="serve" 
         data-id="{{serve.id}}">
@@ -101,7 +96,7 @@
             <view class="discount-name single-line">{{serve.serve_name}}</view>
             <view class="discount-desc double-line">{{serve.serve_brief}}</view>
             <view class="discount-price">￥{{serve.is_promote==1?serve.promote_price:serve.shop_price}}<text class="original-price">￥{{serve.market_price}}</text></view>
-            <image src="/img/jiantou.jpg"></image>
+            <image src="/img/arrow-right.png"></image>
           </view>
         </view>
       </view>
@@ -159,7 +154,7 @@
         </view>
 
         <view class="showAllComment" bindtap="toAllComments">
-          查看全部晒一晒  <image src="/img/jiantou.jpg"></image>
+          查看全部晒一晒  <image src="/img/arrow-right.png"></image>
         </view>
 
       </view>

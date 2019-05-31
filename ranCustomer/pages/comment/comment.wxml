@@ -1,65 +1,136 @@
 <!--pages/comment/comment.wxml-->
-<view class="container">
+<view class="content">
   <view class="tab">
     <view class="tab-box">
-      <view wx:for="{{tabs}}" wx:key="item" data-current="{{index}}" class="tab-item">
+      <view wx:for="{{tabs}}" wx:key="item" data-current="{{index}}" class="tab-item {{currentTab == index?'active':''}}" bindtap="changeTab">
         {{item}}
         <view class="bar" wx:if="{{currentTab == index}}"></view>
       </view>
     </view>
   </view>
 
-   <swiper class="swiper-box" current="{{currentTab}}" bindchange="changeSwiper">
-    <swiper-item wx:for="{{state}}" wx:key="index">
-      <scroll-view scroll-y style="height:100%;padding: 20rpx 40rpx;">
-        <view class="box">
-          <view class="img-num">1/1</view>
-          <image src="/img/2.jpg" bindtap="toCommentDetail"></image>
-          <view class="comment-img">
-            <image src="{{userInfo.avatarUrl}}"></image>
-            <view class="comment-userInfo">
-              <view>{{userInfo.nickName}}</view>
-              <view class="comment-date">2天前</view>
-            </view>
-            <view class="operation">
-            <button open-type='share'><image src="/img/share.png"></image></button>
-              
-              <text>5</text>
-              <image src="/img/comment.png"></image>
-              <text>2</text>
-              <image src="/img/thumb1.png"></image>
-            </view>
-          </view>
-          <view class="comment-text double-line" bindtap="toCommentDetail">
-            点击撒娇的辣椒酱拉卡死姐弟恋吉拉斯加大了看就萨科了解到卡上看就看登记卡刷卡机京东卡时间看佳都科技啊看时间
-          </view>
-          <view class="showAll" bindtap="toCommentDetail">全文></view>
-        </view>
+  <swiper class="swiper-box" current="{{currentTab}}" bindchange="changeSwiper">
+    <swiper-item wx:for="{{tabs}}" wx:key="index">
+      <scroll-view scroll-y>
+        <view class="left">
+          <view class="column">
+            <view class="box">
+              <image src="/img/2.jpg" bindtap="toCommentDetail"></image>
+              <view class="comment-content double-line">
+                1丢三落四来得及爱上了吉林大街奥斯卡觉得家阿斯科利将肯德基撒垃圾袋卡刷卡机的凯乐科技
+              </view>
+              <view class="comment-img">
+                <view class="comment-userInfo">
+                  <text>{{userInfo.nickName}}</text>
+                </view>
+                <image src="{{userInfo.avatarUrl}}"></image>
 
-        <view class="box">
-          <view class="img-num">1/1</view>
-          <image src="/img/2.jpg"></image>
-          <view class="comment-img">
-            <image src="{{userInfo.avatarUrl}}"></image>
-            <view class="comment-userInfo">
-              <view>{{userInfo.nickName}}</view>
-              <view class="comment-date">2天前</view>
-            </view>
-            <view class="operation">
-              <button open-type='share'><image src="/img/share.png"></image></button>
-              <text>5</text>
-              <image src="/img/comment.png"></image>
-              <text>2</text>
-              <image src="/img/thumb1.png"></image>
+                <view class="operation">
+                  <text>2</text>
+                  <image src="/img/thumb1.png"></image>
+                </view>
+              </view>
             </view>
           </view>
-          <view class="comment-text double-line">
-            点击撒娇的辣椒酱拉卡死姐弟恋吉拉斯加大了看就萨科了解到卡上看就看登记卡刷卡机京东卡时间看佳都科技啊看时间
-          </view>
-          <view class="showAll" bindtap="toCommentDetail">全文></view>
-        </view>
 
-        <view style="height: 20rpx;"></view>
+          <view class="column">
+            <view class="box">
+              <image src="/img/2.jpg"></image>
+              <view class="comment-content double-line">
+                2丢三落四来得及爱
+              </view>
+              <view class="comment-img">
+                <view class="comment-userInfo">
+                  <text>{{userInfo.nickName}}</text>
+                </view>
+                <image src="{{userInfo.avatarUrl}}"></image>
+                <view class="operation">
+                  <text>2</text>
+                  <image src="/img/thumb1.png"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+
+          <view class="column">
+            <view class="box">
+              <image src="/img/2.jpg"></image>
+              <view class="comment-content double-line">
+                3丢三落四
+              </view>
+              <view class="comment-img">
+                <view class="comment-userInfo">
+                  <text>{{userInfo.nickName}}</text>
+                </view>
+                <image src="{{userInfo.avatarUrl}}"></image>
+                <view class="operation">
+                  <text>2</text>
+                  <image src="/img/thumb1.png"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+
+        </view>
+        <view class="right">
+          <view class="column">
+            <view class="box">
+              <image src="/img/2.jpg" bindtap="toCommentDetail"></image>
+              <view class="comment-content double-line">
+                1丢三落四来得及爱上
+              </view>
+              <view class="comment-img">
+                <view class="comment-userInfo">
+                  <text>{{userInfo.nickName}}</text>
+                </view>
+                <image src="{{userInfo.avatarUrl}}"></image>
+
+                <view class="operation">
+                  <text>2</text>
+                  <image src="/img/thumb1.png"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+
+          <view class="column">
+            <view class="box">
+              <image src="/img/2.jpg"></image>
+              <view class="comment-content double-line">
+               
+              </view>
+              <view class="comment-img">
+                <view class="comment-userInfo">
+                  <text>{{userInfo.nickName}}</text>
+                </view>
+                <image src="{{userInfo.avatarUrl}}"></image>
+                <view class="operation">
+                  <text>2</text>
+                  <image src="/img/thumb1.png"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+
+          <view class="column">
+            <view class="box">
+              <image src="/img/2.jpg"></image>
+              <view class="comment-content double-line">
+                3丢三落四来得及爱上了吉林大街奥斯卡觉得家阿斯科利将肯德基撒垃圾袋卡刷卡机的凯乐科技
+              </view>
+              <view class="comment-img">
+                <view class="comment-userInfo">
+                  <text>{{userInfo.nickName}}</text>
+                </view>
+                <image src="{{userInfo.avatarUrl}}"></image>
+                <view class="operation">
+                  <text>2</text>
+                  <image src="/img/thumb1.png"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
       </scroll-view>
     </swiper-item>
   </swiper>

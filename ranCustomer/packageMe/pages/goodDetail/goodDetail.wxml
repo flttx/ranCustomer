@@ -1,0 +1,171 @@
+<!--packageMe/pages/goodDetail/goodDetail.wxml-->
+<view class="content {{showCart?'noScroll':''}}">
+  <scroll-view scroll-y style="width: 100%;height: 100%;">
+
+  <view class="banner">
+    <view class="img-num">{{currentIndex + 1}}/{{imgList.length}}</view>
+    <swiper current="{{currentIndex}}" bindchange="swiperImg">
+      <swiper-item wx:for="{{imgList}}" wx:key="index">
+        <image src="{{item}}"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="good-title">
+    <view class="good-price">￥<text>1289</text></view>
+    <image class="tag" src="/img/tag.png"></image>
+    <view class="good-name">海洋之风浪漫主题情人系列香薰</view>
+    <view class="good-tag">好货 | 然·自营</view>
+  </view>
+
+  <view class='line'></view>
+
+  <view class="good-spec">
+    <view class="title">味道</view>
+    <view class="spec-row">
+      <view class="spec-item active">种类标题一</view>
+      <view class="spec-item">种类二</view>
+      <view class="spec-item disabled">缺货</view>
+    </view>
+    <view class="title">规格</view>
+    <view class="spec-row">
+      <view class="spec-item active">30g</view>
+    </view>
+  </view>
+
+  <view class="line"></view>
+
+  <view class="good-info">
+    <view class="title">好货信息</view>
+    <view class="info-row">
+      <view class="name">商品编号</view>
+      <view class="value">NJ9903812</view>
+    </view>
+    <view class="info-row">
+      <view class="name">材质</view>
+      <view class="value">石膏</view>
+    </view>
+    <view class="info-row">
+      <view class="name">适用场景</view>
+      <view class="value">卧室/客厅</view>
+    </view>
+    <view class="info-row">
+      <view class="name">产地</view>
+      <view class="value">江苏南京</view>
+    </view>
+    <view class="info-row">
+      <view class="name">净含量</view>
+      <view class="value">30克</view>
+    </view>
+    <view class="info-row">
+      <view class="name">大小</view>
+      <view class="value">15cm*15cm</view>
+    </view>
+  </view>
+
+  <view class="line"></view>
+
+  <view class="good-desc">
+    <view class="title">图文详情</view>
+    <view class="good-desc-img"></view>
+  </view>
+
+  <view class="line"></view>
+  <view class="bottom">
+    <image class="sc" src="/img/sc.png"></image>
+    <view class="buy-btn" bindtap='buy'>立即购买</view>
+    <view class="add-btn" bindtap='addCart'>加入购物车</view>
+  </view>
+
+  <view class="cart-icon">
+    <view style="position: relative;">
+      <view class="fold-row" wx:if="{{unfold}}">
+        <view catchtap='clickCartIcon'>
+          <image src="/img/cart.png"></image>
+          <view class="cart-num" wx:if="{{cartNum!=''}}">{{cartNum}}</view>
+        </view>
+        <text></text>
+        <view>
+          <button open-type="contact">
+            <image src="/img/pl.png"></image>
+            <view class="cart-num">2</view>
+          </button>
+        </view>
+      </view>
+      <view class="cart" catchtap='clickCart'>
+        <image src="/img/arrow-{{unfold?'down':'up'}}.png"></image>
+       
+      </view>
+      
+    </view>
+    
+  </view>
+  </scroll-view>
+
+ 
+</view>
+
+<view class="mask" wx:if="{{showCart||showSpec}}" catchtap='hideMask'></view>
+<view class="cart-box" wx:if="{{showCart}}">
+  <view class="cart-title">购物车</view>
+  <view class="scroller">
+    <block wx:for="{{cartList}}" wx:key="index" wx:for-item="cart">
+    <view class="type">{{cart.type}}</view>
+    <view class="good-box">
+      <view class="item" wx:for="{{cart.goodList}}" wx:for-index="goodIndex" wx:key="goodIndex" wx:for-item="good">
+        <radio checked="{{good.selected || selectAll}}" catchtap="clickRadio" data-index="{{index}}" data-goodIndex="{{goodIndex}}"/>
+        <view class="item-img"></view>
+        <view class="item-info">
+          <view class="item-name">{{good.good_name}}</view>
+          <view class="item-desc">
+            <view class="desc-text" wx:for="{{good.good_spec}}" wx:for-item="spec" wx:key="index">{{spec}}</view>
+          </view>
+          <text class="item-price">￥<text>{{good.price}}</text></text>
+        </view>
+        <view class="item-num">
+          <text class="minus" catchtouchstart='startMinus' catchtouchend='endMinus' data-index="{{index}}" data-goodIndex="{{goodIndex}}">-</text> {{good.num}}
+          <text class="add" catchtouchstart='startAdd' catchtouchend='endAdd' data-index="{{index}}" data-goodIndex="{{goodIndex}}">+</text>
+        </view>
+      </view>
+   
+    </view>
+   </block>
+  </view>
+  <view class="btn-box">
+    <label catchtap="clickSelectAll" style="color:{{selectAll?'#D9AB42':''}}">
+      <radio checked="{{selectAll}}" />全选</label>
+    <view class="buy">去结算
+      <image src="/img/toBuy.png"></image>
+    </view>
+    <view class="sum-price">合计:
+      <text style="font-size: 30rpx;">￥</text>
+      <text style="font-size: 40rpx">{{goodSumPrice}}</text>
+    </view>
+    <view class="tip">（不含运费）</view>
+  </view>
+</view>
+
+
+<view class="spec-box" wx:if="{{showSpec}}">
+  <view class="cart-title">选择<image class="close-icon" src="/img/close.png" catchtap='closeSpec'></image></view>
+  <view style="margin-top: 100rpx;padding: 12rpx 49rpx 120rpx;">
+    <view class="spec-title">味道</view>
+    <view class="spec-row">
+      <view class="spec-item active">种类标题一</view>
+      <view class="spec-item">种类二</view>
+      <view class="spec-item disabled">缺货</view>
+    </view>
+    <view class="spec-title">规格</view>
+    <view class="spec-row">
+      <view class="spec-item active">32g</view>
+    </view>
+    <view class="spec-title">数量</view>
+    <view class="spec-row">
+      <view class="num-row">
+        <text class="minus-icon" catchtap="clickSpecMinus">-</text>{{num}}
+        <text class="add-icon" catchtap="clickSpecAdd">+</text>
+      </view>
+      <view class="good-unit">单位</view>
+    </view>
+  </view>
+  <view class="commit-btn {{clickBuy?'buy-btn':''}}">{{clickBuy?'立即购买':'加入购物车'}}</view>
+</view>

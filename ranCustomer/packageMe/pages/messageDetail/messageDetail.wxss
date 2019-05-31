@@ -1,0 +1,37 @@
+/* packageMe/pages/messageDetail/messageDetail.wxss */
+.content{
+  padding: 30rpx;
+}
+
+
+.time{
+  font-size: 24rpx;
+  color: #D5D5D5;
+  text-align: center;
+}
+
+.message-box{
+  margin-top: 30rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+.img{
+  display: inline-block;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background: #D9AB42;
+  vertical-align: top;
+}
+
+.message-content{
+  display: inline-block;
+  margin-left: 24rpx;
+  width: calc(100% - 170rpx);
+  padding: 24rpx 30rpx;
+  font-size: 28rpx;
+  color: #333333;
+  background: #fff;
+  line-height: 36rpx;
+}

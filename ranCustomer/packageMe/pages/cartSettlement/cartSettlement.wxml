@@ -1,0 +1,40 @@
+<!--packageMe/pages/cartSettlement/cartSettlement.wxml-->
+<view class="content">
+  <view class="shadow-box"></view>
+  <view class="address-box">
+    <view class="title">收货信息</view>
+    <view class="address-info">
+      <view class="name-row"><text></text>郭迪</view>
+      <view class="phone">18318318333</view>
+      <view class="address double-line">
+        天元东路388号城市之光大厦A座1932室
+      </view>
+      <image src="/img/arrow-right.png"></image>
+    </view>
+  </view>
+
+  <view class="address-box">
+    <view class="title">然の好货<text class="good-num">{{cartList.length}}件商品</text></view>
+    <scroll-view scroll-x="true" class="good-scroll">
+      <block wx:if="{{cartList.length == 1}}">
+        <view class="good-img-big"></view>
+        <view class="good-info">
+          <view class="good-name">{{cartList[0].good_name}}</view>
+          <view class="good-desc"><text wx:for="{{cartList[0].good_spec}}" wx:key="index">{{item}}</text></view>
+          <view class="good-price">
+            <text class="price">￥<text>{{cartList[0].price}}</text></text>
+            <text class="num">x {{cartList[0].num}}</text>
+          </view>
+        </view>
+      </block>
+      <block wx:elif="{{cartList.length > 1 && cartList.length <= 4}}">
+        <view class="good-img" wx:for="{{cartList}}" wx:key="index"></view>
+      </block>
+      <block wx:else>
+        <view class="good-img" wx:for="{{cartList}}" wx:key="index" wx:if="{{(!showAll && index<4) || showAll}}"></view>
+        <view class="showAll" wx:if="{{!showAll}}" catchtap="clickShowAll">全部<image src="/img/arrow-right.png"></image></view>
+      </block>
+        
+    </scroll-view>
+  </view>
+</view>

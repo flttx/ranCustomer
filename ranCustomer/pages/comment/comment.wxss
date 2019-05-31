@@ -5,12 +5,11 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #fff;
 }
 
 .tab-box{
   width: 400rpx;
-  height: 60rpx;
+  height: 100rpx;
   position: absolute;
   top: 0;
   left: 0;
@@ -24,11 +23,21 @@
   flex: 1;
   text-align: center;
   position: relative;
+  font-size: 30rpx;
+  color: #666;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-weight: bold;
+}
+
+.active{
+  font-size: 32rpx;
+  color: #333;
 }
 
 .bar{
-  width: 80rpx;
-  height: 4rpx;
+  width: 60rpx;
+  height: 10rpx;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -38,21 +47,38 @@
 }
 
 .swiper-box{
-  padding-top:60rpx;
+  padding-top:100rpx;
   height:100%;
   box-sizing:border-box;
 }
 
-.box{
-  width: calc(100% - 80rpx);
+scroll-view{
+  height:100%;
   padding: 20rpx 0;
+  box-sizing: border-box;
+}
+
+.left, .right{
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+}
+
+.column{
+  box-sizing: border-box;
+  margin: 0 12rpx 24rpx 12rpx;
+  background: #fff;
+  padding: 26rpx 26rpx 20rpx 26rpx;
+}
+
+.box{
+  width: 100%;
   position: relative;
 }
 
 .box image{
   width: 100%;
-  height: 440rpx;
-  border-radius: 10rpx;
+  height: 360rpx;
 }
 
 .img-num{
@@ -69,24 +95,31 @@
   text-align: center;
 }
 
+.comment-content{
+  height: auto;
+  font-size: 26rpx;
+  color: #666;
+  line-height: 35rpx;
+  margin-bottom: 20rpx;
+}
+
 .comment-img{
-  height: 100rpx;
-  padding: 10rpx 0;
+  height: 40rpx;
 }
 
 .comment-img>image{
-  float: left;
-  width: 80rpx;
-  height: 80rpx;
+  float: right;
+  width: 40rpx;
+  height: 40rpx;
   border-radius: 50%;
 }
 
 .comment-userInfo{
-  float: left;
-  height: 80rpx;
-  width: 200rpx;
-  font-size: 26rpx;
-  padding-left: 20rpx;
+  float: right;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  margin-left: 10rpx;
 }
 
 .comment-userInfo>view{
@@ -100,8 +133,7 @@
 }
 
 .operation{
-  float: right;
-  margin-top: 20rpx;
+  float: left;
 }
 
 .operation image{

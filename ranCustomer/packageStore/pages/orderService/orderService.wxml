@@ -2,16 +2,16 @@
 <view class="container">
   <view class="address {{storeType == 2?'type2':''}}" bindtap="chooseAddress">
     <!-- 奢侈品护理 -->
-    <view style="width: 100%;height: 100%;" wx:if="{{storeType == 1}}">
+    <view style="width: 100%;height: 100%;" wx:if="{{storeType == 2}}">
       <image class="address-img"></image>
       <view class="address-info">
         <view class="user-info"><text>许先生</text><text class="user-phone">18318318333</text></view>
         <view class="address-text">江苏省南京市玄武区德基写字楼巴拉巴拉巴拉把李1888基写字楼巴拉巴拉巴拉把李1888</view>
       </view>
-      <image class="arrow"></image>
+      <image class="arrow" src="/img/arrow-right.png"></image>
     </view>
     <!-- 名车护理 -->
-    <view style="width: 100%;height: 100%;display: flex;flex-direction: column;" wx:else="{{storeType == 2}}">
+    <view style="width: 100%;height: 100%;display: flex;flex-direction: column;" wx:elif="{{storeType == 1}}">
       <view class="car-user">
         <image class="order-icon"></image>
         <view class="user-text">许先生</view>
@@ -24,20 +24,43 @@
   </view>
 
   <view class="order-info">
-    <view class="order-line">
-      <image class="order-icon"></image>
-      <view class="order-select">预约{{storeType == 1?'上门取件':'到店护理'}}时间</view>
+    <view class="order-line" wx:if="{{storeType == 1}}">
+      <picker mode="multiSelector" class="timePicker" bindcolumnchange="columnChange" bindchange="pickerChange" value="{{timeIndex}}" range="{{timeArr}}" range-key="value">
+        <image class="order-icon"></image>
+        <view class="order-select">预约{{storeType == 2?'上门取件':'到店护理'}}时间<image src="/img/arrow-right.png"></image><text>{{visit_time}}</text></view>
+      </picker>
     </view>
-    <view class="order-line">
-      <image class="order-icon"></image>
-      <view class="order-select">{{storeType == 1?'预计洗护数量':'护理项目'}}</view>
+    <view class="order-line" wx:if="{{storeType == 2}}">
+      <picker mode="multiSelector" class="timePicker" bindcolumnchange="columnChange" bindchange="pickerChange" value="{{timeIndex}}" range="{{timeArr}}" range-key="value">
+        <image class="order-icon"></image>
+        <view class="order-select">预约{{storeType == 2?'上门取件':'到店护理'}}时间<image src="/img/arrow-right.png"></image><text>{{visit_time}}</text></view>
+      </picker>
+    </view>
+    <view class="order-line" wx:if="{{storeType == 1}}">
+      <picker mode="multiSelector" class="timePicker" bindcolumnchange="priceColumnChange" bindchange="pricePickerChange" value="{{priceIndex}}" range="{{priceArr}}" range-key="name">
+        <image class="order-icon"></image>
+        <view class="order-select">护理项目<image src="/img/arrow-right.png"></image><text>{{price_item}}</text></view>
+      </picker>
+    </view>
+    <view class="order-line" wx:elif="{{storeType == 2}}">
+      <picker mode="multiSelector" class="timePicker" bindchange="numberPickerChange" value="{{numberIndex}}" range="{{numberArr}}">
+        <image class="order-icon"></image>
+        <view class="order-select">预计洗护数量<image src="/img/arrow-right.png"></image><text>{{number}}</text></view>
+      </picker>
     </view>
     <view class="remark-box">
       <view>
         <image class="order-icon"></image>
         <view class="order-select">备注</view>
       </view>
-      <textarea class="remark"></textarea>
+      <textarea class="remark" bindinput="inputPostscript"></textarea>
     </view>
   </view>
+
+
+  <view class="bottom-box">
+    <view class="commit-btn" bindtap='commitOrder'>提交订单</view>
+  </view>
+
+  <login-component login="{{login}}" bindlogin="refreshUserInfo"></login-component>
 </view>

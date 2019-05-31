@@ -1,4 +1,8 @@
 // packageMe/pages/message/message.js
+const app = getApp();
+const util = require('../../../utils/util.js');
+const network = require('../../../utils/network.js');
+
 Page({
 
   /**
@@ -8,7 +12,8 @@ Page({
     tabs: ['系统消息','互动消息'],
     currentIndex: 0,
     systemMessages: [{title: "您有一张新的洗车券，请查收", content: "内容内容内容内容内容内容", hasRead: false, time: '20:00'}], //系统消息
-    commentMessages: []  //互动消息
+    commentMessages: [],  //互动消息
+    buttonClicked: false
   },
 
   /**
@@ -45,6 +50,16 @@ Page({
       this.setData({
         currentIndex: e.detail.current
       });
+    }
+  },
+
+  //跳转消息详情
+  toMessageDetail(){
+    if(!this.data.buttonClicked){
+      util.buttonClicked(this);
+      wx.navigateTo({
+        url: '../messageDetail/messageDetail',
+      })
     }
   }
 })

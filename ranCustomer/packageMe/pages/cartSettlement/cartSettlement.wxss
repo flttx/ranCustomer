@@ -1,0 +1,152 @@
+/* packageMe/pages/cartSettlement/cartSettlement.wxss */
+
+.shadow-box{
+  height: 2px;
+  box-shadow: 0 2px 4px #eee;
+}
+
+.address-box{
+  margin: 30rpx 20rpx;
+  padding: 0 30rpx;
+  background: #fff;
+}
+
+.title{
+  font-size: 30rpx;
+  color: #333;
+  font-weight: bold;
+  padding: 29rpx 0;
+  border-bottom: 1px solid #eee;
+}
+
+.address-info{
+  font-size: 26rpx;
+  position: relative;
+  padding: 22rpx 0;
+}
+
+.name-row{
+  height: 30rpx;
+}
+
+.name-row text{
+  float: left;
+  width: 16rpx;
+  height: 4rpx;
+  background: #D9AB42;
+  margin-right: 16rpx;
+  margin-top: 13rpx;
+}
+
+.phone, .address{
+  margin-left: 30rpx
+}
+
+.phone{
+  margin-top: 23rpx;
+}
+
+.address{
+  margin-top: 19rpx;
+  margin-right: 50rpx;
+}
+
+.address-info image{
+  width: 34rpx;
+  height: 30rpx;
+  position: absolute;
+  right: 0;
+  top: calc(50% - 15rpx);
+}
+
+.good-scroll{
+  width: 100%;
+  padding: 30rpx 0 30rpx 10rpx;
+  box-sizing: border-box;
+  height: 200rpx;
+  overflow-x: auto;
+  white-space: nowrap;
+  position: relative;
+}
+
+.good-num{
+  float: right;
+  font-size: 24rpx;
+  color: #999;
+  font-weight: normal;
+}
+
+.good-img, .good-img-big{
+  display: inline-block;
+  width: 120rpx;
+  height: 120rpx;
+  background: #ACD598;
+  margin-right: 20rpx;
+}
+
+.good-img-big{
+  width: 140rpx;
+  height: 140rpx;
+  vertical-align: top;
+}
+
+.good-info{
+  display: inline-block;
+  margin-left: 30rpx;
+  width: calc(100% - 160rpx);
+  height: 140rpx;
+  position: relative;
+}
+
+.good-name{
+  font-size: 28rpx;
+  color: #000;
+}
+
+.good-desc{
+  font-size: 24rpx;
+  height: 30rpx;
+  color: #999;
+  margin-right: 21rpx;
+  margin-top: 15rpx;
+}
+
+.good-price{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 30rpx;
+}
+
+.good-price .price{
+  color: #333;
+  font-weight: bold;
+}
+
+.good-price .price text{
+  font-size: 34rpx;
+}
+
+.good-price .num{
+  color: #999;
+  margin-left: 25rpx;
+}
+
+.showAll{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 80rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.showAll image{
+  position: absolute;
+  right: 0;
+  width: 34rpx;
+  height: 30rpx;
+  top: calc(50% - 15rpx);
+}

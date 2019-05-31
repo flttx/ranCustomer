@@ -107,6 +107,20 @@ const GET_COUPON = 'api/coupon/user_add_coupon';
 //余额支付
 const BALANCE_PAY = 'api/pay/balance_pay';
 
+//门店花束列表
+const FLOWER_LIST = 'api/flower/flower_list';
+
+//查看花篮
+const FLOWER_BASKET = 'api/flower/flower_basket';
+
+//修改花篮
+const UP_FLOWER_BASKET = 'api/flower/up_flower_basket';
+
+//获取价目表
+const PRICE_LIST = 'api/price_list';
+
+
+
 /**我的模块 */
 //查询用户信息
 const USER_INFO = 'api/user/user';
@@ -142,6 +156,10 @@ module.exports = {
   COUPON_LIST: COUPON_LIST,
   GET_COUPON: GET_COUPON,
   BALANCE_PAY: BALANCE_PAY,
+  FLOWER_LIST: FLOWER_LIST,
+  FLOWER_BASKET: FLOWER_BASKET,
+  UP_FLOWER_BASKET: UP_FLOWER_BASKET,
+  PRICE_LIST: PRICE_LIST,
 
   LOGIN: LOGIN,
   REGISTER: REGISTER,

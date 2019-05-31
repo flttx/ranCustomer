@@ -1,56 +1,52 @@
 <!--packageStore/pages/commitOrderFlower/commitOrderFlower.wxml-->
+<wxs module="filter" src="../../../utils/filter.wxs"></wxs>
 <view class="container">
   <scroll-view style="height: 100%;background-color: #f8f8f8;" scroll-y>
   
-  <view class="box" style="margin-top: 40rpx;">
+  <view class="box" style="margin-top: 40rpx;" bindtap="toAddress">
     <image src="/img/address.png" class="address-icon"></image>
     <view class="address">
       <view class="user-info">许小新<text class="user-phone">18318318333</text></view>
       <view class="address-info doublie-line">大卡司就离开的加拉数据库里短时间的家拉萨觉得吉拉斯加大了就卡数据库的</view>
     </view>
-    <image src="/img/jiantou.jpg" class="jiantou-icon"></image>
+    <image src="/img/arrow-right.png" class="jiantou-icon"></image>
   </view>
 
   <view class="box flower-box">
-    <view class="flower-item">
+    <view class="flower-item" wx:for="{{list}}" wx:key="index">
       <image src="/img/2.jpg"></image>
       <view class="flower-info">
-        <view class="flower-name single-line">情人节花束1</view>
-        <view class="flower-desc double-line">描述描述描述</view>
-        <view class="flower-price"><text class="price">￥40</text><text class="num">数量：1</text></view>
+        <view class="flower-name single-line">{{item.flower_name}}</view>
+        <view class="flower-desc double-line">{{item.flower_brief}}</view>
+        <view class="flower-price"><text class="price">￥{{item.price}}</text><text class="num">数量：{{item.number}}</text></view>
       </view>
     </view>
 
-    <view class="flower-item">
-      <image src="/img/2.jpg"></image>
-      <view class="flower-info">
-        <view class="flower-name single-line">情人节花束1</view>
-        <view class="flower-desc double-line">描述描述描述</view>
-        <view class="flower-price"><text class="price">￥40</text><text class="num">数量：1</text></view>
-      </view>
-    </view>
   </view>
 
   <view class="box info-box">
     <view class="line">
-      <image src="/img/clock.png"></image>
-      <view class="line-text">送花时间<image src="/img/jiantou.jpg"></image></view>
+      <picker mode="multiSelector" class="timePicker" bindcolumnchange="columnChange" bindchange="pickerChange" value="{{timeIndex}}" range="{{timeArr}}" range-key="value">
+        <image src="/img/clock.png"></image>
+        <view class="line-text">送花时间<image src="/img/arrow-right.png"></image><text>{{visit_time}}</text></view>
+      </picker>
+     
     </view>
-    <view class="line">
+    <view class="line" bindtap='clickBox' data-type="1">
       <image src="/img/clock.png"></image>
-      <view class="line-text">配送方式<image src="/img/jiantou.jpg"></image></view>
+      <view class="line-text">配送方式<image src="/img/arrow-right.png"></image></view>
     </view>
-    <view class="line">
+    <view class="line" bindtap='clickBox' data-type="2">
       <image src="/img/clock.png"></image>
-      <view class="line-text">花束用途<image src="/img/jiantou.jpg"></image></view>
+      <view class="line-text">花束用途<image src="/img/arrow-right.png"></image></view>
     </view>
-    <view class="line">
+    <view class="line" bindtap='clickBox' data-type="3">
       <image src="/img/clock.png"></image>
-      <view class="line-text">祝福卡片<image src="/img/jiantou.jpg"></image></view>
+      <view class="line-text">祝福卡片<image src="/img/arrow-right.png"></image></view>
     </view>
-    <view class="line">
+    <view class="line" bindtap='clickBox' data-type="4">
       <image src="/img/clock.png"></image>
-      <view class="line-text">备注<image src="/img/jiantou.jpg"></image></view>
+      <view class="line-text">备注<image src="/img/arrow-right.png"></image></view>
     </view>
   </view>
 
@@ -59,7 +55,7 @@
       使用优惠券
       <view class="right-text">
         <text class="">暂无可用优惠券</text>
-        <image src="/img/jiantou.jpg"></image>
+        <image src="/img/arrow-right.png"></image>
       </view>
     </view>
      <view class="row">
@@ -67,15 +63,15 @@
         <view class="right-text">
           <checkbox-group bindchange="checkboxChange">
             <label class="checkbox">
-              可用积分100，抵用￥100
-              <checkbox/>
+             可用积分{{pay_points}}
+              <checkbox disabled="{{disableCheckbox}}"/>
             </label>
           </checkbox-group>
         </view>
      </view>
      <view class="row borderTop">
       实付金额
-      <view class="right-text red">￥200</view>
+      <view class="right-text red">￥{{filter.toFix(realPrice)}}</view>
      </view>
 
   </view>
@@ -84,8 +80,36 @@
   </scroll-view>
 
   <view class="bottom">
-    <view class="commit-btn">立即支付</view>
-    <view class="price-box">合计<text class="discount-price">￥<text class="big">40.00</text></text></view>
-    <view class="sum">共2束</view>
+    <view class="commit-btn"  bindtap="commitOrder">立即支付</view>
+    <view class="price-box">合计<text class="discount-price">￥<text class="big">{{filter.toFix(realPrice)}}</text></text></view>
+    <view class="sum">共{{sumCount}}束</view>
   </view>
 </view>
+
+<view class="mask" wx:if="{{showBox}}" bindtap='hideMask'></view>
+
+<view class="operation-box" wx:if="{{showBox}}">
+  <view class="btn-row">
+    <view class="cancel-btn" bindtap="clickCancel">取消</view>
+    <view class="confirm-btn" bindtap="clickConfirm">确定</view>
+  </view>
+  <view class="content-box">
+    <block wx:if="{{operationType==1}}">
+       <view class="opeartion-item {{item.selected?'selected':''}}" wx:for="{{shippingArr}}" wx:key="index" data-index="{{index}}" catchtap="selectShipping">{{item.value}}</view>
+    </block>
+    <block wx:elif="{{operationType==2}}">
+       <view class="opeartion-item" wx:for="{{shippingArr}}" wx:key="index" data-index="{{index}}" catchtap="selectShipping">{{item.value}}</view>
+    </block>
+    <block wx:elif="{{operationType==3}}">
+      <view class="input-row"><label>卡片收件人</label><input catchinput="inputBlessName" value="{{bless_name}}"></input></view>
+      <view style="margin-top: 30rpx;">卡片内容</view>
+      <textarea catchinput="inputBlessInfo" value="{{bless_info}}"></textarea>
+    </block>
+    <block wx:elif="{{operationType==4}}">
+      <textarea placeholder='备注：' catchinput="inputPostscript" value="{{postscript}}"></textarea>
+    </block>
+  </view>
+</view>
+
+
+<view class=""></view>

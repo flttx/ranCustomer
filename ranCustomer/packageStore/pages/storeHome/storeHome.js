@@ -21,7 +21,7 @@ Page({
     originalText: '大灰色空间和对快接啊时抠脚大汉金卡和复健科阖家安大灰色空间和对快接啊时抠脚大汉金卡和复健科阖家安', //原文本
     textIsOver: false, //文本是否需要隐藏
     clickShowAllText: false,
-    storeType: '', //门店类型
+    storeType: 1, //门店类型，1-名车护理，2-奢侈品护理，3-花艺
     tabs: ['价目', '优惠', '晒一晒'], //tab
     currentTab: 0, //当前选中的tab
     tabTop: 0, //tab距页面顶部距离
@@ -37,6 +37,7 @@ Page({
     serveList: [], //服务列表
     login: false, //是否显示登录框
     shop_like_count: 0,  //点赞数
+    priceList: [], //价目表
   },
 
   /**
@@ -175,17 +176,54 @@ Page({
 
       that.setData({
         introText: text,
+        originalText: r.data.shop_brief,
         textIsOver: textIsOver,
         shop_detail: r.data,
-        storeType: r.data.shop_type.type_name,
+        storeType: r.data.shop_type_id,
         shop_like_count: r.data.shop_like_count,
         imgList: r.data.shop_photo
       });
 
-      that.getShopServeList();
+      if (r.data.shop_type_id != 3){
+        that.getShopServeList();
+        that.getPriceList();
+      }
       that.getCouponList();
 
     }, null, "加载中...");
+  },
+
+  //获取价目表
+  getPriceList(){
+    let that = this;
+    let param = {};
+    param.shop_id = that.data.shop_id;
+    network.ajax(network.PRICE_LIST, "post", param, res => {
+      let arr = [];
+      let count = 0;
+      for(let i = 0, len = res.data.length;i<len;i++){
+        if(count == 4){
+          break;
+        }
+        for(let j = 0, len = res.data[i].price_list.length;j<len;j++){
+          arr.push(res.data[i].price_list[j]);
+          count++;
+        }
+      }
+      that.setData({
+        priceList: arr
+      });
+
+    }, err=>{
+      if(err.code == 404){
+
+      } else {
+        wx.showToast({
+          title: err.msg,
+          icon: 'none'
+        });
+      }
+    });
   },
 
   //获取门店服务列表
@@ -460,13 +498,13 @@ Page({
     if (!this.data.buttonClicked) {
       util.buttonClicked(this);
       var storeType = this.data.storeType;
-      if (storeType.indexOf("名车") > -1 || storeType.indexOf("奢侈品") > -1){
+      if (storeType == 1 || storeType == 2){
         wx.navigateTo({
-          url: '/packageStore/pages/orderService/orderService',
+          url: '/packageStore/pages/orderService/orderService?shop_id=' + this.data.shop_id + '&storeType=' + storeType,
         })
       } else {
         wx.navigateTo({
-          url: '/packageStore/pages/orderFlower/orderFlower',
+          url: '/packageStore/pages/orderFlower/orderFlower?shop_id=' + this.data.shop_id,
         })
       }
     }
@@ -479,7 +517,7 @@ Page({
     if (!this.data.buttonClicked) {
       util.buttonClicked(this);
       wx.navigateTo({
-        url: '/packageStore/pages/serviceList/serviceList',
+        url: '/packageStore/pages/serviceList/serviceList?shop_id='+this.data.shop_id,
       })
     }
   },

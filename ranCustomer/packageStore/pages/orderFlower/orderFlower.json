@@ -1,3 +1,6 @@
 {
+  "usingComponents": {
+    "login-component": "/components/login-component"
+  },
   "navigationBarTitleText": "然club"
 }

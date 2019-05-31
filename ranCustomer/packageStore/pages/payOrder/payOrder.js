@@ -15,16 +15,22 @@ Page({
     userInfo: wx.getStorageSync("userInfo"), //用户信息
     payType: 1,
     order_sn: '',
+    showInfo: false,
+    balance: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      price: Number(options.price),
-      order_sn: options.order_sn
-    });
+    if (options.order_sn) {
+      this.setData({
+        price: Number(options.price),
+        order_sn: options.order_sn,
+        balance: Number(this.data.userInfo.user_money)
+      });
+    }
+    
     this.countDown();
   },
 
@@ -80,7 +86,7 @@ Page({
   //倒计时
   countDown(){
     var that = this;
-    var time = 1800;//30分钟换算成1800秒
+    var time = 900;//30分钟换算成1800秒
     var timer = setInterval(function () {
       time = time - 1;
       var minute = parseInt(time / 60);
@@ -113,9 +119,16 @@ Page({
   //点击支付
   pay(){
     if(this.data.payType==1){
-      this.balancePay();
+      
     } else{
-
+      if(this.data.balance<this.data.price){
+        wx.showToast({
+          title: '余额不足，立即充值',
+          icon: 'none'
+        });
+        return;
+      }
+      this.balancePay();
     }
   },
 
@@ -134,6 +147,19 @@ Page({
         delta: 2
       });
     }, null, "支付中...");
+  },
+
+
+  clickTip(){
+    this.setData({
+      showInfo: true
+    });
+  },
+
+  hideMask(){
+    this.setData({
+      showInfo: false
+    });
   }
 
 

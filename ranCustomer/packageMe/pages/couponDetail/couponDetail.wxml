@@ -1,0 +1,44 @@
+<!--packageMe/pages/couponDetail/couponDetail.wxml-->
+<view class="content">
+  <view class="box" bindtap='toCouponDetail'>
+    <view class="coupon-info">
+      <view class="coupon-price">
+        <view class="price-amount">
+          20
+          <view class="price-unit">￥</view>
+        </view>
+        
+      </view>
+      <text class="coupon-title single-line">母亲节鲜花券</text>
+    </view>
+    <view class="coupon-desc">
+      <view>
+        <text>· 仅限于Nous</text>
+        <text>· 有效期：2019.4.23-2019.8.23</text>
+      </view>
+      <image src="/img/xianhua.png"></image>
+    </view>
+  </view>
+  <view class="desc-box">
+    <view class="desc-line">
+      <text class="label">适用范围：</text>
+      <view class="value">除“特价洗车”套餐外，全场通用</view>
+    </view>
+    <view class="desc-line">
+      <text class="label">适用门店：</text>
+      <view class="value">帕拉丁（德基广场店）</view>
+    </view>
+    <view class="desc-line">
+      <text class="label">其他说明：</text>
+      <view class="value">过期无效，不可叠加使用</view>
+    </view>
+    <view class="desc-line">
+      <text class="label">退改说明：</text>
+      <view class="value">成功退单后原路返回账户中</view>
+    </view>
+  </view>
+
+  <view class="btn">
+    立即使用
+  </view>
+</view>

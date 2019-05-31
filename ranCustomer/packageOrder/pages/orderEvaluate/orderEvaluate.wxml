@@ -1,10 +1,27 @@
 <!--packageOrder/pages/orderEvaluate/orderEvaluate.wxml-->
 <view class="container">
+  <view class="top"></view>
+  <view class="product-box">
+    <image src="/img/2.jpg"></image>
+    <view class="product-info">
+      <view class="product-name">MISS LUSSO</view>
+      <view class="product-desc">母亲节花艺套餐</view>
+    </view>
+    <image class="thumb-icon" src="/img/{{thumbed?'thumb1.png':'thumb.png'}}" bindtap="clickThumb"></image>
+    
+  </view>
   <view class="textarea-box">
     <textarea maxlength="-1">
     
     </textarea>
-    <view class="tip">15字，有机会被置顶哦~</view>
+    <!-- <view class="upload" wx:if="{{uploadVideo.length == 0}}" bindtap="uploadVideo">
+      <image src="/img/video.png" class="video"></image>
+    </view> -->
+
+    <view class="upload" bindtap="uploadImg">
+      <image src="/img/camera.png" class="camera"></image>
+      <text class="camera-text"></text>
+    </view>
   </view>
   <view class="imgAndVideo">
     <view class="item" wx:for="{{uploadVideo}}" wx:key="index" bindtap="clickView">
@@ -14,25 +31,12 @@
       <image src="{{item.path}}"></image>
     </view>
     <view>
-      <view class="item upload" wx:if="{{uploadVideo.length == 0}}" bindtap="uploadVideo">
-        <image src="/img/video.png" class="icon"></image>
-        <view>上传视频</view>
-      </view>
-
-      <view class="item upload" bindtap="uploadImg">
-        <image src="/img/camera.png" class="icon"></image>
-        <view>上传图片</view>
-      </view>
+      
     </view>
     
   </view>
 
-  <view class="thumb-box">
-    <text>赞一下~</text>
-    <image src="/img/{{thumbed?'thumb1.png':'thumb.png'}}" bindtap="clickThumb"></image>
-  </view>
-
   <view class="btn">
-    立即发表
+    提交评论
   </view>
 </view>
